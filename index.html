@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_32.png">
+<title>HARIBOW 初単独公演「Go Beyond」｜2026.9.29 めぐろパーシモンホール</title>
+<meta name="description" content="ダブルダッチ世界一のチームHARIBOW、初の単独公演「Go Beyond」。2026年9月29日(火) めぐろパーシモンホール 大ホール。公園から世界、その先へ。">
+<meta property="og:title" content="HARIBOW 初単独公演「Go Beyond」">
+<meta property="og:description" content="公園から世界、その先へ。2026.9.29 めぐろパーシモンホール 大ホール">
+<meta property="og:image" content="assets/hero.jpg">
+<style>
+:root{
+  --bg:#0a0b0e; --bg2:#101218; --ink:#f3f1ea; --dim:#a7adba; --faint:#6b7280;
+  --line:rgba(255,255,255,.10); --teal:#63b6cc; --teal-d:#1f5b6e; --cream:#f0ece0; --red:#c8433a;
+  --shadow:0 20px 60px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+  font-feature-settings:"palt";-webkit-font-smoothing:antialiased;line-height:1.75;letter-spacing:.01em}
+img{max-width:100%;display:block}
+a{color:inherit}
+.disp{font-family:"DIN Condensed","Oswald","Hiragino Sans",sans-serif;font-weight:700;letter-spacing:.04em;line-height:1.02}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.ey{font-family:"DIN Condensed","Oswald",sans-serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--teal);font-weight:700}
+
+/* header */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:12px 22px;background:linear-gradient(180deg,rgba(10,11,14,.9),rgba(10,11,14,0));backdrop-filter:blur(6px);transition:.3s}
+.nav.solid{background:rgba(10,11,14,.92);border-bottom:1px solid var(--line)}
+.nav .brand{font-family:"DIN Condensed",sans-serif;font-weight:700;letter-spacing:.14em;font-size:17px}
+.nav .cta{font-size:13px;font-weight:800;padding:9px 18px;border-radius:40px;background:var(--teal);color:#06222b;
+  text-decoration:none;letter-spacing:.04em;box-shadow:0 6px 20px rgba(99,182,204,.28)}
+
+/* hero = 動くKVを埋め込み(自動再生・背景として) */
+.hero{position:relative;height:100svh;overflow:hidden;background:#000}
+.hero .kv{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none}
+.hero .ov{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 20px 60px;text-align:center;
+  background:linear-gradient(180deg,transparent, rgba(10,11,14,.15) 40%, rgba(10,11,14,.9));pointer-events:none}
+.hero .ov > *{pointer-events:auto}
+.theme{font-size:clamp(16px,2.2vw,22px);color:var(--cream);letter-spacing:.14em;font-weight:600;margin:0 0 20px}
+.meta-line{display:inline-flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;align-items:center;color:var(--dim);font-size:14px}
+.meta-line b{color:var(--ink);font-weight:700}
+.meta-line .dot{width:4px;height:4px;border-radius:50%;background:var(--teal);opacity:.7}
+.hero .btns{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;align-items:center}
+.btn{display:inline-block;text-decoration:none;font-weight:800;border-radius:44px;padding:15px 34px;font-size:15px;letter-spacing:.03em;transition:.2s}
+.btn-p{background:var(--teal);color:#06222b;box-shadow:0 10px 34px rgba(99,182,204,.32)}
+.btn-p:hover{transform:translateY(-2px)}
+.hero .fs{color:var(--dim);font-size:13px;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px}
+.hero .fs:hover{color:var(--teal);border-color:var(--teal)}
+.scroll{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:3;color:var(--faint);font-size:11px;letter-spacing:.3em;pointer-events:none;animation:bob 2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,6px)}}
+
+/* sections */
+section{padding:96px 0}
+.sec-head{margin:0 0 40px}
+.sec-head h2{font-size:clamp(26px,4vw,40px);margin:8px 0 0}
+.lead{color:var(--dim);font-size:16px;max-width:640px}
+
+/* intro */
+.intro{background:linear-gradient(180deg,var(--bg),var(--bg2))}
+.intro .big{font-size:clamp(24px,4.6vw,46px);line-height:1.5;font-weight:700;margin:0}
+.intro .big span{color:var(--teal)}
+.intro p{color:var(--dim);font-size:15.5px;max-width:720px;margin:26px 0 0}
+
+/* info grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.grid .cell{background:var(--bg2);padding:26px 24px}
+.grid .cell .k{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:700}
+.grid .cell .v{font-size:19px;font-weight:700;margin-top:8px}
+.grid .cell .s{color:var(--faint);font-size:13px;margin-top:4px}
+
+/* tickets */
+.tk{background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.ttable{width:100%;border-collapse:collapse;font-size:15px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.ttable th,.ttable td{padding:15px 16px;text-align:left;border-bottom:1px solid var(--line)}
+.ttable thead th{background:rgba(255,255,255,.03);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.ttable td.p{font-family:"DIN Condensed",sans-serif;font-size:19px;font-weight:700;letter-spacing:.03em;white-space:nowrap}
+.ttable .name{font-weight:700}
+.ttable .name .tag{display:inline-block;font-size:10.5px;letter-spacing:.08em;background:var(--teal-d);color:var(--teal);padding:2px 8px;border-radius:20px;margin-left:8px;vertical-align:middle}
+.ttable tr:last-child td{border-bottom:0}
+.tk .note{color:var(--faint);font-size:12.5px;margin-top:14px}
+.tk .buy{margin-top:30px;text-align:center}
+
+/* access */
+.acc .row{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.acc .map{border:1px solid var(--line);border-radius:16px;overflow:hidden;aspect-ratio:16/11}
+.acc .map iframe{width:100%;height:100%;border:0;filter:grayscale(.3) invert(.92) hue-rotate(180deg) contrast(.9)}
+.acc dl{margin:0}
+.acc dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-top:18px}
+.acc dt:first-child{margin-top:0}
+.acc dd{margin:5px 0 0;font-size:16px}
+
+/* soon */
+.soon .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.soon .item{border:1px solid var(--line);border-radius:14px;padding:20px 22px;background:var(--bg2)}
+.soon .item .k{font-weight:700;font-size:15px}
+.soon .item .b{color:var(--faint);font-size:13px;margin-top:6px;letter-spacing:.18em;text-transform:uppercase}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:56px 0 70px;background:var(--bg2)}
+footer .logo2{width:190px;opacity:.9;margin-bottom:22px}
+footer .fmeta{color:var(--dim);font-size:14px}
+footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08em}
+
+@media(max-width:760px){
+  section{padding:70px 0}
+  .grid{grid-template-columns:1fr}
+  .acc .row{grid-template-columns:1fr}
+  .soon .grid2{grid-template-columns:1fr}
+  .nav .brand{font-size:15px}
+  .ttable th,.ttable td{padding:12px 12px;font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="brand">HARIBOW</div>
+  <a class="cta" href="https://junyaunitydev.github.io/haribow-solo-show-survey/tickets.html">チケット購入</a>
+</nav>
+
+<!-- HERO = 動くキービジュアル本体 -->
+<header class="hero">
+  <iframe class="kv" src="https://junyaunitydev.github.io/haribow-kv/?auto" title="HARIBOW Go Beyond — Key Visual" loading="eager" allow="gyroscope; accelerometer"></iframe>
+  <div class="ov">
+    <p class="theme">公園から世界、その先へ。</p>
+    <div class="meta-line">
+      <span><b>2026.9.29</b> (火)</span><span class="dot"></span>
+      <span>開演 <b>19:30</b></span><span class="dot"></span>
+      <span>めぐろパーシモンホール 大ホール</span>
+    </div>
+    <div class="btns">
+      <a class="btn btn-p" href="https://junyaunitydev.github.io/haribow-solo-show-survey/tickets.html">チケットを購入する</a>
+      <a class="fs" href="https://junyaunitydev.github.io/haribow-kv/" target="_blank" rel="noopener">フルスクリーンで動かす →</a>
+    </div>
+  </div>
+  <div class="scroll">SCROLL</div>
+</header>
+
+<!-- INTRO -->
+<section class="intro" id="intro">
+  <div class="wrap">
+    <div class="ey">The First Solo Show</div>
+    <p class="big">路上から始まった跳躍が、<br>世界を越えて、<span>その先</span>へ。</p>
+    <p>ダブルダッチで世界の頂点に立ったチーム HARIBOW、初の単独公演。約11演目＋コラボで構成する、多演目ショーケース。スピード、技、そして一人ひとりの作品性を、一夜に凝縮する。</p>
+  </div>
+</section>
+
+<!-- 公演情報 -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><div class="ey">Information</div><h2 class="disp">公演情報</h2></div>
+    <div class="grid">
+      <div class="cell"><div class="k">Date</div><div class="v">2026.9.29 (火)</div><div class="s">開演 19:30 ／ 開場 近日発表</div></div>
+      <div class="cell"><div class="k">Venue</div><div class="v">めぐろパーシモンホール</div><div class="s">大ホール（最大1,200席）</div></div>
+      <div class="cell"><div class="k">Show</div><div class="v">多演目ショーケース</div><div class="s">約11演目＋コラボ／休憩あり</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- チケット -->
+<section class="tk" id="tickets">
+  <div class="wrap">
+    <div class="sec-head"><div class="ey">Tickets</div><h2 class="disp">チケット</h2></div>
+    <table class="ttable">
+      <thead><tr><th>券種</th><th>前売</th><th>通常</th></tr></thead>
+      <tbody>
+        <tr><td class="name">一般</td><td class="p">¥3,500</td><td class="p">¥4,000</td></tr>
+        <tr><td class="name">メイン<span class="tag">特典付</span></td><td class="p">¥4,500</td><td class="p">¥5,000</td></tr>
+        <tr><td class="name">大学生</td><td class="p">¥2,500</td><td class="p">¥3,000<span style="color:var(--faint);font-size:12px;font-family:inherit;font-weight:400"> ／ 団体 ¥2,000</span></td></tr>
+        <tr><td class="name">高校生・子供（小中学生）</td><td class="p" colspan="2">一般価格</td></tr>
+        <tr><td class="name">サポーター券</td><td class="p" colspan="2">¥15,000</td></tr>
+        <tr><td class="name">未就学児</td><td class="p" colspan="2">無料</td></tr>
+      </tbody>
+    </table>
+    <p class="note">※ 大学生は前売・通常・団体いずれも一般価格から一律1,000円引き。団体券は5名以上。メインチケットの特典内容・サポーター券の席数は近日発表。</p>
+    <div class="buy"><a class="btn btn-p" href="https://junyaunitydev.github.io/haribow-solo-show-survey/tickets.html">チケットを購入する</a></div>
+  </div>
+</section>
+
+<!-- 会場アクセス -->
+<section class="acc" id="access">
+  <div class="wrap">
+    <div class="sec-head"><div class="ey">Access</div><h2 class="disp">会場・アクセス</h2></div>
+    <div class="row">
+      <dl>
+        <dt>会場</dt><dd>めぐろパーシモンホール 大ホール</dd>
+        <dt>住所</dt><dd>東京都目黒区八雲1-1-1</dd>
+        <dt>最寄駅</dt><dd>東急東横線「都立大学」駅 徒歩7分</dd>
+        <dd style="margin-top:20px"><a href="https://www.google.com/maps/search/?api=1&query=めぐろパーシモンホール" target="_blank" rel="noopener" style="color:var(--teal);font-size:14px;text-decoration:none;border-bottom:1px solid var(--teal-d);padding-bottom:2px">Google マップで開く →</a></dd>
+      </dl>
+      <div class="map">
+        <iframe loading="lazy" src="https://maps.google.com/maps?q=めぐろパーシモンホール&z=16&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 近日発表 -->
+<section class="soon">
+  <div class="wrap">
+    <div class="sec-head"><div class="ey">Coming Soon</div><h2 class="disp">続報</h2><p class="lead" style="margin-top:14px">決まり次第、このページで順次お知らせします。</p></div>
+    <div class="grid2">
+      <div class="item"><div class="k">開場時刻</div><div class="b">Coming soon</div></div>
+      <div class="item"><div class="k">メインチケット特典</div><div class="b">Coming soon</div></div>
+      <div class="item"><div class="k">配信の有無</div><div class="b">Coming soon</div></div>
+      <div class="item"><div class="k">来場ガイド（撮影・再入場・お子様連れ 等）</div><div class="b">Coming soon</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img class="logo2" src="assets/logo.png" alt="Go Beyond">
+    <div class="fmeta">HARIBOW 初単独公演「Go Beyond」<br>2026年9月29日(火) 開演19:30／めぐろパーシモンホール 大ホール</div>
+    <div class="cr">© HARIBOW</div>
+  </div>
+</footer>
+
+<script>
+  var nav=document.getElementById('nav');
+  addEventListener('scroll',function(){ nav.classList.toggle('solid', scrollY>60); });
+</script>
+</body>
+</html>
