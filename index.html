@@ -65,6 +65,21 @@ section{padding:96px 0}
 .intro .big span{color:var(--teal)}
 .intro p{color:var(--dim);font-size:15.5px;max-width:720px;margin:26px 0 0}
 
+/* この夜だけ */
+.onenight{background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.onenight .hl{border:1px solid var(--teal-d);background:rgba(99,182,204,.06);border-radius:12px;padding:16px 20px;color:var(--cream);font-size:15px;line-height:1.7;margin-bottom:26px}
+.onenight .hl b{color:var(--teal)}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.pcard{border:1px solid var(--line);border-radius:14px;padding:22px 24px;background:var(--bg2);transition:.2s}
+.pcard:hover{border-color:var(--teal-d);transform:translateY(-2px)}
+.ptags{display:flex;gap:6px;margin-bottom:11px;flex-wrap:wrap}
+.ptag{font-family:"DIN Condensed",sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#06222b;background:var(--teal);padding:3px 11px;border-radius:20px;font-weight:700}
+.ptag.gold{background:#c9a24b;color:#20160a}
+.ptag.red{background:#b0463c;color:#fbeae7}
+.pcard h3{font-size:19px;margin:0 0 8px;font-weight:800;letter-spacing:.01em}
+.pcard p{color:var(--dim);font-size:14px;margin:0;line-height:1.7}
+.note2{color:var(--faint);font-size:12.5px;margin-top:18px}
+
 /* info grid */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .grid .cell{background:var(--bg2);padding:26px 24px}
@@ -108,6 +123,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
 @media(max-width:760px){
   section{padding:70px 0}
   .grid{grid-template-columns:1fr}
+  .pgrid{grid-template-columns:1fr}
   .acc .row{grid-template-columns:1fr}
   .soon .grid2{grid-template-columns:1fr}
   .nav .brand{font-size:15px}
@@ -145,7 +161,26 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
   <div class="wrap">
     <div class="ey">The First Solo Show</div>
     <p class="big">路上から始まった跳躍が、<br>世界を越えて、<span>その先</span>へ。</p>
-    <p>ダブルダッチで世界の頂点に立ったチーム HARIBOW、初の単独公演。約11演目＋コラボで構成する、多演目ショーケース。スピード、技、そして一人ひとりの作品性を、一夜に凝縮する。</p>
+    <p>特別な環境があったわけじゃない。公園と路上の練習を積み重ねて、世界の頂点まで登りつめたチーム HARIBOW、初の単独公演。スピード、技、そして一人ひとりの作品性を、一夜に凝縮する。</p>
+  </div>
+</section>
+
+<!-- この夜だけ -->
+<section class="onenight" id="lineup">
+  <div class="wrap">
+    <div class="sec-head"><div class="ey">One Night Only</div><h2 class="disp">この夜だけの、ラインナップ</h2>
+      <p class="lead" style="margin-top:14px">世界最高峰が、一夜に集結する。出演者は全員、業界の第一線を走るプレイヤー。</p>
+    </div>
+    <div class="hl">2025 IJRU世界選手権（HARIBOW）と DOUBLE DUTCH CONTEST WORLD 2026（YOUNG BLOOD）——<b>2年連続の世界王者の演技が、同じ舞台に立つ。</b></div>
+    <div class="pgrid">
+      <div class="pcard"><div class="ptags"><span class="ptag gold">世界一</span></div><h3>YOUNG BLOOD</h3><p>DOUBLE DUTCH CONTEST WORLD 2026 世界一。頂点に立った次世代チームの演技。</p></div>
+      <div class="pcard"><div class="ptags"><span class="ptag gold">世界一</span></div><h3>2025 IJRU世界選手権 優勝演技</h3><p>2025 IJRU世界選手権を制した、HARIBOW世界一の演技。</p></div>
+      <div class="pcard"><div class="ptags"><span class="ptag red">限定コラボ</span></div><h3>Cheer Re-Man's × HARIBOW</h3><p>Britain's Got Talent 準優勝『Cheer Re-Man's』との、一夜限りの相互ゲストコラボ。</p></div>
+      <div class="pcard"><div class="ptags"><span class="ptag">復活</span></div><h3>Roar</h3><p>National Double Dutch League 2021 世界3位。伝説の作品『Roar』が、この夜に復活する。</p></div>
+      <div class="pcard"><div class="ptags"><span class="ptag">オーディション作品</span></div><h3>Cirque du Soleil オーディション演技</h3><p>シルク・ドゥ・ソレイユのオーディションで披露した、究極のスピードを追求した作品。</p></div>
+      <div class="pcard"><div class="ptags"><span class="ptag">原点</span></div><h3>DOUBLE DUTCH CONTEST JAPAN 2023</h3><p>国内最大のダブルダッチ大会。HARIBOW第一世代がシーンに名乗りを上げた、原点の演技。</p></div>
+    </div>
+    <p class="note2">※ 上記は演目の一部です。OP／EDを含む全11演目＋コラボで構成。演目・出演内容は変更になる場合があります。</p>
   </div>
 </section>
 
