@@ -29,6 +29,12 @@ body{margin:0;background:var(--bg);color:var(--ink);
 img{max-width:100%;display:block}
 a{color:inherit}
 .disp{font-family:"Clash Display","Zen Kaku Gothic New","Hiragino Sans",sans-serif;font-weight:700;letter-spacing:.005em;line-height:1.1}
+/* 改行最適化：PC/スマホで別々の強制改行＋日本語向け自動折り返し */
+.br-sp{display:none}
+@media(max-width:760px){ .br-pc{display:none} .br-sp{display:inline} }
+body{line-break:strict}
+.intro .big,.sec-head h2,.lead,.hl,.climax-sub{text-wrap:balance}
+.intro p,.pcard p,.tk .note,.note2,.acc dd,.fmeta{text-wrap:pretty}
 .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
 .ey{font-family:"Clash Display",sans-serif;letter-spacing:.32em;text-transform:uppercase;font-size:12px;color:var(--teal);font-weight:600;position:relative;padding-left:17px;display:inline-block}
 .ey::before{content:"";position:absolute;left:0;top:50%;width:9px;height:9px;border:1.5px solid var(--teal);border-radius:50%;transform:translateY(-50%)}
@@ -286,7 +292,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
 <section class="intro" id="intro">
   <div class="wrap">
     <div class="ey">The First Solo Show</div>
-    <p class="big">路上から始まった跳躍が、<br>世界を越えて、<span>その先</span>へ。</p>
+    <p class="big">路上から始まった跳躍が、<br>世界を越えて、<br class="br-sp"><span>その先</span>へ。</p>
     <p>特別な環境があったわけじゃない。公園と路上の練習を積み重ねて、世界の頂点まで登りつめたチーム HARIBOW、初の単独公演。世界最高峰のショー、そしてHARIBOWという団体を作る、一人一人のストーリーの集大成が一夜に凝縮する。</p>
   </div>
 </section>
@@ -408,7 +414,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
 <footer>
   <div class="wrap">
     <img class="logo2" src="assets/logo.png" alt="Go Beyond">
-    <div class="fmeta">HARIBOW 初単独公演「Go Beyond」<br>2026年9月29日(火) 開演19:30／めぐろパーシモンホール 大ホール</div>
+    <div class="fmeta">HARIBOW 初単独公演「Go Beyond」<br>2026年9月29日(火) 開演19:30／<br class="br-sp">めぐろパーシモンホール 大ホール</div>
     <div class="cr">© HARIBOW</div>
   </div>
 </footer>
