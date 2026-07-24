@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Particle Test — GO BEYOND</title>
+<title>Particle Test — GO BEYOND（重力/軌道）</title>
 <style>
   html,body{margin:0;height:100%;background:#0a0b0e;overflow:hidden;font-family:-apple-system,sans-serif}
   #c{display:block;width:100vw;height:100dvh}
@@ -13,7 +13,7 @@
 </head>
 <body>
 <canvas id="c"></canvas>
-<div id="hud">PARTICLE TEST ／ タップで再集結</div>
+<div id="hud">PARTICLE TEST（重力/軌道）／ タップで散らす</div>
 <div id="fps">–</div>
 <script type="importmap">
 { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
@@ -21,17 +21,17 @@
 <script type="module">
 import * as THREE from 'three';
 
-const renderer=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:false});
+const renderer=new THREE.WebGLRenderer({canvas:c,antialias:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 renderer.setSize(innerWidth,innerHeight);
 const scene=new THREE.Scene(); scene.background=new THREE.Color(0x0a0b0e);
 const camera=new THREE.PerspectiveCamera(52,innerWidth/innerHeight,0.1,100);
-camera.position.set(0,0,7.2);
+camera.position.set(0,0,7.4);
 
 const isMobile=Math.min(innerWidth,innerHeight)<620;
-const COUNT=isMobile?5000:9000;
+const N=isMobile?4500:9000;
 
-// --- 文字ターゲットをcanvasからサンプリング ---
+// --- 文字ターゲット ---
 function textTargets(){
   const W=1100,H=380, tc=document.createElement('canvas'); tc.width=W; tc.height=H;
   const g=tc.getContext('2d'); g.fillStyle='#000'; g.fillRect(0,0,W,H);
@@ -40,103 +40,81 @@ function textTargets(){
   g.font='900 210px "Arial Black","Arial",sans-serif'; g.fillText('BEYOND',W/2,270);
   const d=g.getImageData(0,0,W,H).data, pts=[];
   for(let y=0;y<H;y+=2)for(let x=0;x<W;x+=2){ if(d[(y*W+x)*4]>120){ pts.push([(x/W-0.5)*6.8,-(y/H-0.5)*2.35]); } }
-  // shuffle
   for(let i=pts.length-1;i>0;i--){const j=(Math.random()*(i+1))|0;[pts[i],pts[j]]=[pts[j],pts[i]];}
   return pts;
 }
 const T=textTargets();
 
-const start=new Float32Array(COUNT*3), target=new Float32Array(COUNT*3), rnd=new Float32Array(COUNT);
-function reseed(){ for(let i=0;i<COUNT;i++){ start[i*3]=(Math.random()*2-1)*8; start[i*3+1]=(Math.random()*2-1)*5; start[i*3+2]=(Math.random()*2-1)*3.5; } geo.attributes.aStart.needsUpdate=true; }
-for(let i=0;i<COUNT;i++){
-  const t=T[i%T.length];
-  target[i*3]=t[0]+(Math.random()-.5)*0.04; target[i*3+1]=t[1]+(Math.random()-.5)*0.04; target[i*3+2]=(Math.random()-.5)*0.5;
-  rnd[i]=Math.random();
+// --- 状態（位置・速度・ターゲット） ---
+const px=new Float32Array(N),py=new Float32Array(N),pz=new Float32Array(N);
+const vx=new Float32Array(N),vy=new Float32Array(N),vz=new Float32Array(N);
+const tx=new Float32Array(N),ty=new Float32Array(N),tz=new Float32Array(N);
+const rnd=new Float32Array(N);
+const pos=new Float32Array(N*3);
+function seed(burst){
+  for(let i=0;i<N;i++){
+    const t=T[i%T.length];
+    tx[i]=t[0]+(Math.random()-.5)*0.05; ty[i]=t[1]+(Math.random()-.5)*0.05; tz[i]=(Math.random()-.5)*0.4;
+    // 散らばった初期位置（球殻状）
+    const a=Math.random()*6.283, b=Math.acos(2*Math.random()-1), R=2.5+Math.random()*3.0;
+    px[i]=Math.sin(b)*Math.cos(a)*R; py[i]=Math.sin(b)*Math.sin(a)*R*0.7; pz[i]=Math.cos(b)*R*0.6;
+    // 中心まわりの接線速度＝軌道（惑星運動）
+    const rr=Math.hypot(px[i],py[i])+1e-3, sp=(0.7+Math.random()*0.5)*(burst?1.7:1.0);
+    vx[i]=-py[i]/rr*sp; vy[i]=px[i]/rr*sp; vz[i]=(Math.random()-.5)*0.3;
+    rnd[i]=Math.random();
+  }
 }
-const geo=new THREE.BufferGeometry();
-geo.setAttribute('position',new THREE.BufferAttribute(new Float32Array(COUNT*3),3));
-geo.setAttribute('aStart',new THREE.BufferAttribute(start,3));
-geo.setAttribute('aTarget',new THREE.BufferAttribute(target,3));
-geo.setAttribute('aR',new THREE.BufferAttribute(rnd,1));
-reseed();
+seed(false);
 
+const geo=new THREE.BufferGeometry();
+geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+geo.setAttribute('aR',new THREE.BufferAttribute(rnd,1));
 const mat=new THREE.ShaderMaterial({
-  uniforms:{ uProg:{value:0}, uTime:{value:0}, uPx:{value:renderer.getPixelRatio()} },
+  uniforms:{ uPx:{value:renderer.getPixelRatio()} },
   transparent:true, depthTest:false, depthWrite:false, blending:THREE.AdditiveBlending,
-  vertexShader:`
-    attribute vec3 aStart; attribute vec3 aTarget; attribute float aR;
-    uniform float uProg,uTime,uPx; varying float vA;
-    // --- 3D simplex noise (Ashima) ---
-    vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x,289.0);}
-    vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}
-    float snoise(vec3 v){
-      const vec2 C=vec2(1.0/6.0,1.0/3.0); const vec4 D=vec4(0.0,0.5,1.0,2.0);
-      vec3 i=floor(v+dot(v,C.yyy)); vec3 x0=v-i+dot(i,C.xxx);
-      vec3 g=step(x0.yzx,x0.xyz); vec3 l=1.0-g; vec3 i1=min(g.xyz,l.zxy); vec3 i2=max(g.xyz,l.zxy);
-      vec3 x1=x0-i1+C.xxx; vec3 x2=x0-i2+C.yyy; vec3 x3=x0-D.yyy;
-      i=mod(i,289.0);
-      vec4 p=permute(permute(permute(i.z+vec4(0.0,i1.z,i2.z,1.0))+i.y+vec4(0.0,i1.y,i2.y,1.0))+i.x+vec4(0.0,i1.x,i2.x,1.0));
-      float n_=1.0/7.0; vec3 ns=n_*D.wyz-D.xzx;
-      vec4 j=p-49.0*floor(p*ns.z*ns.z); vec4 x_=floor(j*ns.z); vec4 y_=floor(j-7.0*x_);
-      vec4 x=x_*ns.x+ns.yyyy; vec4 y=y_*ns.x+ns.yyyy; vec4 h=1.0-abs(x)-abs(y);
-      vec4 b0=vec4(x.xy,y.xy); vec4 b1=vec4(x.zw,y.zw);
-      vec4 s0=floor(b0)*2.0+1.0; vec4 s1=floor(b1)*2.0+1.0; vec4 sh=-step(h,vec4(0.0));
-      vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy; vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;
-      vec3 pp0=vec3(a0.xy,h.x); vec3 pp1=vec3(a0.zw,h.y); vec3 pp2=vec3(a1.xy,h.z); vec3 pp3=vec3(a1.zw,h.w);
-      vec4 norm=taylorInvSqrt(vec4(dot(pp0,pp0),dot(pp1,pp1),dot(pp2,pp2),dot(pp3,pp3)));
-      pp0*=norm.x;pp1*=norm.y;pp2*=norm.z;pp3*=norm.w;
-      vec4 m=max(0.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0); m=m*m;
-      return 42.0*dot(m*m,vec4(dot(pp0,x0),dot(pp1,x1),dot(pp2,x2),dot(pp3,x3)));
-    }
-    vec3 pot(vec3 p){return vec3(snoise(p),snoise(p+vec3(31.4,27.1,19.7)),snoise(p+vec3(-11.2,53.3,-7.9)));}
-    vec3 curl(vec3 p){ // 発散ゼロの流れ場（幻想性の土台）
-      float e=0.12; vec3 dx=vec3(e,0,0),dy=vec3(0,e,0),dz=vec3(0,0,e);
-      vec3 px1=pot(p+dx),px0=pot(p-dx),py1=pot(p+dy),py0=pot(p-dy),pz1=pot(p+dz),pz0=pot(p-dz);
-      return vec3((py1.z-py0.z)-(pz1.y-pz0.y),(pz1.x-pz0.x)-(px1.z-px0.z),(px1.y-px0.y)-(py1.x-py0.x))/(2.0*e);
-    }
-    float ease(float x){ return x<0.5?4.*x*x*x:1.-pow(-2.*x+2.,3.)/2.; }
-    void main(){
-      float e=ease(clamp(uProg,0.,1.));
-      // 散開時：カールノイズ流れ場に沿って流体的に漂う（大スケール遅 + 小スケール速＝時間階層）
-      vec3 flow = curl(aStart*0.16 + vec3(0.,0.,uTime*0.05))*1.25
-                + curl(aStart*0.5 + vec3(uTime*0.14,0.,0.))*0.30;
-      vec3 scattered = aStart + flow;
-      // 集結時：文字上で微かに揺れる（発光のちらつき）
-      vec3 formed = aTarget + vec3(sin(uTime*0.6+aR*30.0),cos(uTime*0.5+aR*24.0),sin(uTime*0.7+aR*17.0))*0.018;
-      vec3 p = mix(scattered, formed, e);
-      // 螺旋降着：ターゲットへ回り込みながら収束（1/軌道物理の"品"）
-      vec3 rel = p - aTarget; float a2=(1.0-e)*2.4*(0.6+aR);
-      float c2=cos(a2),s2=sin(a2); rel.xy=mat2(c2,-s2,s2,c2)*rel.xy;
-      p = aTarget + rel;
-      vec4 mv=modelViewMatrix*vec4(p,1.0);
-      gl_Position=projectionMatrix*mv;
-      gl_PointSize=(0.4+aR*0.8)*uPx*(200.0/-mv.z);
-      vA=0.45+aR*0.55;
-    }`,
-  fragmentShader:`
-    varying float vA;
-    void main(){
-      vec2 c=gl_PointCoord-0.5; float d=length(c); if(d>0.5)discard;
-      float a=smoothstep(0.5,0.0,d);
-      vec3 col=mix(vec3(0.30,0.62,0.74),vec3(0.86,0.83,0.72),vA);
-      gl_FragColor=vec4(col,a*vA*0.62);
-    }`
+  vertexShader:`attribute float aR; uniform float uPx; varying float vA;
+    void main(){ vec4 mv=modelViewMatrix*vec4(position,1.0); gl_Position=projectionMatrix*mv;
+      gl_PointSize=(0.22+aR*0.6)*uPx*(200.0/-mv.z); vA=0.45+aR*0.55; }`,
+  fragmentShader:`varying float vA;
+    void main(){ vec2 c=gl_PointCoord-0.5; float d=length(c); if(d>0.5)discard;
+      float a=smoothstep(0.5,0.0,d); vec3 col=mix(vec3(0.30,0.62,0.74),vec3(0.86,0.83,0.72),vA);
+      gl_FragColor=vec4(col,a*vA*0.38); }`
 });
 scene.add(new THREE.Points(geo,mat));
 
-// ループ: 集結→保持→分散→再集結
-const clock=new THREE.Clock(); let cycle=0; const DUR=9.0;
-addEventListener('pointerdown',()=>{ cycle=clock.getElapsedTime(); reseed(); });
+// --- 重力シミュ ---
+// 各粒子: 中心への微弱重力(常時=軌道を保つ)＋ターゲットへの重力(gatherで増減=文字に降着)
+const CENTER_G=0.42, SOFT_C=2.4, SPRING=0.14, DT=0.6;
+const clock=new THREE.Clock(); const DUR=11.0, H=1/60;
+let simT=0, lastT=0, acc=0, cyc=0;
+addEventListener('pointerdown',()=>{ seed(true); cyc=simT; });
+function smooth(a,b,x){ x=Math.min(1,Math.max(0,(x-a)/(b-a))); return x*x*(3-2*x); }
 let last=performance.now(), frames=0, fpsEl=document.getElementById('fps');
+
+function physics(gather){  // 1ステップ(=1/60秒相当)
+  // 中心への微弱1/r²重力（惑星軌道）はgatherで減衰。ターゲットへは減衰バネで滑らかに着地。
+  const cg=CENTER_G*(1.0-gather), sp=SPRING*gather, damp=0.985-0.14*gather;
+  for(let i=0;i<N;i++){
+    let ax=0,ay=0,az=0;
+    if(cg>0.0005){ let cx=-px[i],cy=-py[i],cz=-pz[i]; let cr2=cx*cx+cy*cy+cz*cz+SOFT_C; let cr=Math.sqrt(cr2); let fc=cg/cr2;
+      ax+=cx/cr*fc; ay+=cy/cr*fc; az+=cz/cr*fc; }
+    if(sp>0.0005){ ax+=(tx[i]-px[i])*sp; ay+=(ty[i]-py[i])*sp; az+=(tz[i]-pz[i])*sp; }
+    vx[i]=(vx[i]+ax*DT)*damp; vy[i]=(vy[i]+ay*DT)*damp; vz[i]=(vz[i]+az*DT)*damp;
+    px[i]+=vx[i]*DT; py[i]+=vy[i]*DT; pz[i]+=vz[i]*DT;
+  }
+}
+function step(){
+  const t=clock.getElapsedTime(); acc+=(t-lastT); lastT=t; let n=0;
+  while(acc>=H && n<600){ simT+=H; const ph=((simT-cyc)%DUR)/DUR;
+    const g=Math.min(1,Math.max(0, smooth(0.06,0.42,ph)-smooth(0.72,0.98,ph))); physics(g); acc-=H; n++; }
+  for(let i=0;i<N;i++){ pos[i*3]=px[i]; pos[i*3+1]=py[i]; pos[i*3+2]=pz[i]; }
+  geo.attributes.position.needsUpdate=true;
+}
 function loop(){
-  const t=clock.getElapsedTime(); const ph=((t-cycle)%DUR)/DUR;
-  const prog=Math.min(1,Math.max(0, smooth(0,0.34,ph)-smooth(0.74,1.0,ph)));
-  mat.uniforms.uProg.value=prog; mat.uniforms.uTime.value=t;
-  renderer.render(scene,camera);
+  step(); renderer.render(scene,camera);
   frames++; const now=performance.now(); if(now-last>500){ fpsEl.textContent=Math.round(frames*1000/(now-last))+' fps'; frames=0; last=now; }
   requestAnimationFrame(loop);
 }
-function smooth(a,b,x){ x=Math.min(1,Math.max(0,(x-a)/(b-a))); return x*x*(3-2*x); }
 loop();
 addEventListener('resize',()=>{ renderer.setSize(innerWidth,innerHeight); camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); });
 </script>
