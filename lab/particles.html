@@ -52,7 +52,7 @@ const tx=new Float32Array(N),ty=new Float32Array(N),tz=new Float32Array(N);
 const rnd=new Float32Array(N);
 const pos=new Float32Array(N*3);
 // 重力定数：中心の1/r²重力。SOFT_Cを小さく＝近距離の急加速が効く（近い粒子ほど強く引かれ速い）
-const CENTER_G=0.6, SOFT_C=0.5;
+const CENTER_G=0.13, SOFT_C=1.5;
 function seed(burst){
   for(let i=0;i<N;i++){
     const t=T[i%T.length];
@@ -87,21 +87,30 @@ scene.add(new THREE.Points(geo,mat));
 
 // --- 重力シミュ ---
 // 各粒子: 中心への微弱重力(常時=軌道を保つ)＋ターゲットへの重力(gatherで増減=文字に降着)
-const SPRING=0.14, DT=0.6;
-const clock=new THREE.Clock(); const DUR=11.0, H=1/60;
+const SPRING=0.085, DT=0.32, SWIRL=0.0011, FLOW=0.008;
+const clock=new THREE.Clock(); const DUR=15.0, H=1/60;
 let simT=0, lastT=0, acc=0, cyc=0;
 addEventListener('pointerdown',()=>{ seed(true); cyc=simT; });
 function smooth(a,b,x){ x=Math.min(1,Math.max(0,(x-a)/(b-a))); return x*x*(3-2*x); }
 let last=performance.now(), frames=0, fpsEl=document.getElementById('fps');
 
 function physics(gather){  // 1ステップ(=1/60秒相当)
-  // 中心への微弱1/r²重力（惑星軌道）はgatherで減衰。ターゲットへは減衰バネで滑らかに着地。
-  const cg=CENTER_G*(1.0-gather), sp=SPRING*gather, damp=0.985-0.14*gather;
+  // 漂い(星雲): 微弱1/r²重力＋ゆるやかな回転(swirl)＋流れ場(flow)。gatherで漂いを消し、ターゲットへ減衰バネで着地。
+  const drift=1.0-gather;
+  const cg=CENTER_G*drift, sp=SPRING*gather, damp=0.992-0.16*gather;
+  const sw=SWIRL*drift, fl=FLOW*drift, tt=simT;
   for(let i=0;i<N;i++){
+    const x=px[i],y=py[i],z=pz[i];
     let ax=0,ay=0,az=0;
-    if(cg>0.0005){ let cx=-px[i],cy=-py[i],cz=-pz[i]; let cr2=cx*cx+cy*cy+cz*cz+SOFT_C; let cr=Math.sqrt(cr2); let fc=cg/cr2;
-      ax+=cx/cr*fc; ay+=cy/cr*fc; az+=cz/cr*fc; }
-    if(sp>0.0005){ ax+=(tx[i]-px[i])*sp; ay+=(ty[i]-py[i])*sp; az+=(tz[i]-pz[i])*sp; }
+    if(cg>0.0004){ let cr2=x*x+y*y+z*z+SOFT_C; let cr=Math.sqrt(cr2); let fc=cg/cr2;
+      ax+=-x/cr*fc; ay+=-y/cr*fc; az+=-z/cr*fc; }
+    if(sp>0.0005){ ax+=(tx[i]-x)*sp; ay+=(ty[i]-y)*sp; az+=(tz[i]-z)*sp; }
+    if(drift>0.02){
+      ax+=-y*sw; ay+=x*sw;                                   // 星雲のゆるやかな回転
+      ax+=Math.sin(y*0.6+tt*0.23)*fl;                        // ゆるやかな流れ場（漂い）
+      ay+=Math.cos(x*0.5-tt*0.19)*fl;
+      az+=Math.sin(z*0.7+x*0.3+tt*0.17)*fl;
+    }
     vx[i]=(vx[i]+ax*DT)*damp; vy[i]=(vy[i]+ay*DT)*damp; vz[i]=(vz[i]+az*DT)*damp;
     px[i]+=vx[i]*DT; py[i]+=vy[i]*DT; pz[i]+=vz[i]*DT;
   }
@@ -109,7 +118,7 @@ function physics(gather){  // 1ステップ(=1/60秒相当)
 function step(){
   const t=clock.getElapsedTime(); acc+=(t-lastT); lastT=t; let n=0;
   while(acc>=H && n<600){ simT+=H; const ph=((simT-cyc)%DUR)/DUR;
-    const g=Math.min(1,Math.max(0, smooth(0.06,0.42,ph)-smooth(0.72,0.98,ph))); physics(g); acc-=H; n++; }
+    const g=Math.min(1,Math.max(0, smooth(0.28,0.46,ph)-smooth(0.70,0.92,ph))); physics(g); acc-=H; n++; }
   for(let i=0;i<N;i++){ pos[i*3]=px[i]; pos[i*3+1]=py[i]; pos[i*3+2]=pz[i]; }
   geo.attributes.position.needsUpdate=true;
 }
