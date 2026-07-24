@@ -76,9 +76,16 @@ a{color:inherit}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
   padding:12px 22px;background:linear-gradient(180deg,rgba(10,11,14,.9),rgba(10,11,14,0));backdrop-filter:blur(6px);transition:.3s}
 .nav.solid{background:rgba(10,11,14,.92);border-bottom:1px solid var(--line)}
-.nav .brand{font-family:"Clash Display",sans-serif;font-weight:600;letter-spacing:.16em;font-size:18px}
+.nav .brand{font-family:"Clash Display",sans-serif;font-weight:600;letter-spacing:.16em;font-size:18px;text-decoration:none;color:var(--ink)}
+.nav .nav-links{display:flex;gap:28px;font-size:13px;letter-spacing:.04em}
+.nav .nav-links a{color:var(--dim);text-decoration:none;transition:color .2s;padding:4px 0;position:relative}
+.nav .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--teal);transition:width .25s cubic-bezier(.22,.7,.2,1)}
+.nav .nav-links a:hover{color:var(--ink)}
+.nav .nav-links a:hover::after{width:100%}
 .nav .cta{font-size:13px;font-weight:800;padding:9px 18px;border-radius:40px;background:var(--teal);color:#06222b;
   text-decoration:none;letter-spacing:.04em;box-shadow:0 6px 20px rgba(99,182,204,.28)}
+section[id],header[id]{scroll-margin-top:66px}
+@media(max-width:760px){.nav .nav-links{display:none}}
 
 /* hero = 動くKVを埋め込み(自動再生・背景として) */
 .hero{position:relative;height:100svh;overflow:hidden;background:#000}
@@ -151,6 +158,23 @@ section{padding:96px 0}
   .stat .lb{font-size:11px}
 }
 
+/* countdown */
+.cd{padding:78px 0 20px;text-align:center;background:radial-gradient(70% 120% at 50% 0%,rgba(31,91,110,.10),transparent 60%)}
+.cd .sec-head{margin-bottom:26px}
+.cd .sec-head h2{font-size:clamp(22px,3.2vw,32px)}
+.cd-row{display:inline-flex;gap:14px;justify-content:center;flex-wrap:nowrap}
+.cd-u{min-width:80px;border:1px solid var(--line);border-radius:14px;padding:18px 8px 14px;background:var(--bg2)}
+.cd-n{display:block;font-family:"Clash Display",sans-serif;font-weight:600;font-size:clamp(30px,6.6vw,50px);
+  color:var(--teal);line-height:1;font-variant-numeric:tabular-nums}
+.cd-l{display:block;margin-top:10px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint)}
+.cd-live{color:var(--cream);font-size:clamp(20px,4vw,30px);letter-spacing:.1em;font-weight:800}
+@media(max-width:760px){
+  .cd{padding:60px 0 8px}
+  .cd-row{gap:9px}
+  .cd-u{min-width:0;flex:1;padding:15px 4px 11px;border-radius:12px}
+  .cd-l{font-size:9px;letter-spacing:.12em}
+}
+
 /* info grid */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .grid .cell{background:var(--bg2);padding:26px 24px}
@@ -218,12 +242,17 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
 <div class="cursor" id="cursor"></div>
 
 <nav class="nav" id="nav">
-  <div class="brand">HARIBOW</div>
+  <a class="brand" href="#top">HARIBOW</a>
+  <div class="nav-links">
+    <a href="#lineup">ラインナップ</a>
+    <a href="#tickets">チケット</a>
+    <a href="#access">アクセス</a>
+  </div>
   <a class="cta" href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケット購入</a>
 </nav>
 
 <!-- HERO = 動くキービジュアル本体 -->
-<header class="hero">
+<header class="hero" id="top">
   <iframe class="kv" src="https://junyaunitydev.github.io/haribow-kv/?auto" title="HARIBOW Go Beyond — Key Visual" loading="eager" allow="gyroscope; accelerometer"></iframe>
   <div class="ov">
     <p class="theme">公園から世界、その先へ。</p>
@@ -282,6 +311,19 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
       <div class="stat"><div class="num" data-to="20">1</div><div class="lb">カ国で<br>公演</div></div>
       <div class="stat"><div class="num-t">初</div><div class="lb">HARIBOW<br>単独公演</div></div>
       <div class="stat"><div class="num-t">BGT</div><div class="lb">史上初の<br>オーディエンス<br>ゴールデンブザー</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- カウントダウン -->
+<section class="cd" id="countdown" aria-label="開演までのカウントダウン">
+  <div class="wrap">
+    <div class="sec-head"><div class="ey">Countdown</div><h2 class="disp">その一夜まで</h2></div>
+    <div class="cd-row" id="cd">
+      <div class="cd-u"><span class="cd-n" data-d>—</span><span class="cd-l">Days</span></div>
+      <div class="cd-u"><span class="cd-n" data-h>—</span><span class="cd-l">Hours</span></div>
+      <div class="cd-u"><span class="cd-n" data-m>—</span><span class="cd-l">Min</span></div>
+      <div class="cd-u"><span class="cd-n" data-s>—</span><span class="cd-l">Sec</span></div>
     </div>
   </div>
 </section>
@@ -376,7 +418,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
 
   // スクロールリビール
   var revSel='.sec-head, .intro .big, .intro p, .onenight .hl, .note2, .ttable, .tk .note, .tk .buy, .acc .row, footer .wrap';
-  var stagSel='.pgrid, .grid, .soon .grid2';
+  var stagSel='.pgrid, .grid, .soon .grid2, .cd-row';
   document.querySelectorAll(revSel).forEach(function(el){el.classList.add('reveal');});
   document.querySelectorAll(stagSel).forEach(function(el){el.classList.add('stagger');});
   var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);} });},{threshold:.14, rootMargin:'0px 0px -8% 0px'});
@@ -421,6 +463,22 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
       io2.disconnect(); } }); },{threshold:.35});
     io2.observe(climax.querySelector('.stats'));
   }
+
+  // 開演カウントダウン（2026.9.29 19:30 JST）
+  (function(){
+    var el=document.getElementById('cd'); if(!el) return;
+    var target=new Date('2026-09-29T19:30:00+09:00').getTime();
+    var dN=el.querySelector('[data-d]'),hN=el.querySelector('[data-h]'),mN=el.querySelector('[data-m]'),sN=el.querySelector('[data-s]');
+    function p2(n){return (n<10?'0':'')+n;}
+    function upd(){
+      var diff=target-Date.now();
+      if(diff<=0){ el.innerHTML='<div class="cd-live">本日、開演。</div>'; clearInterval(iv); return; }
+      var s=Math.floor(diff/1000), d=Math.floor(s/86400); s-=d*86400;
+      var h=Math.floor(s/3600); s-=h*3600; var m=Math.floor(s/60); s-=m*60;
+      dN.textContent=d; hN.textContent=p2(h); mN.textContent=p2(m); sN.textContent=p2(s);
+    }
+    upd(); var iv=setInterval(upd,1000);
+  })();
 </script>
 </body>
 </html>
