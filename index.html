@@ -178,6 +178,26 @@ section{padding:96px 0}
   .stat .lb{font-size:11px}
 }
 
+/* これまで＝通過点 → その先 */
+.story{background:linear-gradient(180deg,var(--bg),var(--bg2))}
+.story .stats{margin:40px auto 0}
+.timeline{max-width:820px;margin:60px auto 0;position:relative;padding-left:26px}
+.timeline::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,transparent,var(--teal-d) 10%,var(--teal-d) 90%,transparent)}
+.tl{position:relative;padding:0 0 28px}
+.tl:last-child{padding-bottom:0}
+.tl::before{content:"";position:absolute;left:-25px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(99,182,204,.13)}
+.tl-k{font-family:"Clash Display","Zen Kaku Gothic New",sans-serif;font-size:12px;letter-spacing:.14em;color:var(--teal);font-weight:600;text-transform:uppercase;margin-bottom:7px}
+.tl-b{color:var(--dim);font-size:15px;line-height:1.85;text-wrap:pretty}
+.tl-b b{color:var(--cream);font-weight:700}
+.tl-big .tl-b{color:var(--ink);font-size:15.5px}
+.tl-big::before{width:12px;height:12px;left:-26.5px;background:var(--cream);box-shadow:0 0 0 5px rgba(240,236,224,.1)}
+.beyond{text-align:center;margin:66px auto 0;max-width:720px}
+.beyond-lead{color:var(--dim);font-size:15px;letter-spacing:.06em;margin:0}
+.beyond-big{font-family:"Zen Kaku Gothic New","Hiragino Sans",sans-serif;font-weight:900;font-size:clamp(23px,4.4vw,40px);line-height:1.42;margin:14px 0 0;letter-spacing:.01em;text-wrap:balance}
+.beyond-big span{color:var(--teal)}
+.beyond-sub{color:var(--cream);font-size:15.5px;line-height:1.9;margin:22px 0 0;text-wrap:pretty}
+.beyond-cta{margin-top:34px}
+
 /* countdown */
 .cd{padding:78px 0 20px;text-align:center;background:radial-gradient(70% 120% at 50% 0%,rgba(31,91,110,.10),transparent 60%)}
 .cd .sec-head{margin-bottom:26px}
@@ -327,11 +347,49 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
       <span class="l2" data-par="-0.10">BEYOND</span>
     </div>
     <p class="climax-sub">2026.9.29 — 公園から世界、その先へ。</p>
+  </div>
+</section>
+
+<!-- これまで＝通過点 → その先 -->
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="sec-head"><div class="ey">The Story So Far</div><h2 class="disp">世界を、通過してきた。</h2></div>
+
     <div class="stats">
-      <div class="stat"><div class="num" data-to="2">0</div><div class="lb">組の<br>世界王者</div></div>
-      <div class="stat"><div class="num" data-to="20">1</div><div class="lb">カ国で<br>公演</div></div>
-      <div class="stat"><div class="num-t">初</div><div class="lb">HARIBOW<br>単独公演</div></div>
-      <div class="stat"><div class="num-t">BGT</div><div class="lb">史上初の<br>オーディエンス<br>ゴールデンブザー</div></div>
+      <div class="stat"><div class="num-t">世界一</div><div class="lb">2025 IJRU<br>世界選手権</div></div>
+      <div class="stat"><div class="num-t">史上初</div><div class="lb">BGT 観客<br>ゴールデンブザー</div></div>
+      <div class="stat"><div class="num" data-to="4">1</div><div class="lb">カ国の<br>海外TV出演</div></div>
+      <div class="stat"><div class="num" data-to="20000" data-comma="1">0</div><div class="lb">人規模のアリーナ<br>（NBA）</div></div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl">
+        <div class="tl-k">TV / 世界のタレントショー</div>
+        <div class="tl-b"><b>Britain's Got Talent（英）</b>で番組史上初の"観客ゴールデンブザー"を獲得し、決勝進出。Tu Si Que Vales（伊）／Got Talent España（西）／La France a un Incroyable Talent（仏）にも出演し、言葉も文化も超えて世界を沸かせた。</div>
+      </div>
+      <div class="tl">
+        <div class="tl-k">世界最高峰のサーカス／ヴァリエテ</div>
+        <div class="tl-b">サーカスの本場ヨーロッパで、"世界の頂点"の常連に。〈Elefant d'Or〉（世界トップ5・欧州最大級のサーカス祭）で<b>シルク・ドゥ・ソレイユ賞／リングリング賞</b>、〈Latina〉で<b>モンテカルロ賞＝サーカス界のアカデミー賞</b>を獲得。ムーラン・ルージュ／<b>世界最大のサーカステント</b> Cirque Phénix／<b>ドイツ最大級</b>のテーマパーク Europa-Park／Apollo Varieté／Conelli（スイス）／Circo Medrano（伊）ほか名門に続々出演。</div>
+      </div>
+      <div class="tl tl-big">
+        <div class="tl-k">ドイツアリーナツアー</div>
+        <div class="tl-b"><b>Feuerwerk der Turnkunst「VIVA」</b>——35年続く<b>「欧州で最も成功した体操エンタメショー」</b>（年間20万人超を動員）。ハンブルク・ケルン・ベルリン等の<b>1万人超級アリーナ</b>を巡り、<b>30公演以上</b>に出演。<b>のべ十数万人</b>の観客の前で演じた。</div>
+      </div>
+      <div class="tl">
+        <div class="tl-k">世界的ビッグイベント</div>
+        <div class="tl-b"><b>NBA Abu Dhabi Games 2024</b>——約2万人が埋まるアリーナのハーフタイムショーに出演。<b>2025年 欧州7拠点同時公演</b>——総勢35名を派遣し、同じ時間に7つの舞台を回した。</div>
+      </div>
+      <div class="tl">
+        <div class="tl-k">ダブルダッチ、世界の頂点</div>
+        <div class="tl-b"><b>2025 IJRU世界選手権 優勝</b>。世界30カ国以上が集う舞台で、HARIBOWは世界一になった。</div>
+      </div>
+    </div>
+
+    <div class="beyond">
+      <p class="beyond-lead">これまでの全部が、通過点だった。</p>
+      <p class="beyond-big">HARIBOWが掲げる<span>“その先”</span>とは、何か。</p>
+      <p class="beyond-sub">その答え合わせは、この夜、劇場でしかできない。<br>この夜は、ゴールじゃない。だから、見逃せない。</p>
+      <div class="beyond-cta"><a class="btn btn-p" href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケットを購入する</a></div>
     </div>
   </div>
 </section>
@@ -436,8 +494,8 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
   },{passive:true});
 
   // スクロールリビール
-  var revSel='.sec-head, .intro .big, .intro p, .onenight .hl, .note2, .ttable, .tk .note, .tk .buy, .acc .row, footer .wrap';
-  var stagSel='.pgrid, .grid, .soon .grid2, .cd-row';
+  var revSel='.sec-head, .intro .big, .intro p, .onenight .hl, .note2, .ttable, .tk .note, .tk .buy, .acc .row, footer .wrap, .beyond';
+  var stagSel='.pgrid, .grid, .soon .grid2, .cd-row, .story .stats, .timeline';
   document.querySelectorAll(revSel).forEach(function(el){el.classList.add('reveal');});
   document.querySelectorAll(stagSel).forEach(function(el){el.classList.add('stagger');});
   var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in'); io.unobserve(e.target);} });},{threshold:.14, rootMargin:'0px 0px -8% 0px'});
@@ -475,13 +533,19 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
     addEventListener('scroll',function(){ if(!tickingC){tickingC=true; requestAnimationFrame(cxUpdate);} },{passive:true});
     cxUpdate();
     if(reduce && ringC) ringC.style.strokeDashoffset=0;
-    var done=false, io2=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting && !done){ done=true;
-      climax.querySelectorAll('.stat .num').forEach(function(n){ var to=+n.dataset.to, comma=n.dataset.comma;
-        if(reduce){ n.textContent=comma? to.toLocaleString():to; return; }
-        var t0=performance.now(); (function tick(t){ var p=Math.min(1,(t-t0)/1100), v=Math.round(to*(1-Math.pow(1-p,3))); if(v<1)v=1; n.textContent=comma? v.toLocaleString():v; if(p<1)requestAnimationFrame(tick); })(performance.now()); });
-      io2.disconnect(); } }); },{threshold:.35});
-    io2.observe(climax.querySelector('.stats'));
   }
+
+  // 数字カウントアップ（経歴セクションの掴み4数字）
+  (function(){
+    var statsEl=document.querySelector('#story .stats'); if(!statsEl) return;
+    var reduceM=matchMedia('(prefers-reduced-motion:reduce)').matches, done=false;
+    var io2=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting && !done){ done=true;
+      statsEl.querySelectorAll('.stat .num').forEach(function(n){ var to=+n.dataset.to, comma=n.dataset.comma;
+        if(reduceM){ n.textContent=comma? to.toLocaleString():to; return; }
+        var t0=performance.now(); (function tick(t){ var p=Math.min(1,(t-t0)/1100), v=Math.round(to*(1-Math.pow(1-p,3))); if(v<1)v=1; n.textContent=comma? v.toLocaleString():v; if(p<1)requestAnimationFrame(tick); })(performance.now()); });
+      io2.disconnect(); } }); },{threshold:.3});
+    io2.observe(statsEl);
+  })();
 
   // 常在パーティクル：画面内でのみ再生・フェードイン（省電力）
   (function(){
