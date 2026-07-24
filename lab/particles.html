@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Particle Test — GO BEYOND</title>
+<style>
+  html,body{margin:0;height:100%;background:#0a0b0e;overflow:hidden;font-family:-apple-system,sans-serif}
+  #c{display:block;width:100vw;height:100dvh}
+  #hud{position:fixed;left:14px;bottom:14px;color:#5b6472;font-size:11px;letter-spacing:.15em;z-index:5}
+  #fps{position:fixed;right:14px;top:12px;color:#63b6cc;font-size:12px;font-variant-numeric:tabular-nums;z-index:5}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="hud">PARTICLE TEST ／ タップで再集結</div>
+<div id="fps">–</div>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+
+const renderer=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:false});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setSize(innerWidth,innerHeight);
+const scene=new THREE.Scene(); scene.background=new THREE.Color(0x0a0b0e);
+const camera=new THREE.PerspectiveCamera(52,innerWidth/innerHeight,0.1,100);
+camera.position.set(0,0,7.2);
+
+const isMobile=Math.min(innerWidth,innerHeight)<620;
+const COUNT=isMobile?5000:9000;
+
+// --- 文字ターゲットをcanvasからサンプリング ---
+function textTargets(){
+  const W=1100,H=380, tc=document.createElement('canvas'); tc.width=W; tc.height=H;
+  const g=tc.getContext('2d'); g.fillStyle='#000'; g.fillRect(0,0,W,H);
+  g.fillStyle='#fff'; g.textAlign='center'; g.textBaseline='middle';
+  g.font='900 150px "Arial Black","Arial",sans-serif'; g.fillText('GO',W/2,120);
+  g.font='900 210px "Arial Black","Arial",sans-serif'; g.fillText('BEYOND',W/2,270);
+  const d=g.getImageData(0,0,W,H).data, pts=[];
+  for(let y=0;y<H;y+=2)for(let x=0;x<W;x+=2){ if(d[(y*W+x)*4]>120){ pts.push([(x/W-0.5)*6.8,-(y/H-0.5)*2.35]); } }
+  // shuffle
+  for(let i=pts.length-1;i>0;i--){const j=(Math.random()*(i+1))|0;[pts[i],pts[j]]=[pts[j],pts[i]];}
+  return pts;
+}
+const T=textTargets();
+
+const start=new Float32Array(COUNT*3), target=new Float32Array(COUNT*3), rnd=new Float32Array(COUNT);
+function reseed(){ for(let i=0;i<COUNT;i++){ start[i*3]=(Math.random()*2-1)*8; start[i*3+1]=(Math.random()*2-1)*5; start[i*3+2]=(Math.random()*2-1)*3.5; } geo.attributes.aStart.needsUpdate=true; }
+for(let i=0;i<COUNT;i++){
+  const t=T[i%T.length];
+  target[i*3]=t[0]+(Math.random()-.5)*0.04; target[i*3+1]=t[1]+(Math.random()-.5)*0.04; target[i*3+2]=(Math.random()-.5)*0.5;
+  rnd[i]=Math.random();
+}
+const geo=new THREE.BufferGeometry();
+geo.setAttribute('position',new THREE.BufferAttribute(new Float32Array(COUNT*3),3));
+geo.setAttribute('aStart',new THREE.BufferAttribute(start,3));
+geo.setAttribute('aTarget',new THREE.BufferAttribute(target,3));
+geo.setAttribute('aR',new THREE.BufferAttribute(rnd,1));
+reseed();
+
+const mat=new THREE.ShaderMaterial({
+  uniforms:{ uProg:{value:0}, uTime:{value:0}, uPx:{value:renderer.getPixelRatio()} },
+  transparent:true, depthTest:false, depthWrite:false, blending:THREE.AdditiveBlending,
+  vertexShader:`
+    attribute vec3 aStart; attribute vec3 aTarget; attribute float aR;
+    uniform float uProg,uTime,uPx; varying float vA;
+    float ease(float x){ return x<0.5?4.*x*x*x:1.-pow(-2.*x+2.,3.)/2.; }
+    void main(){
+      float e=ease(clamp(uProg,0.,1.));
+      vec3 p=mix(aStart,aTarget,e);
+      float sw=1.0-e;
+      p.x+=sin(uTime*0.8+aR*6.28)*0.5*sw;
+      p.y+=cos(uTime*0.7+aR*6.28)*0.5*sw;
+      p.z+=sin(uTime*0.5+aR*10.0)*0.8*sw;
+      p.x+=sin(uTime*0.4+aR*20.0)*0.02*e;
+      p.y+=cos(uTime*0.35+aR*18.0)*0.02*e;
+      vec4 mv=modelViewMatrix*vec4(p,1.0);
+      gl_Position=projectionMatrix*mv;
+      gl_PointSize=(0.4+aR*0.8)*uPx*(200.0/-mv.z);
+      vA=0.45+aR*0.55;
+    }`,
+  fragmentShader:`
+    varying float vA;
+    void main(){
+      vec2 c=gl_PointCoord-0.5; float d=length(c); if(d>0.5)discard;
+      float a=smoothstep(0.5,0.0,d);
+      vec3 col=mix(vec3(0.30,0.62,0.74),vec3(0.86,0.83,0.72),vA);
+      gl_FragColor=vec4(col,a*vA*0.62);
+    }`
+});
+scene.add(new THREE.Points(geo,mat));
+
+// ループ: 集結→保持→分散→再集結
+const clock=new THREE.Clock(); let cycle=0; const DUR=9.0;
+addEventListener('pointerdown',()=>{ cycle=clock.getElapsedTime(); reseed(); });
+let last=performance.now(), frames=0, fpsEl=document.getElementById('fps');
+function loop(){
+  const t=clock.getElapsedTime(); const ph=((t-cycle)%DUR)/DUR;
+  const prog=Math.min(1,Math.max(0, smooth(0,0.34,ph)-smooth(0.74,1.0,ph)));
+  mat.uniforms.uProg.value=prog; mat.uniforms.uTime.value=t;
+  renderer.render(scene,camera);
+  frames++; const now=performance.now(); if(now-last>500){ fpsEl.textContent=Math.round(frames*1000/(now-last))+' fps'; frames=0; last=now; }
+  requestAnimationFrame(loop);
+}
+function smooth(a,b,x){ x=Math.min(1,Math.max(0,(x-a)/(b-a))); return x*x*(3-2*x); }
+loop();
+addEventListener('resize',()=>{ renderer.setSize(innerWidth,innerHeight); camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); });
+</script>
+</body>
+</html>
