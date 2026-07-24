@@ -279,9 +279,9 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
     <p class="climax-sub">2026.9.29 — 公園から世界、その先へ。</p>
     <div class="stats">
       <div class="stat"><div class="num" data-to="2">0</div><div class="lb">年連続<br>世界王者</div></div>
-      <div class="stat"><div class="num-t">20+</div><div class="lb">カ国で<br>公演</div></div>
+      <div class="stat"><div class="num" data-to="20">1</div><div class="lb">カ国で<br>公演</div></div>
       <div class="stat"><div class="num-t">初</div><div class="lb">HARIBOW<br>単独公演</div></div>
-      <div class="stat"><div class="num-t">BGT</div><div class="lb">史上初の<br>ゴールデンブザー</div></div>
+      <div class="stat"><div class="num-t">BGT</div><div class="lb">史上初の<br>オーディエンス<br>ゴールデンブザー</div></div>
     </div>
   </div>
 </section>
@@ -417,7 +417,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
     var done=false, io2=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting && !done){ done=true;
       climax.querySelectorAll('.stat .num').forEach(function(n){ var to=+n.dataset.to, comma=n.dataset.comma;
         if(reduce){ n.textContent=comma? to.toLocaleString():to; return; }
-        var t0=performance.now(); (function tick(t){ var p=Math.min(1,(t-t0)/1100), v=Math.round(to*(1-Math.pow(1-p,3))); n.textContent=comma? v.toLocaleString():v; if(p<1)requestAnimationFrame(tick); })(performance.now()); });
+        var t0=performance.now(); (function tick(t){ var p=Math.min(1,(t-t0)/1100), v=Math.round(to*(1-Math.pow(1-p,3))); if(v<1)v=1; n.textContent=comma? v.toLocaleString():v; if(p<1)requestAnimationFrame(tick); })(performance.now()); });
       io2.disconnect(); } }); },{threshold:.35});
     io2.observe(climax.querySelector('.stats'));
   }
