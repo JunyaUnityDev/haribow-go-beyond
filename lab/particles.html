@@ -24,7 +24,7 @@ import * as THREE from 'three';
 const EMBED=location.search.indexOf('embed')>=0;      // ?embed=公式サイト埋め込み(透過・HUD無し)
 const AMBIENT=location.search.indexOf('ambient')>=0;  // ?ambient=常在の漂いのみ(文字化しない背景演出)
 const isMobile=Math.min(innerWidth,innerHeight)<620;
-const N=AMBIENT?(isMobile?900:1600):(isMobile?4500:9000);
+const N=AMBIENT?(isMobile?90:120):(isMobile?4500:9000);
 const FPS_CAP=isMobile?30:60;                          // スマホは30fps描画に間引く(物理は固定ステップで正確)
 const renderer=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,isMobile?1.25:2));
@@ -67,7 +67,7 @@ function seed(burst){
     const t=T[i%T.length];
     tx[i]=t[0]+(Math.random()-.5)*0.05; ty[i]=t[1]+(Math.random()-.5)*0.05; tz[i]=(Math.random()-.5)*0.4;
     // 散らばった初期位置（球殻状）。ambientは密なフィールドにするため内寄せ
-    const a=Math.random()*6.283, b=Math.acos(2*Math.random()-1), R=AMBIENT?(isMobile?(1.6+Math.random()*3.0):(2.0+Math.random()*3.4)):(2.2+Math.random()*3.6);
+    const a=Math.random()*6.283, b=Math.acos(2*Math.random()-1), R=AMBIENT?(isMobile?(0.9+Math.random()*2.3):(2.0+Math.random()*3.4)):(2.2+Math.random()*3.6);
     px[i]=Math.sin(b)*Math.cos(a)*R; py[i]=Math.sin(b)*Math.sin(a)*R*0.7; pz[i]=Math.cos(b)*R*0.55;
     // ケプラー軌道の接線速度 v=√(G/r)：内側ほど速く、外側ほど遅い（本物の惑星運動）
     const rr=Math.max(0.6,Math.hypot(px[i],py[i]));
@@ -82,7 +82,7 @@ const geo=new THREE.BufferGeometry();
 geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
 geo.setAttribute('aR',new THREE.BufferAttribute(rnd,1));
 const mat=new THREE.ShaderMaterial({
-  uniforms:{ uPx:{value:renderer.getPixelRatio()}, uSize:{value:AMBIENT?(isMobile?1.3:1.15):1.0}, uBright:{value:AMBIENT?(isMobile?0.85:0.7):1.0} },
+  uniforms:{ uPx:{value:renderer.getPixelRatio()}, uSize:{value:AMBIENT?(isMobile?1.3:1.15):1.0}, uBright:{value:AMBIENT?(isMobile?0.55:0.45):1.0} },
   transparent:true, depthTest:false, depthWrite:false, blending:THREE.AdditiveBlending,
   vertexShader:`attribute float aR; uniform float uPx; uniform float uSize; varying float vA;
     void main(){ vec4 mv=modelViewMatrix*vec4(position,1.0); gl_Position=projectionMatrix*mv;
