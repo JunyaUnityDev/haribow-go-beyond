@@ -51,16 +51,19 @@ const vx=new Float32Array(N),vy=new Float32Array(N),vz=new Float32Array(N);
 const tx=new Float32Array(N),ty=new Float32Array(N),tz=new Float32Array(N);
 const rnd=new Float32Array(N);
 const pos=new Float32Array(N*3);
+// 重力定数：中心の1/r²重力。SOFT_Cを小さく＝近距離の急加速が効く（近い粒子ほど強く引かれ速い）
+const CENTER_G=0.6, SOFT_C=0.5;
 function seed(burst){
   for(let i=0;i<N;i++){
     const t=T[i%T.length];
     tx[i]=t[0]+(Math.random()-.5)*0.05; ty[i]=t[1]+(Math.random()-.5)*0.05; tz[i]=(Math.random()-.5)*0.4;
     // 散らばった初期位置（球殻状）
-    const a=Math.random()*6.283, b=Math.acos(2*Math.random()-1), R=2.5+Math.random()*3.0;
-    px[i]=Math.sin(b)*Math.cos(a)*R; py[i]=Math.sin(b)*Math.sin(a)*R*0.7; pz[i]=Math.cos(b)*R*0.6;
-    // 中心まわりの接線速度＝軌道（惑星運動）
-    const rr=Math.hypot(px[i],py[i])+1e-3, sp=(0.7+Math.random()*0.5)*(burst?1.7:1.0);
-    vx[i]=-py[i]/rr*sp; vy[i]=px[i]/rr*sp; vz[i]=(Math.random()-.5)*0.3;
+    const a=Math.random()*6.283, b=Math.acos(2*Math.random()-1), R=2.2+Math.random()*3.6;
+    px[i]=Math.sin(b)*Math.cos(a)*R; py[i]=Math.sin(b)*Math.sin(a)*R*0.7; pz[i]=Math.cos(b)*R*0.55;
+    // ケプラー軌道の接線速度 v=√(G/r)：内側ほど速く、外側ほど遅い（本物の惑星運動）
+    const rr=Math.max(0.6,Math.hypot(px[i],py[i]));
+    const vorb=Math.sqrt(CENTER_G/rr)*(0.82+Math.random()*0.4)*(burst?1.5:1.0);
+    vx[i]=-py[i]/rr*vorb; vy[i]=px[i]/rr*vorb; vz[i]=(Math.random()-.5)*0.25;
     rnd[i]=Math.random();
   }
 }
@@ -84,7 +87,7 @@ scene.add(new THREE.Points(geo,mat));
 
 // --- 重力シミュ ---
 // 各粒子: 中心への微弱重力(常時=軌道を保つ)＋ターゲットへの重力(gatherで増減=文字に降着)
-const CENTER_G=0.42, SOFT_C=2.4, SPRING=0.14, DT=0.6;
+const SPRING=0.14, DT=0.6;
 const clock=new THREE.Clock(); const DUR=11.0, H=1/60;
 let simT=0, lastT=0, acc=0, cyc=0;
 addEventListener('pointerdown',()=>{ seed(true); cyc=simT; });
