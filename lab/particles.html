@@ -21,12 +21,19 @@
 <script type="module">
 import * as THREE from 'three';
 
-const renderer=new THREE.WebGLRenderer({canvas:c,antialias:true});
+const EMBED=location.search.indexOf('embed')>=0;   // ?embed=公式サイト埋め込み(透過・HUD無し)
+const renderer=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 renderer.setSize(innerWidth,innerHeight);
-const scene=new THREE.Scene(); scene.background=new THREE.Color(0x0a0b0e);
+const scene=new THREE.Scene();
+if(EMBED){ renderer.setClearColor(0x000000,0); document.documentElement.style.background='transparent'; document.body.style.background='transparent';
+  var _h=document.getElementById('hud'),_f=document.getElementById('fps'); if(_h)_h.style.display='none'; if(_f)_f.style.display='none'; }
+else scene.background=new THREE.Color(0x0a0b0e);
 const camera=new THREE.PerspectiveCamera(52,innerWidth/innerHeight,0.1,100);
-camera.position.set(0,0,7.4);
+function fitCam(){ camera.aspect=innerWidth/innerHeight;   // 文字幅が見切れないようアスペクトでカメラを引く
+  const need=3.75/(Math.tan(52*Math.PI/360)*Math.max(0.6,camera.aspect));
+  camera.position.z=Math.max(6.7,need); camera.updateProjectionMatrix(); }
+fitCam();
 
 const isMobile=Math.min(innerWidth,innerHeight)<620;
 const N=isMobile?4500:9000;
@@ -122,13 +129,17 @@ function step(){
   for(let i=0;i<N;i++){ pos[i*3]=px[i]; pos[i*3+1]=py[i]; pos[i*3+2]=pz[i]; }
   geo.attributes.position.needsUpdate=true;
 }
+let RUN=true;   // 親ページから画面外で pause / 画面内で run（省電力）
+addEventListener('message',function(e){ if(e.data==='pp-pause'){ RUN=false; }
+  else if(e.data==='pp-run'){ if(!RUN){ RUN=true; lastT=clock.getElapsedTime(); requestAnimationFrame(loop); } } });
 function loop(){
+  if(!RUN) return;
   step(); renderer.render(scene,camera);
   frames++; const now=performance.now(); if(now-last>500){ fpsEl.textContent=Math.round(frames*1000/(now-last))+' fps'; frames=0; last=now; }
   requestAnimationFrame(loop);
 }
 loop();
-addEventListener('resize',()=>{ renderer.setSize(innerWidth,innerHeight); camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); });
+addEventListener('resize',()=>{ renderer.setSize(innerWidth,innerHeight); fitCam(); });
 </script>
 </body>
 </html>

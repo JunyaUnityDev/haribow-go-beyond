@@ -139,6 +139,14 @@ section{padding:96px 0}
 .climax-ring{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);width:min(80vw,640px);aspect-ratio:1;pointer-events:none;opacity:.55;z-index:1}
 .climax-ring svg{width:100%;height:100%;display:block;transform:rotate(-90deg)}
 .climax-ring circle{fill:none;stroke:var(--teal);stroke-width:.5;stroke-dasharray:603;stroke-dashoffset:603}
+/* 粒子 GO BEYOND（lab/particles.html を透過埋め込み） */
+.go-stage{position:relative;z-index:2;width:100%;max-width:900px;margin:0 auto;height:clamp(260px,42vw,440px)}
+.go-kv{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;opacity:0;transition:opacity 1.4s ease}
+.go-kv.in{opacity:1}
+.go-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:"Clash Display",sans-serif;font-weight:700;line-height:.9;font-size:clamp(52px,13vw,150px);
+  color:transparent;-webkit-text-stroke:1.2px var(--cream);opacity:.14;pointer-events:none;text-align:center}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .bigtype{position:relative;z-index:2;font-family:"Clash Display",sans-serif;font-weight:700;line-height:.88;letter-spacing:-.01em;will-change:transform}
 .bigtype span{display:block;font-size:clamp(56px,15vw,178px)}
 .bigtype .l2{color:transparent;-webkit-text-stroke:1.6px var(--cream);text-stroke:1.6px var(--cream)}
@@ -301,9 +309,10 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
 <section class="climax" id="climax">
   <div class="climax-ring"><svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="96"/></svg></div>
   <div class="wrap">
-    <div class="bigtype">
-      <span class="l1" data-par="0.10">GO</span>
-      <span class="l2" data-par="-0.10">BEYOND</span>
+    <div class="go-stage">
+      <iframe class="go-kv" src="lab/particles.html?embed" title="GO BEYOND" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+      <span class="go-fallback disp" aria-hidden="true">GO<br>BEYOND</span>
+      <h2 class="vh">GO BEYOND</h2>
     </div>
     <p class="climax-sub">2026.9.29 — 公園から世界、その先へ。</p>
     <div class="stats">
@@ -463,6 +472,17 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
       io2.disconnect(); } }); },{threshold:.35});
     io2.observe(climax.querySelector('.stats'));
   }
+
+  // 粒子 GO BEYOND：画面内でのみ再生・フェードイン（省電力）
+  (function(){
+    var goIf=document.querySelector('.go-kv'), goStage=document.querySelector('.go-stage');
+    if(!goIf||!goStage) return;
+    var io3=new IntersectionObserver(function(es){ es.forEach(function(e){
+      if(e.isIntersecting) goIf.classList.add('in');
+      try{ goIf.contentWindow.postMessage(e.isIntersecting?'pp-run':'pp-pause','*'); }catch(_){}
+    }); },{threshold:.04});
+    io3.observe(goStage);
+  })();
 
   // 開演カウントダウン（2026.9.29 19:30 JST）
   (function(){
