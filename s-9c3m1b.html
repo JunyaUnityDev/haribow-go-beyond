@@ -13,7 +13,7 @@
 <meta name="description" content="ダブルダッチ世界一のチームHARIBOW、初の単独公演「Go Beyond」。2026年9月29日(火) めぐろパーシモンホール 大ホール。公園から世界、その先へ。">
 <meta property="og:title" content="HARIBOW「Go Beyond」— ダブルダッチが、世界の舞台に立っている。">
 <meta property="og:description" content="公園から世界、その先へ。2026.9.29 めぐろパーシモンホール 大ホール">
-<meta property="og:image" content="assets/hero.jpg">
+<meta property="og:image" content="https://go-beyond.haribow.com/assets/hero.jpg">
 <style>
 :root{
   --bg:#0a0b0e; --bg2:#101218; --ink:#f3f1ea; --dim:#a7adba; --faint:#6b7280;
@@ -290,7 +290,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
   <div class="nav-links">
     <a href="index.html">公式サイト</a>
   </div>
-  <a class="cta" href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケット購入</a>
+  <a class="cta" data-buy href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケット購入</a>
 </nav>
 
 <!-- HERO = 動くキービジュアル本体 -->
@@ -304,7 +304,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
       <span>めぐろパーシモンホール 大ホール</span>
     </div>
     <div class="btns">
-      <a class="btn btn-p" href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケットを購入する</a>
+      <a class="btn btn-p" data-buy href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケットを購入する</a>
       <a class="fs" href="index.html">公式サイト →</a>
     </div>
   </div>
@@ -330,6 +330,18 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
       <span class="l2" data-par="-0.10">BEYOND</span>
     </div>
     <p class="climax-sub">2026.9.29 — 公園から世界、その先へ。</p>
+  </div>
+</section>
+
+<!-- ラインナップ -->
+<section class="onenight" id="lineup">
+  <div class="wrap">
+    <div class="sec-head"><div class="ey">One Night Only</div><h2 class="disp">この夜だけの、ラインナップ</h2>
+      <p class="lead" style="margin-top:14px">世界最高峰が、一夜に集結する。出演者は全員、業界の第一線を走るプレイヤー。</p>
+    </div>
+    <div class="hl">2025 IJRU世界選手権（HARIBOW）と DOUBLE DUTCH CONTEST WORLD 2026（YOUNG BLOOD）——<b>2組の世界王者の演技が、同じ舞台に立つ。</b></div>
+    <div class="pgrid" id="lineupGrid"></div>
+    <p class="note2">※ 上記は演目の一部です。OP／EDを含む複数の演目＋コラボで構成。演目・出演内容は変更になる場合があります。</p>
   </div>
 </section>
 
@@ -382,7 +394,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
       <p class="beyond-big">それは、“本物”のまま<br class="br-sp">そこに立てているか。</p>
       <p class="beyond-sub">世界に届いても、譲れないものがあるはずだ。<br>それを一番わかっているのは、この道を歩いてきた、あなただ。</p>
       <p class="beyond-invite">——その厳しい目で、<b>本物かどうか</b>、確かめに来てほしい。</p>
-      <div class="beyond-cta"><a class="btn btn-p" href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケットを購入する</a></div>
+      <div class="beyond-cta"><a class="btn btn-p" data-buy href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケットを購入する</a></div>
     </div>
   </div>
 </section>
@@ -408,7 +420,9 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
   </div>
 </footer>
 
+<script src="content.js"></script>
 <script>
+  if(window.HARIBOW){ HARIBOW.renderLineup('#lineupGrid'); HARIBOW.applyPurchaseLinks(); }
   // ローディング演出（最低1.5秒表示→フェードアウト。JS無しでもCSSで3.4s後に消える）
   (function(){
     var loader=document.getElementById('loader'), t0=Date.now();

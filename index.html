@@ -13,7 +13,7 @@
 <meta name="description" content="ダブルダッチ世界一のチームHARIBOW、初の単独公演「Go Beyond」。2026年9月29日(火) めぐろパーシモンホール 大ホール。公園から世界、その先へ。">
 <meta property="og:title" content="HARIBOW 初単独公演「Go Beyond」">
 <meta property="og:description" content="公園から世界、その先へ。2026.9.29 めぐろパーシモンホール 大ホール">
-<meta property="og:image" content="assets/hero.jpg">
+<meta property="og:image" content="https://go-beyond.haribow.com/assets/hero.jpg">
 <style>
 :root{
   --bg:#0a0b0e; --bg2:#101218; --ink:#f3f1ea; --dim:#a7adba; --faint:#6b7280;
@@ -292,7 +292,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
     <a href="#tickets">チケット</a>
     <a href="#access">アクセス</a>
   </div>
-  <a class="cta" href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケット購入</a>
+  <a class="cta" data-buy href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケット購入</a>
 </nav>
 
 <!-- HERO = 動くキービジュアル本体 -->
@@ -306,7 +306,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
       <span>めぐろパーシモンホール 大ホール</span>
     </div>
     <div class="btns">
-      <a class="btn btn-p" href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケットを購入する</a>
+      <a class="btn btn-p" data-buy href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケットを購入する</a>
       <a class="fs" href="https://junyaunitydev.github.io/haribow-kv/" target="_blank" rel="noopener">フルスクリーンで動かす →</a>
     </div>
   </div>
@@ -329,14 +329,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
       <p class="lead" style="margin-top:14px">世界最高峰が、一夜に集結する。出演者は全員、業界の第一線を走るプレイヤー。</p>
     </div>
     <div class="hl">2025 IJRU世界選手権（HARIBOW）と DOUBLE DUTCH CONTEST WORLD 2026（YOUNG BLOOD）——<b>2組の世界王者の演技が、同じ舞台に立つ。</b></div>
-    <div class="pgrid">
-      <div class="pcard ph"><div class="bg" style="background-image:url(assets/lineup/young-blood.jpg)"></div><div class="ptags"><span class="ptag gold">世界王者</span></div><h3>YOUNG BLOOD</h3><p>DOUBLE DUTCH CONTEST WORLD 2026 世界一。頂点に立った次世代チームの演技。</p></div>
-      <div class="pcard ph"><div class="bg" style="background-image:url(assets/lineup/ijru-2025.jpg)"></div><div class="ptags"><span class="ptag gold">世界王者</span></div><h3>2025 IJRU世界選手権 優勝演技</h3><p>世界30カ国以上が集う2025 IJRU世界選手権を制した、HARIBOW世界一の演技。</p></div>
-      <div class="pcard"><div class="ptags"><span class="ptag red">限定コラボ</span></div><h3>Special Guest Collaboration</h3><p>この夜だけの、特別ゲストとのコラボレーション。<span style="color:var(--teal)">近日発表。</span></p></div>
-      <div class="pcard ph"><div class="bg" style="background-image:url(assets/lineup/roar.jpg)"></div><div class="ptags"><span class="ptag">復活</span><span class="ptag">完全新作</span></div><h3>Roar</h3><p>ニューヨーク・アポロシアターで開催されたNational Double Dutch League 2021 世界3位。伝説のチーム『Roar』が、完全新作のパフォーマンスとして復活する。</p></div>
-      <div class="pcard ph"><div class="bg bg-cirque" style="background-image:url(assets/lineup/cirque-du-soleil.jpg)"></div><div class="ptags"><span class="ptag">オーディション作品</span></div><h3>Cirque du Soleil オーディション演技</h3><p>世界最高峰のサーカス、シルク・ドゥ・ソレイユのオーディションで披露した、究極のスピード、ダブルダッチでの新たな表現を追求した作品。</p></div>
-      <div class="pcard ph"><div class="bg bg-ddc" style="background-image:url(assets/lineup/ddc-japan-2023.jpg)"></div><div class="ptags"><span class="ptag">原点</span></div><h3>DOUBLE DUTCH CONTEST JAPAN 2023</h3><p>国内最大のダブルダッチ大会。HARIBOW第一世代がシーンに名乗りを上げた、原点の演技。</p></div>
-    </div>
+    <div class="pgrid" id="lineupGrid"></div>
     <p class="note2">※ 上記は演目の一部です。OP／EDを含む複数の演目＋コラボで構成。演目・出演内容は変更になる場合があります。</p>
   </div>
 </section>
@@ -403,7 +396,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
       <p class="beyond-big">ずっと、<span>“あの公園の続き”</span>を、やってるだけだ。</p>
       <p class="beyond-sub">子供の頃から、同じ仲間と、同じ遊びのまま。<br>違いは才能じゃない。途切れさせなかった、それだけ。</p>
       <p class="beyond-invite">——あなたが手放した <b>“何か”</b>と<b>“誰か”</b>を、思い出しに来てほしい。</p>
-      <div class="beyond-cta"><a class="btn btn-p" href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケットを購入する</a></div>
+      <div class="beyond-cta"><a class="btn btn-p" data-buy href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケットを購入する</a></div>
     </div>
   </div>
 </section>
@@ -451,7 +444,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
       </tbody>
     </table>
     <p class="note">※ 団体は一律価格（前売・通常とも同額）。<b>大学生団体</b>＝大学生〜社会人1年目までの5名以上、<b>コミュニティ団体</b>＝大学生に限らない5名以上のグループ。大学生（個人）は一般価格から1,000円引き。<b>メイン</b>の特典は限定サンクス動画。<b>サポーター券</b>は1階2列目中央の12席で、当日パンフレットへの名前掲載・終演後の記念撮影付き。</p>
-    <div class="buy"><a class="btn btn-p" href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケットを購入する</a></div>
+    <div class="buy"><a class="btn btn-p" data-buy href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケットを購入する</a></div>
   </div>
 </section>
 
@@ -492,7 +485,10 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
   </div>
 </footer>
 
+<script src="content.js"></script>
 <script>
+  // 共有コンテンツ（ラインナップ・購入URL）を描画
+  if(window.HARIBOW){ HARIBOW.renderLineup('#lineupGrid'); HARIBOW.applyPurchaseLinks(); }
   // ローディング演出（最低1.5秒表示→フェードアウト。JS無しでもCSSで3.4s後に消える）
   (function(){
     var loader=document.getElementById('loader'), t0=Date.now();
