@@ -298,11 +298,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
   <iframe class="kv" src="https://junyaunitydev.github.io/haribow-kv/?auto" title="HARIBOW Go Beyond — Key Visual" loading="eager" allow="gyroscope; accelerometer"></iframe>
   <div class="ov">
     <p class="theme">その先は、どこまで行けるのか。</p>
-    <div class="meta-line">
-      <span><b>2026.9.29</b> (火)</span><span class="dot"></span>
-      <span>開演 <b>19:30</b></span><span class="dot"></span>
-      <span>めぐろパーシモンホール 大ホール</span>
-    </div>
+    <div class="meta-line" id="heroMeta"></div>
     <div class="btns">
       <a class="btn btn-p" data-buy href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケットを購入する</a>
       <a class="fs" href="index.html">公式サイト →</a>
@@ -339,7 +335,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
     <div class="sec-head"><div class="ey">One Night Only</div><h2 class="disp">この夜だけの、ラインナップ</h2>
       <p class="lead" style="margin-top:14px">世界最高峰が、一夜に集結する。出演者は全員、業界の第一線を走るプレイヤー。</p>
     </div>
-    <div class="hl">2025 IJRU世界選手権（HARIBOW）と DOUBLE DUTCH CONTEST WORLD 2026（YOUNG BLOOD）——<b>2組の世界王者の演技が、同じ舞台に立つ。</b></div>
+    <div class="hl" id="lineupHl"></div>
     <div class="pgrid" id="lineupGrid"></div>
     <p class="note2">※ 上記は演目の一部です。OP／EDを含む複数の演目＋コラボで構成。演目・出演内容は変更になる場合があります。</p>
   </div>
@@ -350,44 +346,9 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
   <div class="wrap">
     <div class="sec-head"><div class="ey">The Story So Far</div><h2 class="disp">世界を、沸かせてきた。</h2></div>
 
-    <div class="stats">
-      <div class="stat"><div class="num-t">世界一</div><div class="lb">2025 IJRU<br>世界選手権</div></div>
-      <div class="stat"><div class="num-t">史上初</div><div class="lb">BGT 観客<br>ゴールデンブザー</div></div>
-      <div class="stat"><div class="num" data-to="4">1</div><div class="lb">カ国の<br>海外TV出演</div></div>
-      <div class="stat"><div class="num" data-to="20000" data-comma="1">0</div><div class="lb">人規模のアリーナ<br>（NBA）</div></div>
-    </div>
+    <div class="stats" id="statsRow"></div>
 
-    <div class="timeline">
-      <div class="tl">
-        <div class="tl-k">世界のタレントショー</div>
-        <div class="tl-h">Britain's Got Talent — 史上初の“観客ゴールデンブザー”、決勝進出</div>
-        <div class="tl-b">イタリア・スペイン・フランスのタレントショーにも出演</div>
-      </div>
-      <div class="tl">
-        <div class="tl-k">世界最高峰のサーカス／ヴァリエテ</div>
-        <div class="tl-h">シルク・ドゥ・ソレイユ賞／リングリング賞／モンテカルロ賞 を受賞</div>
-        <div class="tl-b">ムーラン・ルージュ、世界最大のテント Cirque Phénix、欧州最大級 Europa-Park ほか名門に続々出演</div>
-      </div>
-      <div class="tl tl-big">
-        <div class="tl-k">ドイツアリーナツアー</div>
-        <div class="tl-h">Feuerwerk「VIVA」— 1万人超級のアリーナで 30公演以上</div>
-        <div class="tl-b">“欧州で最も成功した体操エンタメショー”（年間20万人超を動員）</div>
-      </div>
-      <div class="tl">
-        <div class="tl-k">世界的ビッグイベント</div>
-        <div class="tl-h">NBA アブダビ — 約2万人アリーナのハーフタイム</div>
-      </div>
-      <div class="tl">
-        <div class="tl-k">欧州7拠点・同時公演（2025）</div>
-        <div class="tl-h">同じ時間に、7つの舞台を回した</div>
-        <div class="tl-b">総勢35名のHARIBOWメンバーを派遣</div>
-      </div>
-      <div class="tl">
-        <div class="tl-k">ダブルダッチ、世界の頂点</div>
-        <div class="tl-h">2025 IJRU世界選手権 優勝</div>
-        <div class="tl-b">世界30カ国以上が集う舞台で、世界一に</div>
-      </div>
-    </div>
+    <div class="timeline" id="timelineBox"></div>
 
     <div class="beyond">
       <p class="beyond-lead">でも、これで終わりじゃない。HARIBOWは、まだ止まらない。<br>ダブルダッチの“その先”は、跳び続ける人間が、これから書き換えていく。</p>
@@ -403,11 +364,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
 <section>
   <div class="wrap">
     <div class="sec-head"><div class="ey">Information</div><h2 class="disp">公演情報</h2></div>
-    <div class="grid">
-      <div class="cell"><div class="k">Date</div><div class="v">2026.9.29 (火)</div><div class="s">開場 18:30（予定）／ 開演 19:30</div></div>
-      <div class="cell"><div class="k">Venue</div><div class="v">めぐろパーシモンホール</div><div class="s">大ホール</div></div>
-      <div class="cell"><div class="k">Show</div><div class="v">多演目ショーケース</div><div class="s">複数演目＋コラボ／休憩あり</div></div>
-    </div>
+    <div class="grid" id="infoGrid"></div>
     <p class="note2" style="text-align:center;margin-top:26px">チケット・座席・全ラインナップは <a href="index.html" style="color:var(--teal)">公式サイト</a> から。</p>
   </div>
 </section>
@@ -415,14 +372,14 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
 <footer>
   <div class="wrap">
     <img class="logo2" src="assets/logo.png" alt="Go Beyond">
-    <div class="fmeta">HARIBOW 初単独公演「Go Beyond」<br>2026年9月29日(火) 開演19:30／<br class="br-sp">めぐろパーシモンホール 大ホール</div>
+    <div class="fmeta" id="footMeta"></div>
     <div class="cr">© HARIBOW</div>
   </div>
 </footer>
 
 <script src="content.js"></script>
 <script>
-  if(window.HARIBOW){ HARIBOW.renderLineup('#lineupGrid'); HARIBOW.applyPurchaseLinks(); }
+  if(window.HARIBOW) HARIBOW.render();
   // ローディング演出（最低1.5秒表示→フェードアウト。JS無しでもCSSで3.4s後に消える）
   (function(){
     var loader=document.getElementById('loader'), t0=Date.now();
@@ -505,7 +462,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
   // 開演カウントダウン（2026.9.29 19:30 JST）
   (function(){
     var el=document.getElementById('cd'); if(!el) return;
-    var target=new Date('2026-09-29T19:30:00+09:00').getTime();
+    var target=new Date((window.HARIBOW?HARIBOW.show.datetime:'2026-09-29T19:30:00+09:00')).getTime();
     var dN=el.querySelector('[data-d]'),hN=el.querySelector('[data-h]'),mN=el.querySelector('[data-m]'),sN=el.querySelector('[data-s]');
     function p2(n){return (n<10?'0':'')+n;}
     function upd(){
