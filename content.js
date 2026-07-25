@@ -99,6 +99,8 @@
 
     render: function () {
       var el;
+      // クライマックス サブ（日付）
+      if ((el = q("#climaxSub"))) el.innerHTML = SHOW.dateShort + " — 公園から世界、その先へ。";
       // ラインナップ
       if ((el = q("#lineupGrid"))) el.innerHTML = LINEUP.map(lineupCard).join("");
       if ((el = q("#lineupHl"))) el.innerHTML = LINEUP_HL;
