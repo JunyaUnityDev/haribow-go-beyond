@@ -9,7 +9,7 @@
   var SHOW = {
     dateShort: "2026.9.29", dow: "(火)",
     dateLong: "2026年9月29日(火)",
-    open: "18:30（予定）", start: "19:30",
+    open: "18:30", start: "19:30",
     venue: "めぐろパーシモンホール", hall: "大ホール",
     showType: "多演目ショーケース", showSub: "複数演目＋コラボ／休憩あり",
     datetime: "2026-09-29T19:30:00+09:00" // カウントダウン基準(JST)
@@ -24,8 +24,8 @@
       desc: "DOUBLE DUTCH CONTEST WORLD 2026 世界一。頂点に立った次世代チームの演技。" },
     { tags: [{ t: "世界王者", c: "gold" }], title: "2025 IJRU世界選手権 優勝演技", img: "assets/lineup/ijru-2025.jpg",
       desc: "世界30カ国以上が集う2025 IJRU世界選手権を制した、HARIBOW世界一の演技。" },
-    { tags: [{ t: "限定コラボ", c: "red" }], title: "Cheer Re-Man's × HARIBOW", img: null,
-      desc: '全員が会社員のパフォーマンスチーム『チアリーマンズ』。Britain\'s Got Talent 2025 準決勝に進んだ“空飛ぶスーツ集団”との、この夜だけの共演。' },
+    { tags: [{ t: "限定コラボ", c: "red" }], title: "Cheer Re-Man's × HARIBOW", img: "assets/lineup/cheer-remans.jpg",
+      desc: '全員が会社員のパフォーマンスチーム『チアリーマンズ』。8月、5,000席を満席にした彼らの単独公演にHARIBOWが出演した。今度は“空飛ぶスーツ集団”が、この舞台に立つ。' },
     { tags: [{ t: "復活" }, { t: "完全新作" }], title: "Roar", img: "assets/lineup/roar.jpg",
       desc: "ニューヨーク・アポロシアターで開催されたNational Double Dutch League 2021 世界3位。伝説のチーム『Roar』が、完全新作のパフォーマンスとして復活する。" },
     { tags: [{ t: "オーディション作品" }], title: "Cirque du Soleil オーディション演技", img: "assets/lineup/cirque-du-soleil.jpg", bg: "bg-cirque",
