@@ -246,6 +246,11 @@ section{padding:96px 0}
 .ttable tr:last-child td{border-bottom:0}
 .tk .note{color:var(--faint);font-size:12.5px;margin-top:14px}
 .tk .buy{margin-top:30px;text-align:center}
+  .stream-cta{margin:34px auto 0;max-width:640px;padding:22px 24px;border:1px solid var(--line);
+    border-radius:14px;background:rgba(255,255,255,.02);text-align:center}
+  .stream-cta .k{margin:0 0 8px;font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--teal)}
+  .stream-cta .b{margin:0 0 18px;font-size:13.5px;line-height:2;color:var(--dim)}
+  .stream-cta .b b{color:var(--ink)}
 
 /* access */
 .acc .row{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
@@ -405,6 +410,16 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
     </table>
     <p class="note">※ 団体は一律価格（前売・通常とも同額）。<b>大学生団体</b>＝大学生〜社会人1年目までの5名以上、<b>コミュニティ団体</b>＝大学生に限らない5名以上のグループ。大学生（個人）は一般価格から1,000円引き（<b>大学院生も対象</b>・当日学生証をご提示ください）。<b>一般S席</b>の特典は限定サンクス動画。<b>サポーター券</b>は1階2列目中央の12席で、サイン入り扇子・オリジナルTシャツ・サンクス動画・デジタルパンフレットとホワイエの横断幕へのお名前掲載付き。</p>
     <div class="buy"><a class="btn btn-p" data-buy href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html">チケットを購入する</a></div>
+
+    <!-- 会場に来られない方への導線（2026-08-24 追加）。
+         配信は 2026-08-06 から販売しているが、公式サイトに一度も載せていなかった。
+         席の在庫を持たない唯一の商品なので、会場が満席でも案内できる。 -->
+    <div class="stream-cta">
+      <p class="k">当日、会場にお越しになれない方へ</p>
+      <p class="b">生配信でご覧いただけます。<b>アーカイブは2週間（〜10月13日）</b>ご視聴いただけますので、
+        当日ご都合がつかない場合も後からお楽しみいただけます。ご家族やチームで1画面を囲んでのご視聴も歓迎しています。</p>
+      <a class="btn btn-p" href="https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html?tab=stream">配信チケットを見る</a>
+    </div>
   </div>
 </section>
 
@@ -431,7 +446,8 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
   <div class="wrap">
     <div class="sec-head"><div class="ey">Coming Soon</div><h2 class="disp">続報</h2><p class="lead" style="margin-top:14px">決まり次第、このページで順次お知らせします。</p></div>
     <div class="grid2">
-      <div class="item"><div class="k">生配信</div><div class="b">予定 ／ 詳細は近日</div></div>
+      <!-- 生配信はここから外した（2026-08-24）。2026-08-06 に販売を開始しているのに
+           「予定／詳細は近日」のまま19日間置いていた。料金表と購入導線に移動済み。 -->
       <div class="item"><div class="k">来場ガイド（撮影・再入場・お子様連れ 等）</div><div class="b">Coming soon</div></div>
     </div>
   </div>
