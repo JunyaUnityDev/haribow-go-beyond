@@ -16,7 +16,7 @@
   };
 
   /* ▼ チケット購入URL（将来 ticket.haribow.com にする時もここだけ） */
-  var PURCHASE_URL = "https://junyaunitydev.github.io/haribow-solo-show-survey/seats.html";
+  var PURCHASE_URL = "https://ticket.haribow.com/seats.html";
 
   /* ▼ ラインナップ（演目）。順番＝表示順。img:null で写真なし。bg:背景位置クラス(任意) */
   var LINEUP = [
