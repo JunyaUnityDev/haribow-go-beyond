@@ -55,6 +55,16 @@
     { k: "ダブルダッチ、世界の頂点", h: "2025 IJRU世界選手権 優勝", b: "世界30カ国以上が集う舞台で、世界一に" }
   ];
 
+  /* ▼ 締切（このリポで日付を書く唯一の場所）
+     ★正典は gas/Deadlines.js。ここは公式サイト用の写しなので、直すときは必ず両方。
+       ズレは performance/solo_show/gas_tests/check_deadlines.js が検出する。
+     ★ページのHTMLに日付を書かないこと。書くとこの1箇所で直せなくなる。 */
+  var DEADLINES = {
+    advance:   "9/28",   // 前売価格の最終日（9/29の当日から通常価格）
+    team:      "9/12",   // 団体（5名〜）の申込の最終日
+    supporter: "9/5"     // 来場サポーター券の申込の最終日（横断幕とTシャツの手配のため）
+  };
+
   /* ▼ チケット料金表（一般ページのみ）。pre/reg があれば2列、price があれば colspan */
   var TICKETS = [
     { name: "一般S席", tag: "サンクス動画付", sub: "3〜12列 中央", pre: "¥4,500", reg: "¥5,000" },
@@ -127,6 +137,15 @@
         'HARIBOW 初単独公演「Go Beyond」<br>' + SHOW.dateLong + " 開演" + SHOW.start + "／<br class=\"br-sp\">" + SHOW.venue + " " + SHOW.hall;
       // チケット
       if ((el = q("#ticketBody"))) el.innerHTML = TICKETS.map(ticketRow).join("");
+      /* 締切。**料金表を出しているのに締切だけ書いていなかった**（2026-08-27の全面走査で判明）。
+         団体の幹事が人数を集めてから、サポーター券の希望者が特典目当てで来てから、
+         購入画面で初めて「受付は終了しました」に当たる状態だった。 */
+      if ((el = q("#ticketDeadlines"))) {
+        el.innerHTML =
+          "※ 前売価格は <b>" + DEADLINES.advance + "</b> までのお申し込みに適用されます（公演当日は通常価格）。" +
+          "<b>団体</b>（5名以上）のお申し込みは <b>" + DEADLINES.team + "</b> まで、" +
+          "<b>サポーター券</b>のお申し込みは <b>" + DEADLINES.supporter + "</b> までです。";
+      }
       // 購入リンク
       var a = document.querySelectorAll("[data-buy]");
       for (var i = 0; i < a.length; i++) a[i].setAttribute("href", PURCHASE_URL);
