@@ -7,3 +7,5 @@
   ddc-japan-2023.jpg     … DOUBLE DUTCH CONTEST JAPAN 2023
   special-guest.jpg      … Special Guest Collaboration（公開可になったら）
 写真が概ね揃ったら、index.htmlの各カードに一斉に画像を載せる（案A）。
+  air-footworks.jpg      … AIR FOOTWORKS（AGT 2024 ゴールデンブザー・一夜限りゲスト）※取得済
+  homecoming.jpg         … HOMECOMING（完全新作）※取得済

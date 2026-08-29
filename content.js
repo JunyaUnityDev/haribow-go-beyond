@@ -26,10 +26,14 @@
       desc: "世界30カ国以上が集う2025 IJRU世界選手権を制した、HARIBOW世界一の演技。" },
     { tags: [{ t: "限定コラボ", c: "red" }], title: "Cheer Re-Man's × HARIBOW", img: "assets/lineup/cheer-remans.jpg",
       desc: '全員が会社員のパフォーマンスチーム『チアリーマンズ』。8月、5,000席を満席にした彼らの単独公演にHARIBOWが出演した。今度は“空飛ぶスーツ集団”が、この舞台に立つ。' },
+    { tags: [{ t: "限定ゲスト", c: "red" }], title: "AIR FOOTWORKS", img: "assets/lineup/air-footworks.jpg",
+      desc: "2018年結成、世界初のエアダンス（鉄棒ダンス）ユニット。America's Got Talent 2024 でゴールデンブザーを受け、グランドファイナルへ進出。一夜限りのゲスト出演。" },
     { tags: [{ t: "復活" }, { t: "完全新作" }], title: "Roar", img: "assets/lineup/roar.jpg",
       desc: "ニューヨーク・アポロシアターで開催されたNational Double Dutch League 2021 世界3位。伝説のチーム『Roar』が、完全新作のパフォーマンスとして復活する。" },
     { tags: [{ t: "オーディション作品" }], title: "Cirque du Soleil オーディション演技", img: "assets/lineup/cirque-du-soleil.jpg", bg: "bg-cirque",
       desc: "世界最高峰のサーカス、シルク・ドゥ・ソレイユのオーディションで披露した、究極のスピード、ダブルダッチでの新たな表現を追求した作品。" },
+    { tags: [{ t: "完全新作" }], title: "HOMECOMING", img: "assets/lineup/homecoming.jpg",
+      desc: "一年中海外で活動しているメンバーが、この日のために帰ってくる。過去の実績ではなく、この夜のためだけに作られた完全新作。" },
     { tags: [{ t: "原点" }], title: "DOUBLE DUTCH CONTEST JAPAN 2023", img: "assets/lineup/ddc-japan-2023.jpg", bg: "bg-ddc",
       desc: "国内最大のダブルダッチ大会。HARIBOW第一世代がシーンに名乗りを上げた、原点の演技。" }
   ];
