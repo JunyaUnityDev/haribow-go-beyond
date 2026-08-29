@@ -303,6 +303,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
     <a href="#lineup">ラインナップ</a>
     <a href="#tickets">チケット</a>
     <a href="#access">アクセス</a>
+    <a href="#guide">来場ガイド</a>
   </div>
   <a class="cta" data-buy href="https://ticket.haribow.com/seats.html">チケット購入</a>
 </nav>
@@ -442,14 +443,34 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
   </div>
 </section>
 
-<!-- 近日発表 -->
-<section class="soon">
+<!-- 来場ガイド
+     2026-08-29：Coming soon を中身に差し替えた。
+     ★入金確認から当日までお客様へのメールが0通なので、**来場前の情報源はこのページしかない**。
+       それが「Coming soon」のまま置かれていた（全体監査で8/23・8/27と2回連続の未解消）。
+     ★内容は ADR-003 §E「運営ルール（サイト明記が要る）」の確定値。勝手に足さない。
+     ★撮影について演目名を書いていないのは意図的。撮影を止める演目は未公開の演目で、
+       ここに書くと公開前の情報が出る（feedback_internal_frameworks_stay_internal）。
+       当日アナウンスで足りるので、事前には「一部の演目」とだけ伝える。
+     ★終演予定時刻はまだ書いていない。尺表が未確定（AIR FOOTWORKS の演目尺と
+       鉄棒の撤去時間が未決・ADR-012）。確定したら「終演 ○○ごろ」を dt/dd で足すこと。
+     ★乳幼児連れの親子席（ADR-003 の「1階最後方21〜22列 通路側」）も書いていない。
+       21〜22列は現在プロジェクター設置と団体エリアに割り当て済みで、親子席として
+       実装されていない。実体が無いものを案内しない。 -->
+<section class="acc" id="guide">
   <div class="wrap">
-    <div class="sec-head"><div class="ey">Coming Soon</div><h2 class="disp">続報</h2><p class="lead" style="margin-top:14px">決まり次第、このページで順次お知らせします。</p></div>
-    <div class="grid2">
-      <!-- 生配信はここから外した（2026-08-24）。2026-08-06 に販売を開始しているのに
-           「予定／詳細は近日」のまま19日間置いていた。料金表と購入導線に移動済み。 -->
-      <div class="item"><div class="k">来場ガイド（撮影・再入場・お子様連れ 等）</div><div class="b">Coming soon</div></div>
+    <div class="sec-head"><div class="ey">Guide</div><h2 class="disp">来場ガイド</h2><p class="lead" style="margin-top:14px">当日のご案内です。ご不明な点は info@haribow.com までお気軽にどうぞ。</p></div>
+    <div class="row">
+      <dl>
+        <dt>開場・開演</dt><dd>開場 18:30 ／ 開演 19:30</dd>
+        <dt>お席</dt><dd>すべて指定席です。お手持ちの電子チケット（QRコード）を受付でご提示ください。読み取れない場合はお名前で確認いたしますので、そのままお声がけください。</dd>
+        <dt>再入場</dt><dd>できます。</dd>
+        <dt>撮影</dt><dd>基本的に撮影いただけます。一部の演目のみご遠慮いただきます。その場面では客席の照明を落とし、「ここから撮影はご遠慮ください」と場内アナウンスでお知らせします。</dd>
+        <dt>未就学のお子様</dt><dd>保護者の方の膝上でのご鑑賞は無料です。お席が必要な場合は「高校生・子供」券をお求めください。</dd>
+        <dt>ベビーカー</dt><dd>客席内へはお持ち込みいただけません。1階ホワイエに置き場をご用意し、番号札でお預かりします。</dd>
+        <dt>車椅子</dt><dd>1階に車椅子スペースをご用意しています。購入画面からはお申し込みいただけませんので、<a href="mailto:info@haribow.com?subject=%E8%BB%8A%E6%A4%85%E5%AD%90%E5%B8%AD%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" style="color:var(--teal)">info@haribow.com</a> までご連絡ください。付き添いの方のお席と合わせてご案内します。</dd>
+        <dt>ホワイエ</dt><dd>物販とお飲み物をご用意しています。開場中と休憩時間にご利用いただけます。</dd>
+        <dt>会場にお越しになれない方</dt><dd>生配信でご覧いただけます。アーカイブは2週間（〜10月13日）ご視聴いただけます。</dd>
+      </dl>
     </div>
   </div>
 </section>
