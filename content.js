@@ -29,7 +29,7 @@
     { tags: [{ t: "限定ゲスト", c: "red" }], title: "AIR FOOTWORKS", img: "assets/lineup/air-footworks.jpg",
       desc: "2018年結成、世界初のエアダンス（鉄棒ダンス）ユニット。America's Got Talent 2024 でゴールデンブザーを受け、グランドファイナルへ進出。一夜限りのゲスト出演。" },
     { tags: [{ t: "復活" }, { t: "完全新作" }], title: "Roar", img: "assets/lineup/roar.jpg",
-      desc: "ニューヨーク・アポロシアターで開催されたNational Double Dutch League 2021 世界3位。伝説のチーム『Roar』が、完全新作のパフォーマンスとして復活する。" },
+      desc: "ニューヨーク・アポロシアターで開催された国際大会 National Double Dutch League 2021 で3位。チーム『Roar』が、完全新作のパフォーマンスとして復活する。" },
     { tags: [{ t: "オーディション作品" }], title: "Cirque du Soleil オーディション演技", img: "assets/lineup/cirque-du-soleil.jpg", bg: "bg-cirque",
       desc: "世界最高峰のサーカス、シルク・ドゥ・ソレイユのオーディションで披露した、究極のスピード、ダブルダッチでの新たな表現を追求した作品。" },
     { tags: [{ t: "完全新作" }], title: "HOMECOMING", img: "assets/lineup/homecoming.jpg",
@@ -45,7 +45,7 @@
   var STATS = [
     { t: "世界一", lb: "2025 IJRU<br>世界選手権" },
     { t: "史上初", lb: "BGT 観客<br>ゴールデンブザー" },
-    { n: 4, lb: "カ国の<br>海外TV出演" },
+    { n: 7, lb: "カ国の<br>海外TV出演" },
     { n: 20000, comma: true, lb: "人規模のアリーナ<br>（NBA）" }
   ];
 
