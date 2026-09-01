@@ -246,11 +246,6 @@ section{padding:96px 0}
 .ttable tr:last-child td{border-bottom:0}
 .tk .note{color:var(--faint);font-size:12.5px;margin-top:14px}
 .tk .buy{margin-top:30px;text-align:center}
-  .stream-cta{margin:34px auto 0;max-width:640px;padding:22px 24px;border:1px solid var(--line);
-    border-radius:14px;background:rgba(255,255,255,.02);text-align:center}
-  .stream-cta .k{margin:0 0 8px;font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--teal)}
-  .stream-cta .b{margin:0 0 18px;font-size:13.5px;line-height:2;color:var(--dim)}
-  .stream-cta .b b{color:var(--ink)}
 
 /* access */
 .acc .row{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
@@ -413,15 +408,12 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
     <p class="note" id="ticketDeadlines"></p>
     <div class="buy"><a class="btn btn-p" data-buy href="https://ticket.haribow.com/seats.html">チケットを購入する</a></div>
 
-    <!-- 会場に来られない方への導線（2026-08-24 追加）。
-         配信は 2026-08-06 から販売しているが、公式サイトに一度も載せていなかった。
-         席の在庫を持たない唯一の商品なので、会場が満席でも案内できる。 -->
-    <div class="stream-cta">
-      <p class="k">当日、会場にお越しになれない方へ</p>
-      <p class="b">生配信でご覧いただけます。<b>アーカイブは2週間（〜10月13日）</b>ご視聴いただけますので、
-        当日ご都合がつかない場合も後からお楽しみいただけます。ご家族やチームで1画面を囲んでのご視聴も歓迎しています。</p>
-      <a class="btn btn-p" href="https://ticket.haribow.com/seats.html?tab=stream">配信チケットを見る</a>
-    </div>
+    <!-- 2026-09-01 配信を全面中止（決定No.37・ADR-015）したため、
+         「当日、会場にお越しになれない方へ（配信チケットを見る）」のブロックを削除した。
+         アーカイブも無いので、来場できない方への代替導線は存在しない。代わりの文言を置かない。
+         ★削除の順序：先に ticket.haribow.com 側で ?tab=stream の着地に中止の案内を出し、
+           それが反映されたことを確認してから、この入口を消した。逆順にすると、
+           別ドメインで反映がずれる間、説明の無いまま座席表に落ちる人が出る。 -->
   </div>
 </section>
 
@@ -469,7 +461,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
         <dt>ベビーカー</dt><dd>客席内へはお持ち込みいただけません。1階ホワイエに置き場をご用意し、番号札でお預かりします。</dd>
         <dt>車椅子</dt><dd>1階に車椅子スペースをご用意しています。購入画面からはお申し込みいただけませんので、<a href="mailto:info@haribow.com?subject=%E8%BB%8A%E6%A4%85%E5%AD%90%E5%B8%AD%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" style="color:var(--teal)">info@haribow.com</a> までご連絡ください。付き添いの方のお席と合わせてご案内します。</dd>
         <dt>ホワイエ</dt><dd>物販とお飲み物をご用意しています。開場中と休憩時間にご利用いただけます。</dd>
-        <dt>会場にお越しになれない方</dt><dd>生配信でご覧いただけます。アーカイブは2週間（〜10月13日）ご視聴いただけます。</dd>
+        <!-- 2026-09-01 配信中止（決定No.37・ADR-015）により「会場にお越しになれない方」の項目を削除。 -->
       </dl>
     </div>
   </div>
