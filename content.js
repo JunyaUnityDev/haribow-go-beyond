@@ -9,7 +9,7 @@
   var SHOW = {
     dateShort: "2026.9.29", dow: "(火)",
     dateLong: "2026年9月29日(火)",
-    open: "18:30", start: "19:30",
+    open: "18:00", start: "19:30",
     venue: "めぐろパーシモンホール", hall: "大ホール",
     showType: "多演目ショーケース", showSub: "複数演目＋コラボ／休憩あり",
     datetime: "2026-09-29T19:30:00+09:00" // カウントダウン基準(JST)
