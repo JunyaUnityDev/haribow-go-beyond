@@ -31,7 +31,9 @@
   --rule:#333a38; --accent:#7cae9c; --mark:#c99a5e; --band:#202524;
 }
 *{box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);margin:0;
+html{overflow-x:hidden}
+p,li,figcaption,.q,.bub p{overflow-wrap:anywhere}
+body{background:var(--paper);color:var(--ink);margin:0;-webkit-text-size-adjust:100%;
   font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;
   font-size:16px;line-height:2.05;-webkit-font-smoothing:antialiased;
   font-feature-settings:"palt"}
@@ -52,7 +54,7 @@ main{max-width:664px;margin:0 auto;padding:26px 22px 0}
 
 /* ヒーロー */
 .hero{margin:0;padding:0}
-.hero img{width:100%;border-radius:5px}
+.hero img{width:100%;height:auto;border-radius:5px}
 
 /* 見出し */
 .masthead{padding:30px 0 0}
@@ -148,6 +150,61 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}
   html{scroll-behavior:auto}}
 
+
+/* ───────── スマホ ───────── */
+@media (max-width:640px){
+  body{font-size:15.5px;line-height:1.95}
+  main{padding:18px 16px 0}
+  .sitebar .in{padding:10px 16px}
+  .sitebar .brand{font-size:11.5px;letter-spacing:.1em}
+
+  .masthead{padding:22px 0 0}
+  .kicker{font-size:10px;letter-spacing:.13em;margin-bottom:11px}
+  h1{font-size:clamp(25px,7.4vw,32px);line-height:1.48}
+  .lede{font-size:14.5px;line-height:1.85}
+  .meta{margin-top:18px;font-size:11px;line-height:1.85}
+
+  nav.toc{margin:24px 0 0;padding:14px 15px}
+  nav.toc ol{font-size:13.5px;line-height:1.9;padding-left:1.25em}
+  h2.ch{font-size:19px;margin:54px 0 20px;letter-spacing:.03em;scroll-margin-top:52px}
+  p.n{margin:19px 0}
+  .pull{margin:30px 0;padding-left:15px;font-size:19px;line-height:1.68}
+
+  .ask{margin:28px 0 18px;padding:13px 15px}
+  .ask .q{font-size:15px;line-height:1.75}
+  .cite{padding:13px 15px;font-size:13.5px}
+
+  /* 吹き出し：アイコンを詰めて本文の幅を稼ぐ */
+  .bal{grid-template-columns:36px 1fr;gap:9px;margin:14px 0}
+  .av{width:36px;height:36px}
+  .bub{padding:11px 13px;border-radius:11px}
+  .bub::before{top:13px}
+  .nm{font-size:10.5px}
+  .bub p{font-size:15px;line-height:1.88}
+  .ann{margin-left:45px;padding:8px 11px;font-size:12px;line-height:1.85}
+
+  figure.fig{margin:26px 0}
+  figure.fig figcaption{font-size:11.5px;line-height:1.8}
+
+  .endcta{margin:60px 0 0;padding:26px 18px}
+  .ec-lead{font-size:16.5px;line-height:1.75}
+  .ec-sub{font-size:12px}
+  .ec-btn{padding:16px;font-size:15px}
+  .ec-ghost{padding:14px}
+  .foot{padding:20px 0 56px;font-size:11px}
+}
+
+/* さらに狭い端末（iPhone SE 等） */
+@media (max-width:360px){
+  main{padding:16px 13px 0}
+  .sitebar .in{padding:10px 13px}
+  .bal{grid-template-columns:32px 1fr;gap:8px}
+  .av{width:32px;height:32px}
+  .bub p{font-size:14.5px}
+  .ann{margin-left:40px}
+  h1{font-size:24px}
+}
+
 </style>
 </head>
 <body>
@@ -158,7 +215,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 </div></div>
 
 <main>
-<figure class="hero"><img src="assets/bgt/hero.jpg" alt="HARIBOW"></figure>
+<figure class="hero"><picture><source media="(max-width:640px)" srcset="assets/bgt/hero_sp.jpg"><img src="assets/bgt/hero.jpg" alt="HARIBOW の5人と、5人のサイン" width="1640" height="887"></picture></figure>
 
 <div class="masthead">
   <p class="kicker">Britain's Got Talent 2024 — 5人が話した4日間</p>
