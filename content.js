@@ -1,5 +1,5 @@
 /* ============================================================
-   単独公演「Go Beyond」 共有コンテンツ（唯一の一次ソース）
+   単独公演「Go BEYOND」 共有コンテンツ（唯一の一次ソース）
    ここ1ファイルを直せば、全ページ（一般＋業界各面）に反映される。
    ── ラインナップ / 経歴(数字・年表) / 公演情報・日程 / チケット / 購入URL
    ============================================================ */
@@ -142,7 +142,7 @@
         '<div class="cell"><div class="k">Venue</div><div class="v">' + SHOW.venue + '</div><div class="s">' + SHOW.hall + "</div></div>" +
         '<div class="cell"><div class="k">Show</div><div class="v">' + SHOW.showType + '</div><div class="s">' + SHOW.showSub + "</div></div>";
       if ((el = q("#footMeta"))) el.innerHTML =
-        'HARIBOW 初単独公演「Go Beyond」<br>' + SHOW.dateLong + " 開演" + SHOW.start + "／<br class=\"br-sp\">" + SHOW.venue + " " + SHOW.hall;
+        'HARIBOW 初単独公演「Go BEYOND」<br>' + SHOW.dateLong + " 開演" + SHOW.start + "／<br class=\"br-sp\">" + SHOW.venue + " " + SHOW.hall;
       // チケット
       if ((el = q("#ticketBody"))) el.innerHTML = TICKETS.map(ticketRow).join("");
       /* 締切。**料金表を出しているのに締切だけ書いていなかった**（2026-08-27の全面走査で判明）。

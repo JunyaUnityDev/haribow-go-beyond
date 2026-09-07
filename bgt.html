@@ -36,7 +36,7 @@ body{background:var(--paper);color:var(--ink);margin:0;
   font-size:16px;line-height:2.05;-webkit-font-smoothing:antialiased;
   font-feature-settings:"palt"}
 img,video{max-width:100%;display:block}
-main{max-width:664px;margin:0 auto;padding:0 22px 0}
+main{max-width:664px;margin:0 auto;padding:26px 22px 0}
 
 /* 公演サイトへ戻る帯 */
 .sitebar{position:sticky;top:0;z-index:20;background:var(--paper);
@@ -50,8 +50,12 @@ main{max-width:664px;margin:0 auto;padding:0 22px 0}
   color:#fff;background:var(--accent);border-radius:3px;
   padding:6px 13px;text-decoration:none;white-space:nowrap}
 
+/* ヒーロー */
+.hero{margin:0;padding:0}
+.hero img{width:100%;border-radius:5px}
+
 /* 見出し */
-.masthead{padding:52px 0 0}
+.masthead{padding:30px 0 0}
 .kicker{font-family:"Zen Kaku Gothic New",sans-serif;font-size:11px;
   letter-spacing:.17em;color:var(--accent);font-weight:700;margin:0 0 15px}
 h1{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:clamp(29px,6vw,40px);
@@ -149,11 +153,13 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 <body>
 
 <div class="sitebar"><div class="in">
-  <a class="brand" href="/">HARIBOW　Go&nbsp;Beyond</a>
+  <a class="brand" href="/">HARIBOW　Go&nbsp;BEYOND</a>
   <a class="go" href="https://ticket.haribow.com/seats.html">チケット</a>
 </div></div>
 
 <main>
+<figure class="hero"><img src="assets/bgt/hero.jpg" alt="HARIBOW"></figure>
+
 <div class="masthead">
   <p class="kicker">Britain's Got Talent 2024 — 5人が話した4日間</p>
   <h1>誰も、あの瞬間を覚えていない</h1>
@@ -185,6 +191,8 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 <p class="n">5人のうち4人は、部活で始めている。海野鷹幸と加藤周平が長野、松澤竜介が千葉、井端真秀が神奈川。</p>
 <p class="n">坂田潤弥だけが違う。高校の仲間4人に部活をやめさせて、近所の公園で始めた。そのときつけたチーム名が pawn だった。チェスでいちばん弱い駒のことだ。盤の端まで行くと、別の駒に成る。意味は知っていた、と本人は言う。</p>
 <p class="n">いまは海野が株式会社HARIBOWの代表を務め、潤弥が作品と演出をまとめている。</p>
+<p class="n">いわゆるプロのスポーツ選手とは、経路が違う。スカウトも、強化指定も、育成組織もない。大学のダブルダッチサークルで同じ代になった仲間が、卒業してもばらけずに、そのまま会社を立てた。</p>
+<p class="n">その延長で、イギリスのオーディション番組に出た。その延長で、世界一になった。</p>
 <p class="n">誘ったのは潤弥と海野で、竜介・真秀・周平は後輩にあたる。</p>
 <p class="n">2026年9月3日の夜。横浜に5人が集まった。机の上には、質問を書いたカードが伏せてある。誰も進行役をやらない。引いた人が答える。</p>
 <p class="n">9月29日、めぐろパーシモンホール大ホールで、HARIBOWは初めての単独公演をやる。タイトルは「Go BEYOND」。その26日前の夜だった。</p>
@@ -357,7 +365,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 <p class="n">難しいロープを回すのは、年下のほうだ。そして、いちばんリスクの高いスピードを跳ぶのも年下が担う。1秒に8回まわる縄の中に、足を入れ続ける役目になる。</p>
 <p class="n">海野と潤弥は、自分のパートが終わったら、縄の外ではしゃぐ役割になる。</p>
 <div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>（俺らが）一番年下に負荷をかけて、年下がやってた。</p></div></div>
-<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/junya_poster.jpg" src="assets/bgt/junya.mp4" aria-label="片足で振り付けを合わせる潤弥"></video><figcaption>ギプスの足を上げたまま、片足だけで振りを確認している。渡英の直前。</figcaption></figure>
+<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/junya_poster.jpg" src="assets/bgt/junya.mp4" aria-label="片足で振り付けを合わせる潤弥"></video><figcaption>ギプスのまま、片足で動いている。手術のあと、渡英までのあいだ。</figcaption></figure>
 <h2 class="ch" id="ch4">第五章　揃わなかった</h2>
 <p class="n">そのあと、カードは痛みではなく、違いを聞くものに変わった。</p>
 <div class="ask"><span class="lbl">引いたカード</span><div class="q">いまここにいる5人の中で、自分と一番価値観が違うのは誰？ どこが？</div></div>
@@ -442,6 +450,10 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 <div class="ann"><b>注</b>下手（しもて）＝客席から見て左側。</div>
 <div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>自分というよりは、公演全体を見てほしい。それが僕たちの今なんだと思ってほしい。いいことも悪いことも含めて。</p></div></div>
 <p class="n">3人が、前の方の席、と答えた。潤弥だけ、席を指定しなかった。</p>
+<p class="n">もうひとつ、チームとしての答えがある。</p>
+<p class="n">HARIBOWが見てほしいのは、これまでの全部が通過点だった、ということだ。子供の頃から、同じ仲間と、同じ遊びのまま。違いは才能ではなく、途切れさせなかったこと。</p>
+<p class="n">好きなことをやっていたら、思ったより遠くまで連れて行かれた。そういうことが起きる、という話でもある。</p>
+<p class="n">——あなたが手放した「何か」と「誰か」を、思い出しに来てほしい。</p>
 <h2 class="ch" id="ch7">エピローグ　まだ、埋まっていない</h2>
 <p class="n">誘う話には、つづきがある。断られてもいる。</p>
 <div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>行けたら行くわ、で絶対来ない親友だから。すごく疑ってて、本当に来ない。</p></div></div>
