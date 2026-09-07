@@ -32,9 +32,10 @@
 }
 *{box-sizing:border-box}
 html{overflow-x:hidden}
-.nb{white-space:nowrap}
-p,li,figcaption,.q,.bub p,.ann,.meta{
-  word-break:normal;overflow-wrap:break-word;line-break:strict;text-wrap:pretty}
+/* 改行は <wbr>（文節の切れ目）でだけ起きる。keep-all がそれ以外を封じている。
+   overflow-wrap は最後の逃げ道で、1文節が行幅に収まらない時だけ働く。 */
+h1,h2.ch,p,li,figcaption,.q,.bub p,.ann,.meta,.lede,.pull,.nm{
+  word-break:keep-all;overflow-wrap:anywhere;line-break:strict}
 body{background:var(--paper);color:var(--ink);margin:0;-webkit-text-size-adjust:100%;
   font-family:"Zen Old Mincho","Hiragino Mincho ProN",serif;
   font-size:16px;line-height:2.05;-webkit-font-smoothing:antialiased;
@@ -222,319 +223,319 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 <div class="masthead">
   <p class="kicker">Britain's Got Talent 2024 — 5人が話した4日間</p>
-  <h1>誰も、あの瞬間を覚えていない</h1>
-  <p class="lede">史上初の観客<span class="nb">ゴールデンブザー</span>を受けた5人が、満席でも赤字の公演をやろうとしている</p>
+  <h1>誰も、<wbr>あの<wbr>瞬間を<wbr>覚えていない</h1>
+  <p class="lede">史上初の<wbr>観客ゴールデンブザーを<wbr>受けた<wbr>5人が、<wbr>満席でも<wbr>赤字の<wbr>公演を<wbr>やろうと<wbr>している</p>
   <div class="meta">2026年9月3日 収録　横浜（＋追加取材）<br>
   HARIBOW 初の単独公演「Go BEYOND」　2026年9月29日（火）めぐろパーシモンホール 大ホール</div>
 </div>
-<nav class="toc"><p>もくじ</p><ol><li><a href="#ch0">第一章　誰も覚えていない</a></li><li><a href="#ch1">第二章　大晦日の電話</a></li><li><a href="#ch2">第三章　五人で、五万三千円</a></li><li><a href="#ch3">第四章　さけるチーズ</a></li><li><a href="#ch4">第五章　揃わなかった</a></li><li><a href="#ch5">第六章　満席でも、赤字</a></li><li><a href="#ch6">どこを見てほしいか</a></li><li><a href="#ch7">エピローグ　まだ、埋まっていない</a></li></ol></nav>
-<p class="n">ブザーが鳴った瞬間のことを、5人とも覚えていない。</p>
-<p class="n">2024年、ブリテンズ・ゴット・タレント。チーム<span class="nb">HARIBOW</span>が跳んでいる途中で、客席が「<span class="nb">ゴールデンブザー</span>を押してくれ」と声を揃えはじめた。審査員はもう全員、<span class="nb">ゴールデンブザー</span>を押す権利を使い終えていた。そのあとで、観客がブザーを押させている。</p>
-<div class="cite"><div class="q"><span class="nb">HARIBOW</span>のパフォーマンスを見た観客たちが「<span class="nb">ゴールデンブザー</span>を押してくれ！」と一体となって訴えかけたことでブザーのボタンが押されるという、歴史的偉業ともいえる事態が生まれた。そして今回の「オーディエンス <span class="nb">ゴールデンブザー</span>」は<span class="nb">BGT</span>の10年以上の歴史で初となる制度。</div><span class="src">出典：<a href="https://www.oricon.co.jp/article/2597896/" target="_blank" rel="noopener">FINEPLAY／ORICON NEWS（2024年5月27日）</a></span></div>
-<p class="n">観客が押させた<span class="nb">ゴールデンブザー</span>は、番組10年以上の歴史で初めてだった。5人はそのまま決勝に進んでいる。</p>
-<p class="n">日本人がこの番組の決勝に立ったのは、2023年のとにかく明るい安村氏に続いて2組目。安村氏は準決勝で敗れたあとワイルドカード枠で決勝に進んでいる。決勝進出が、いまのところ日本人の最高到達点で、<span class="nb">HARIBOW</span>はそこに並んだ。</p>
-<div class="cite"><div class="q">準決勝で敗れたとにかく明るい安村がワイルドカード枠で決勝に出場することが決まった。日本人初となる決勝進出という快挙。</div><span class="src">出典：<a href="https://www.chunichi.co.jp/article/703599" target="_blank" rel="noopener">中日スポーツ ほか（2023年6月）</a></span></div>
-<p class="n">その夜の収録で、あの瞬間について彼らが思い出せたのは、これだけだった。</p>
-<div class="pull">あと、本当にトイレ行きたかった。</div>
-<p class="n">その5人がいま、満席になっても赤字になる公演をやろうとしている。</p>
-<p class="n">チケットは、まだ埋まっていない。だから彼らは、友達にひとりずつ連絡を入れている。そこで、こういう話が出た。</p>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>近い人ほど、誘うのが慎重になっちゃう。……結構、来てほしいからな。</p></div></div>
-<p class="n">いちばん近い友達ほど、誘えない。断られるのが分かるからではなく、来てほしいからだ。</p>
-<p class="n">これは、その連絡をしている最中の5人に、95分話してもらった記録である。</p>
-<figure class="fig"><img loading="lazy" src="assets/bgt/group.jpg" alt="いまのHARIBOW"><figcaption>現在の5人。</figcaption></figure>
-<p class="n">先に、彼らが何をやっているのかを書いておく。</p>
-<p class="n"><span class="nb">ダブルダッチ</span>は、2本の縄を向かい合った2人が回し、その中で跳ぶ。速い場面では、縄は1秒に8回まわる。1回あたり125ミリ秒。人が無意識にまばたきをする時間と、ほぼ同じだ。</p>
-<p class="n">まばたき1回のあいだに、縄が1本、足の下を通り抜けている。</p>
-<p class="n">それを、メンバーは平均して10年やっている。</p>
-<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/jump_poster.jpg" src="assets/bgt/jump.mp4" aria-label="縄の中"></video><figcaption>回し手が2人、跳び手が1人。この弧の中に、足を入れ続ける。</figcaption></figure>
-<p class="n">この記事に出てくるのは、その5人だ。</p>
-<p class="n">5人のうち4人は、部活で始めている。<span class="nb">海野鷹幸</span>と<span class="nb">加藤周平</span>が長野、<span class="nb">松澤竜介</span>が千葉、<span class="nb">井端真秀</span>が神奈川。</p>
-<p class="n"><span class="nb">坂田潤弥</span>だけが違う。高校の仲間4人に部活をやめさせて、近所の公園で始めた。そのときつけたチーム名が pawn だった。チェスでいちばん弱い駒のことだ。盤の端まで行くと、別の駒に成る。意味は知っていた、と本人は言う。</p>
-<p class="n">いまは<span class="nb">海野</span>が株式会社<span class="nb">HARIBOW</span>の代表を務め、<span class="nb">潤弥</span>が作品と演出をまとめている。</p>
-<p class="n">いわゆるプロのスポーツ選手とは、経路が違う。スカウトも、強化指定も、育成組織もない。大学の<span class="nb">ダブルダッチ</span>サークルで同じ代になった仲間が、卒業してもばらけずに、そのまま会社を立てた。</p>
-<p class="n">その延長で、<span class="nb">イギリス</span>のオーディション番組に出た。その延長で、世界一になった。</p>
-<p class="n">誘ったのは<span class="nb">潤弥</span>と<span class="nb">海野</span>で、<span class="nb">竜介</span>・<span class="nb">真秀</span>・<span class="nb">周平</span>は後輩にあたる。</p>
-<p class="n">2026年9月3日の夜。横浜に5人が集まった。机の上には、質問を書いたカードが伏せてある。誰も進行役をやらない。引いた人が答える。</p>
-<p class="n">9月29日、<span class="nb">めぐろパーシモンホール</span>大ホールで、<span class="nb">HARIBOW</span>は初めての単独公演をやる。タイトルは「Go BEYOND」。その26日前の夜だった。</p>
-<h2 class="ch" id="ch0">第一章　誰も覚えていない</h2>
-<p class="n">最初に引かれたのは、あの瞬間のカードだった。</p>
-<div class="ask"><span class="lbl">引いたカード</span><div class="q"><span class="nb">ゴールデンブザー</span>って、審査員は全員押し終わってたんだよね。観客が押させた。あれ、どの瞬間に気づいた？</div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>僕自身、情報弱者すぎて何も知らなかった。なのにウキウキして出てて。<span class="nb">ゴールデンブザー</span>って決勝とかで押されるもんだと思ってたから、予選で押されるとは思ってなくて。</p></div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>英語わからないながら、ジャッジのコメントを聞いて、その観客の反応で、<span class="nb">ゴールデンブザー</span>を押されたんだっていうのを、そこで気づいたかも。</p></div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>押されて、意味が分かんなかった。押された後にいろいろ調べ始めて、えっ、これ実はやばくね、俺らすごくね、みたいな。</p></div></div>
-<p class="n">押したのは、客席にいた2人の子供だった。審査員サイモン・コーウェルの息子エリックと、審査員アマンダ・ホールデンの娘ホリー。審査員のブザーは全員が使い切っていて、会場が「押して」の合唱になったとき、サイモンが2人に「君たちが押しなさい」と声をかけている。</p>
-<div class="cite"><div class="q">観客席にいたこの2人の子どもたちに対し、サイモンが直接指示しました。会場は「<span class="nb">ゴールデンブザー</span>を押して！」という大合唱に包まれており、審査員の<span class="nb">ゴールデンブザー</span>がすべて使い切られていた状況でした。</div><span class="src">出典：<a href="https://dryuki.net/haribow-bgt-golden-buzzer/" target="_blank" rel="noopener">dryukiネット（2024年）</a></span></div>
-<p class="n">価値が分かっていなかったので、心配していたことも的外れだった。</p>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>（俺らには）子供が乱入して勝手に押した、みたいな感じで見えて。英語わかんないから、これ多分、全カットでなくなるんだろうなと思ってた。</p></div></div>
-<p class="n">消えるどころではなかった。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>（再生回数を）合わせたら2,500万。あの単発だけでも1,000万ぐらい再生されてんじゃん。</p></div></div>
-<p class="n">2,500万回。ただし、そこに自分が映っているかどうかは、別の話だった。</p>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>俺、映ってなくて悲しいわと思って。動画が上がった後に、全然映ってねえ、ってなった瞬間はありました。</p></div></div>
-<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/buzzer_poster.jpg" src="assets/bgt/buzzer.mp4" aria-label="ゴールデンブザーが鳴った瞬間"></video><figcaption>金の紙吹雪が降りはじめた直後。ブザーが鳴ってから、何が起きたのかを理解するまでに、まだ時間がある。</figcaption></figure>
-<p class="n">収録の終盤、同じ話題のカードがもう一度引かれた。今度は、記憶のズレを聞くカードだった。</p>
-<div class="ask"><span class="lbl">引いたカード</span><div class="q"><span class="nb">BGT</span>で<span class="nb">ゴールデンブザー</span>が鳴った瞬間。あの記憶、5人でズレてるところある？</div></div>
-<p class="n">ズレている、という答えは出なかった。出てきたのは、そもそも覚えていない、だった。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>ぶっちゃけ、喜んどくか、？って気持ちで。何が起きてるかさっぱりすぎて。</p></div></div>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>俺、あれ（＝海外の番組）一発目だから、本当に記憶なくて。</p></div></div>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p>審査員が英語喋ってる時に必死すぎて。とりあえず、わかんないけど喜んどこうと思ってたら、なんかパーンってなって。子供が走ってきたのも正直見えてなくて、急にパーンってなったから。</p></div></div>
-<p class="n"><span class="nb">周平</span>には、押される瞬間が見えていなかった。</p>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p>子どもがブザーを押すところは自分からは見えていなくて、いきなり<span class="nb">ゴールデンブザー</span>が鳴りました。最初は「え、何？」ってびっくりしていて、周りを見ると<span class="nb">潤弥</span>さんあたりが喜んでいたので、「え、マジ？」となって、とりあえず一緒に「イエーイ！」と喜びました。</p></div></div>
-<p class="n">そのあと、確信するまでに時間がかかっている。</p>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p>スタッフや会場関係者の人たちもちょっと慌てていたし、お客さんも一気に「イエーイ！」という感じではなかったので、「これ大丈夫？ 本当に<span class="nb">ゴールデンブザー</span>なの？ 間違えて押したとかじゃない？」と半信半疑でした。</p></div></div>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p>そのあと徐々に「どうやら本当らしい」と分かってきて、最後にサイモンたちがもう一度話すターンで「準決勝で待ってるよ」というようなことを言われたときに、「あ、マジなんだ」と確信に変わりました。</p></div></div>
-<p class="n">ブザーが鳴った直後に、誰と目が合ったか。</p>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p>正直、はっきりとは覚えていないです。ただ、隣にいたのがうんのさんだったと思うので、多分うんのさんです。</p></div></div>
-<p class="n"><span class="nb">ロンドン</span>にいた4日で、いちばんくだらなかった時間は何かと、あとで<span class="nb">竜介</span>に聞いた。返ってきたのは、本番の日の朝だった。</p>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>鳥の真似をしながら会場へ向かう、当日の朝。</p></div></div>
-<p class="n">その数時間後に、番組史上初のブザーが鳴る。</p>
-<p class="n">当日は、何時間も待たされている。楽屋で待ち、昼寝をして、名前を呼ばれて舞台袖まで来た。そこから先、トイレに行くタイミングが分からないまま、幕が開いている。</p>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p>あと、本当にトイレ行きたかった。めっちゃ待たされたじゃん。本番始まるって言われてから、トイレ行くタイミングが分かんなくて。舞台袖に来た時に行きたかったけど、ここでトイレなんて言い出せなくて。</p></div></div>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p>（当日は）昼寝してた。ほぼ練習してないよね。</p></div></div>
-<p class="n">縄の中で4分跳び、審査員の英語を聞き取れないまま笑い、客席が声を揃えはじめ、ブザーが鳴った。その4分のあいだ、頭にあったのはトイレだった。</p>
-<p class="n">番組史上初の瞬間に立っていた本人の記憶が、それなのだ。</p>
-<p class="n">彼らはあの日、自分たちに何が起きているのか分かっていなかった。価値は、あとから知った。</p>
-<h2 class="ch" id="ch1">第二章　大晦日の電話</h2>
-<p class="n"><span class="nb">BGT</span>の話が来る前に、<span class="nb">井端真秀</span>は負けている。</p>
-<p class="n">2023年の秋。<span class="nb">真秀</span>は大学3年生だった。<span class="nb">ダブルダッチ</span>・<span class="nb">デライト</span> East。学生の大会で、勝ち上がれば12月にニューヨークの<span class="nb">アポロシアター</span>へ行ける。8位までが敗者復活に残り、次のコマがあった。</p>
-<p class="n">Auro-ra は、10位だった。</p>
-<p class="n">結果は会場で発表される。選手席に座ったまま、聞いている。最初に思ったのは、やりきった、だった。会場を出るまで、泣いていた。</p>
-<p class="n">次に縄を触ったのは、10日後。やめるつもりはない。3年生で、4年生まで続けるつもりだった。</p>
-<p class="n">11月27日にあのグループが作られたのは、そのあとだ。</p>
-<p class="n">そんな最中の、ある練習の帰り道だった。突然、<span class="nb">潤弥</span>から電話がかかってくる。</p>
-<p class="n">では、なぜこの5人だったのか。</p>
-<p class="n">番組から声がかかったのは、<span class="nb">坂田潤弥</span>ひとりだった。Instagramに上げた動画が拡散し、それを見た<span class="nb">BGT</span>がオファーを出した。だから<span class="nb">潤弥</span>には、どのチームで出るかを選ぶ余地があった。</p>
-<p class="n">当時の<span class="nb">HARIBOW</span>は、大学の<span class="nb">ダブルダッチ</span>サークルで同じ代が揃った、それだけのチームだった。会社にする気も、長く続ける気もない。一回イベントに出るだけのつもりで集まっていた。</p>
-<div class="ask"><span class="lbl">引いたカード</span><div class="q">入口がバラバラの5人が、なんで同じチームになったんだっけ？</div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>なんで<span class="nb">潤弥</span>が<span class="nb">HARIBOW</span>で出るんだ、ってなったんだっけ。最初にオファー来た時にさ、チーム選べるじゃん。なんでロアーじゃないの、って。</p></div></div>
-<div class="ann"><b>注</b>ロアー＝<span class="nb">HARIBOW</span>とは別のチーム。<span class="nb">潤弥</span>はこちらにも所属していて、2021年に<span class="nb">アポロシアター</span>で3位に入っている。番組から声がかかったのは<span class="nb">潤弥</span>ひとりだったので、どちらのチームで出るかを選べた。ロアーは2026年の単独公演で、完全新作として復活する。</div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>（番組側と）ミーティングがあって。<span class="nb">HARIBOW</span>のコンテストの映像と、もうひとつの映像。この2つがいい、って言われて。で、ストリート感がほしい、みたいな。</p></div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>自分自身も、<span class="nb">ダブルダッチ</span>の魅力を一番シンプルな形で見せたいと思っていた。テーマも技も衣装も、シンプルイズベストな感じで。</p></div></div>
-<figure class="fig"><img loading="lazy" src="assets/bgt/concept.jpg" alt="潤弥が書いた当時のコンセプト"><figcaption>2023年11月23日、午前2時5分。誘う前に、<span class="nb">潤弥</span>はこれを書いている。この時点では、番組名を「ゴッドタレント」だと思っている。</figcaption></figure>
-<p class="n">誘われた側にはどう見えていたのか。その場でLINEが遡られた。</p>
-<div class="ask"><span class="lbl">引いたカード</span><div class="q"><span class="nb">BGT</span>に誘われたとき、断る選択肢あった？</div></div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>11月27日。（<span class="nb">潤弥</span>たちに）いきなりグループ作られて、今ミーティング入ってほしい、って。要件なしでミーティングに招集されて。</p></div></div>
-<p class="n">11月27日。要件を告げられないまま作られたグループに入れられ、そのまま通話がはじまる。話は終わらない。駅のホームに立ったまま、電車を1本、また1本と見送っている。</p>
-<p class="n">アポロが消えてから、いくらも経っていない。</p>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>ワクワクして、ミーティングにのめり込みすぎて。駅のホームでミーティングしてたのに終電逃して、PayPayでお金送ってもらう、という。</p></div></div>
-<p class="n">気づいたときには、終電が出ていた。帰る金がなくて、送ってもらっている。</p>
-<p class="n">この通話で<span class="nb">潤弥</span>が伝えたのは、<span class="nb">ゴットタレント</span>に出演できるかもしれない、ということだけだった。</p>
-<p class="n">グループに追加されたのは11時59分。<span class="nb">真秀</span>が返事をしたのは、12時26分だった。</p>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>色々考慮しようと思ったんですが、迷う余地なさすぎました。お願いします。</p></div></div>
+<nav class="toc"><p>もくじ</p><ol><li><a href="#ch0">第一章　誰も<wbr>覚えていない</a></li><li><a href="#ch1">第二章　大晦日の<wbr>電話</a></li><li><a href="#ch2">第三章　五人で、<wbr>五万三千円</a></li><li><a href="#ch3">第四章　さける<wbr>チーズ</a></li><li><a href="#ch4">第五章　揃わなかった</a></li><li><a href="#ch5">第六章　満席でも、<wbr>赤字</a></li><li><a href="#ch6">どこを<wbr>見てほしいか</a></li><li><a href="#ch7">エピローグ　まだ、<wbr>埋まっていない</a></li></ol></nav>
+<p class="n">ブザーが<wbr>鳴った<wbr>瞬間の<wbr>ことを、<wbr>5人とも<wbr>覚えていない。</p>
+<p class="n">2024年、<wbr>ブリテンズ・ゴット・タレント。<wbr>チームHARIBOWが<wbr>跳んでいる<wbr>途中で、<wbr>客席が<wbr>「ゴールデンブザーを<wbr>押してくれ」と<wbr>声を<wbr>揃えはじめた。<wbr>審査員は<wbr>もう<wbr>全員、<wbr>ゴールデンブザーを<wbr>押す<wbr>権利を<wbr>使い<wbr>終えていた。<wbr>その<wbr>あとで、<wbr>観客が<wbr>ブザーを<wbr>押させている。</p>
+<div class="cite"><div class="q">HARIBOWの<wbr>パフォーマンスを<wbr>見た<wbr>観客たちが<wbr>「ゴールデンブザーを<wbr>押してくれ！」と<wbr>一体と<wbr>なって<wbr>訴えかけた<wbr>ことで<wbr>ブザーの<wbr>ボタンが<wbr>押されると<wbr>いう、<wbr>歴史的偉業ともいえる<wbr>事態が<wbr>生まれた。<wbr>そして<wbr>今回の<wbr>「オーディエンス ゴールデンブザー」は<wbr>BGTの<wbr>10年以上の<wbr>歴史で<wbr>初と<wbr>なる<wbr>制度。</div><span class="src">出典：<a href="https://www.oricon.co.jp/article/2597896/" target="_blank" rel="noopener">FINEPLAY／ORICON NEWS<wbr>（2024年5月27日）</a></span></div>
+<p class="n">観客が<wbr>押させた<wbr>ゴールデンブザーは、<wbr>番組10年以上の<wbr>歴史で<wbr>初めてだった。<wbr>5人は<wbr>そのまま<wbr>決勝に<wbr>進んでいる。</p>
+<p class="n">日本人が<wbr>この<wbr>番組の<wbr>決勝に<wbr>立ったのは、<wbr>2023年のとにかく<wbr>明る<wbr>い<wbr>安村氏に<wbr>続いて<wbr>2組目。<wbr>安村氏は<wbr>準決勝で<wbr>敗れた<wbr>あと<wbr>ワイルドカード枠で<wbr>決勝に<wbr>進んでいる。<wbr>決勝進出が、<wbr>いまの<wbr>ところ<wbr>日本人の<wbr>最高到達点で、<wbr>HARIBOWは<wbr>そこに<wbr>並んだ。</p>
+<div class="cite"><div class="q">準決勝で<wbr>敗れたとにかく<wbr>明る<wbr>い<wbr>安村が<wbr>ワイルドカード枠で<wbr>決勝に<wbr>出場する<wbr>ことが<wbr>決まった。<wbr>日本人初と<wbr>なる<wbr>決勝進出と<wbr>いう<wbr>快挙。</div><span class="src">出典：<a href="https://www.chunichi.co.jp/article/703599" target="_blank" rel="noopener">中日スポーツ ほか<wbr>（2023年6月）</a></span></div>
+<p class="n">その<wbr>夜の<wbr>収録で、<wbr>あの<wbr>瞬間に<wbr>ついて<wbr>彼らが<wbr>思い出せたのは、<wbr>これだけだった。</p>
+<div class="pull">あと、<wbr>本当に<wbr>トイレ行きたかった。</div>
+<p class="n">その<wbr>5人が<wbr>いま、<wbr>満席に<wbr>なっても<wbr>赤字に<wbr>なる<wbr>公演を<wbr>やろうと<wbr>している。</p>
+<p class="n">チケットは、<wbr>まだ<wbr>埋まっていない。<wbr>だから<wbr>彼らは、<wbr>友達に<wbr>ひとりずつ連絡を<wbr>入れている。<wbr>そこで、<wbr>こういう<wbr>話が<wbr>出た。</p>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>近い<wbr>人ほど、<wbr>誘うのが<wbr>慎重に<wbr>なっちゃう。<wbr>……<wbr>結構、<wbr>来て<wbr>ほしいからな。</p></div></div>
+<p class="n">いちばん近い<wbr>友達ほど、<wbr>誘えない。<wbr>断られるのが<wbr>分かるからではなく、<wbr>来て<wbr>ほしいからだ。</p>
+<p class="n">これは、<wbr>その<wbr>連絡を<wbr>している<wbr>最中の<wbr>5人に、<wbr>95分話して<wbr>もらった<wbr>記録である。</p>
+<figure class="fig"><img loading="lazy" src="assets/bgt/group.jpg" alt="いまのHARIBOW"><figcaption>現在の<wbr>5人。</figcaption></figure>
+<p class="n">先に、<wbr>彼らが<wbr>何を<wbr>やっているのかを<wbr>書いておく。</p>
+<p class="n">ダブルダッチは、<wbr>2本の<wbr>縄を<wbr>向かい合った<wbr>2人が<wbr>回し、<wbr>その<wbr>中で<wbr>跳ぶ。<wbr>速い<wbr>場面では、<wbr>縄は<wbr>1秒に<wbr>8回まわる。<wbr>1回あたり125ミリ秒。<wbr>人が<wbr>無意識に<wbr>まば<wbr>たきを<wbr>する<wbr>時間と、<wbr>ほぼ<wbr>同じだ。</p>
+<p class="n">まば<wbr>たき1回の<wbr>あいだに、<wbr>縄が<wbr>1本、<wbr>足の<wbr>下を<wbr>通り抜けている。</p>
+<p class="n">それを、<wbr>メンバーは<wbr>平均して<wbr>10年やっている。</p>
+<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/jump_poster.jpg" src="assets/bgt/jump.mp4" aria-label="縄の中"></video><figcaption>回し手が<wbr>2人、<wbr>跳び手が<wbr>1人。<wbr>この<wbr>弧の<wbr>中に、<wbr>足を<wbr>入れ続ける。</figcaption></figure>
+<p class="n">この<wbr>記事に<wbr>出てくるのは、<wbr>その<wbr>5人だ。</p>
+<p class="n">5人の<wbr>うち4人は、<wbr>部活で<wbr>始めている。<wbr>海野鷹幸と<wbr>加藤周平が<wbr>長野、<wbr>松澤竜介が<wbr>千葉、<wbr>井端真秀が<wbr>神奈川。</p>
+<p class="n">坂田潤弥だけが<wbr>違う。<wbr>高校の<wbr>仲間4人に<wbr>部活を<wbr>やめさせて、<wbr>近所の<wbr>公園で<wbr>始めた。<wbr>その<wbr>ときつけた<wbr>チーム名が<wbr> pawn だった。<wbr>チェスで<wbr>いちばん弱い駒の<wbr>ことだ。<wbr>盤の<wbr>端まで<wbr>行くと、<wbr>別の<wbr>駒に<wbr>成る。<wbr>意味は<wbr>知っていた、と<wbr>本人は<wbr>言う。</p>
+<p class="n">いまは<wbr>海野が<wbr>株式会社HARIBOWの<wbr>代表を<wbr>務め、<wbr>潤弥が<wbr>作品と<wbr>演出を<wbr>まとめている。</p>
+<p class="n">いわゆる<wbr>プロの<wbr>スポーツ選手とは、<wbr>経路が<wbr>違う。<wbr>スカウトも、<wbr>強化指定も、<wbr>育成組織も<wbr>ない。<wbr>大学の<wbr>ダブルダッチサークルで<wbr>同じ代に<wbr>なった<wbr>仲間が、<wbr>卒業してもばらけずに、<wbr>そのまま<wbr>会社を<wbr>立てた。</p>
+<p class="n">その<wbr>延長で、<wbr>イギリスの<wbr>オーディション番組に<wbr>出た。<wbr>その<wbr>延長で、<wbr>世界一に<wbr>なった。</p>
+<p class="n">誘ったのは<wbr>潤弥と<wbr>海野で、<wbr>竜介・真秀・周平は<wbr>後輩に<wbr>あたる。</p>
+<p class="n">2026年9月3日の<wbr>夜。<wbr>横浜に<wbr>5人が<wbr>集まった。<wbr>机の<wbr>上には、<wbr>質問を<wbr>書いた<wbr>カードが<wbr>伏せてある。<wbr>誰も<wbr>進行役を<wbr>やらない。<wbr>引いた<wbr>人が<wbr>答える。</p>
+<p class="n">9月29日、<wbr>めぐろパーシモンホール大ホールで、<wbr>HARIBOWは<wbr>初めての<wbr>単独公演を<wbr>やる。<wbr>タイトルは<wbr>「Go BEYOND」。<wbr>その<wbr>26日前の<wbr>夜だった。</p>
+<h2 class="ch" id="ch0">第一章　誰も<wbr>覚えていない</h2>
+<p class="n">最初に<wbr>引かれたのは、<wbr>あの<wbr>瞬間の<wbr>カードだった。</p>
+<div class="ask"><span class="lbl">引いたカード</span><div class="q">ゴールデンブザーって、<wbr>審査員は<wbr>全員押し終わって<wbr>たんだよね。<wbr>観客が<wbr>押させた。<wbr>あれ、<wbr>どの<wbr>瞬間に<wbr>気づいた？</div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>僕自身、<wbr>情報弱者すぎて<wbr>何も<wbr>知らなかった。<wbr>なのに<wbr>ウキウキして<wbr>出てて。<wbr>ゴールデンブザーって<wbr>決勝とかで<wbr>押される<wbr>もんだと<wbr>思ってたから、<wbr>予選で<wbr>押されるとは<wbr>思ってなくて。</p></div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>英語わからないながら、<wbr>ジャッジの<wbr>コメントを<wbr>聞いて、<wbr>その<wbr>観客の<wbr>反応で、<wbr>ゴールデンブザーを<wbr>押されたんだっていうのを、<wbr>そこで<wbr>気づいたかも。</p></div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>押されて、<wbr>意味が<wbr>分かんなかった。<wbr>押された<wbr>後に<wbr>いろいろ<wbr>調べ始めて、<wbr>えっ、<wbr>これ実は<wbr>やばくね、<wbr>俺らすごくね、<wbr>みたいな。</p></div></div>
+<p class="n">押したのは、<wbr>客席に<wbr>いた<wbr>2人の<wbr>子供だった。<wbr>審査員サイモン・<wbr>コーウェルの<wbr>息子エリックと、<wbr>審査員アマンダ・<wbr>ホールデンの<wbr>娘ホリー。<wbr>審査員の<wbr>ブザーは<wbr>全員が<wbr>使い<wbr>切っていて、<wbr>会場が<wbr>「押して」の<wbr>合唱に<wbr>なった<wbr>とき、<wbr>サイモンが<wbr>2人に<wbr>「君たちが<wbr>押しなさい」と<wbr>声を<wbr>かけている。</p>
+<div class="cite"><div class="q">観客席に<wbr>いた<wbr>この<wbr>2人の<wbr>子ども<wbr>たちに<wbr>対し、<wbr>サイモンが<wbr>直接指示しました。<wbr>会場は<wbr>「ゴールデンブザーを<wbr>押して！」と<wbr>いう<wbr>大合唱に<wbr>包まれており、<wbr>審査員の<wbr>ゴールデンブザーが<wbr>すべて<wbr>使い<wbr>切られていた<wbr>状況でした。</div><span class="src">出典：<a href="https://dryuki.net/haribow-bgt-golden-buzzer/" target="_blank" rel="noopener">dryukiネット<wbr>（2024年）</a></span></div>
+<p class="n">価値が<wbr>分かっていなかったので、<wbr>心配していた<wbr>ことも的外れだった。</p>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>（俺らには）<wbr>子供が<wbr>乱入して<wbr>勝手に<wbr>押した、<wbr>みたいな<wbr>感じで<wbr>見えて。<wbr>英語わかんないから、<wbr>これ多分、<wbr>全カットで<wbr>なくなるんだろうなと<wbr>思ってた。</p></div></div>
+<p class="n">消える<wbr>どころではなかった。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>（再生回数を<wbr>）合わせたら<wbr>2,500万。<wbr>あの<wbr>単発だけでも<wbr>1,000万ぐらい<wbr>再生されてんじゃん。</p></div></div>
+<p class="n">2,500万回。<wbr>ただし、<wbr>そこに<wbr>自分が<wbr>映っているかどうかは、<wbr>別の<wbr>話だった。</p>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>俺、<wbr>映ってなくて<wbr>悲しいわと<wbr>思って。<wbr>動画が<wbr>上がった<wbr>後に、<wbr>全然<wbr>映ってねえ、ってなった<wbr>瞬間は<wbr>ありました。</p></div></div>
+<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/buzzer_poster.jpg" src="assets/bgt/buzzer.mp4" aria-label="ゴールデンブザーが鳴った瞬間"></video><figcaption>金の<wbr>紙吹雪が<wbr>降りはじめた<wbr>直後。<wbr>ブザーが<wbr>鳴ってから、<wbr>何が<wbr>起きたのかを<wbr>理解するまでに、<wbr>まだ<wbr>時間が<wbr>ある。</figcaption></figure>
+<p class="n">収録の<wbr>終盤、<wbr>同じ<wbr>話題の<wbr>カードが<wbr>もう<wbr>一度<wbr>引かれた。<wbr>今度は、<wbr>記憶の<wbr>ズレを<wbr>聞く<wbr>カードだった。</p>
+<div class="ask"><span class="lbl">引いたカード</span><div class="q">BGTで<wbr>ゴールデンブザーが<wbr>鳴った<wbr>瞬間。<wbr>あの<wbr>記憶、<wbr>5人で<wbr>ズレてる<wbr>ところ<wbr>ある？</div></div>
+<p class="n">ズレている、と<wbr>いう<wbr>答えは<wbr>出なかった。<wbr>出てきたのは、<wbr>そも<wbr>そも<wbr>覚えていない、だった。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>ぶっちゃけ、<wbr>喜んどくか、？って<wbr>気持ちで。<wbr>何が<wbr>起きてるか<wbr>さっぱりすぎて。</p></div></div>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>俺、<wbr>あれ<wbr>（＝海外の<wbr>番組）<wbr>一発目だから、<wbr>本当に<wbr>記憶なくて。</p></div></div>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>審査員が<wbr>英語喋ってる<wbr>時に<wbr>必死すぎて。<wbr>とりあえず、<wbr>わかんないけど<wbr>喜んどこうと<wbr>思ってたら、<wbr>なんかパーンってなって。<wbr>子供が<wbr>走ってきたのも<wbr>正直<wbr>見えてなくて、<wbr>急に<wbr>パーンってなったから。</p></div></div>
+<p class="n">周平には、<wbr>押される<wbr>瞬間が<wbr>見えていなかった。</p>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>子どもが<wbr>ブザーを<wbr>押すところは<wbr>自分からは<wbr>見えていなくて、<wbr>いきなりゴールデンブザーが<wbr>鳴りました。<wbr>最初は<wbr>「え、<wbr>何？」って<wbr>びっくりしていて、<wbr>周りを<wbr>見ると<wbr>潤弥さん<wbr>あたりが<wbr>喜んでいたので、<wbr>「え、<wbr>マジ？」と<wbr>なって、とりあえず<wbr>一緒に<wbr>「イエーイ！」と<wbr>喜びました。</p></div></div>
+<p class="n">その<wbr>あと、<wbr>確信するまでに<wbr>時間が<wbr>かかっている。</p>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>スタッフや<wbr>会場関係者の<wbr>人たちも<wbr>ちょっと<wbr>慌てていたし、<wbr>お客さんも<wbr>一気に<wbr>「イエーイ！」と<wbr>いう<wbr>感じではなかったので、<wbr>「これ<wbr>大丈夫？<wbr> 本当に<wbr>ゴールデンブザーなの？<wbr> 間違えて<wbr>押したとかじゃない？」と<wbr>半信半疑でした。</p></div></div>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>その<wbr>あと<wbr>徐々に<wbr>「どうやら<wbr>本当らしい」と<wbr>分かってきて、<wbr>最後に<wbr>サイモンたちが<wbr>もう<wbr>一度<wbr>話すターンで<wbr>「準決勝で<wbr>待ってるよ」と<wbr>いうような<wbr>ことを<wbr>言われた<wbr>ときに、<wbr>「あ、<wbr>マジなんだ」と<wbr>確信に<wbr>変わりました。</p></div></div>
+<p class="n">ブザーが<wbr>鳴った<wbr>直後に、<wbr>誰と<wbr>目が<wbr>合ったか。</p>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>正直、<wbr>はっきりとは<wbr>覚えていないです。<wbr>ただ、<wbr>隣に<wbr>いたのが<wbr>うんのさんだったと<wbr>思うので、<wbr>多分うんのさんです。</p></div></div>
+<p class="n">ロンドンに<wbr>いた<wbr>4日で、<wbr>いちばんくだらなかった<wbr>時間は<wbr>何かと、<wbr>あとで<wbr>竜介に<wbr>聞いた。<wbr>返ってきたのは、<wbr>本番の<wbr>日の<wbr>朝だった。</p>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>鳥の<wbr>真似を<wbr>しながら会場へ<wbr>向かう、<wbr>当日の<wbr>朝。</p></div></div>
+<p class="n">その<wbr>数時間後に、<wbr>番組史上初の<wbr>ブザーが<wbr>鳴る。</p>
+<p class="n">当日は、<wbr>何時間も<wbr>待たされている。<wbr>楽屋で<wbr>待ち、<wbr>昼寝を<wbr>して、<wbr>名前を<wbr>呼ばれて<wbr>舞台袖まで<wbr>来た。<wbr>そこから<wbr>先、<wbr>トイレに<wbr>行く<wbr>タイミングが<wbr>分からないまま、<wbr>幕が<wbr>開いている。</p>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>あと、<wbr>本当に<wbr>トイレ行きたかった。<wbr>めっちゃ<wbr>待たされた<wbr>じゃん。<wbr>本番<wbr>始まるって<wbr>言われてから、<wbr>トイレ行く<wbr>タイミングが<wbr>分かんなくて。<wbr>舞台袖に<wbr>来た時に<wbr>行きたかったけど、<wbr>ここで<wbr>トイレなんて<wbr>言い出せなくて。</p></div></div>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>（<wbr>当日は）<wbr>昼寝してた。<wbr>ほぼ練習して<wbr>ないよね。</p></div></div>
+<p class="n">縄の<wbr>中で<wbr>4分<wbr>跳び、<wbr>審査員の<wbr>英語を<wbr>聞き取れないまま笑い、<wbr>客席が<wbr>声を<wbr>揃えはじめ、<wbr>ブザーが<wbr>鳴った。<wbr>その<wbr>4分の<wbr>あいだ、<wbr>頭に<wbr>あったのは<wbr>トイレだった。</p>
+<p class="n">番組史上初の<wbr>瞬間に<wbr>立っていた<wbr>本人の<wbr>記憶が、<wbr>それなのだ。</p>
+<p class="n">彼らは<wbr>あの<wbr>日、<wbr>自分たちに<wbr>何が<wbr>起きているのか<wbr>分かっていなかった。<wbr>価値は、<wbr>あとから<wbr>知った。</p>
+<h2 class="ch" id="ch1">第二章　大晦日の<wbr>電話</h2>
+<p class="n">BGTの<wbr>話が<wbr>来る<wbr>前に、<wbr>井端真秀は<wbr>負けている。</p>
+<p class="n">2023年の<wbr>秋。<wbr>真秀は<wbr>大学3年生だった。<wbr>ダブルダッチ・デライト East。<wbr>学生の<wbr>大会で、<wbr>勝ち<wbr>上がれば<wbr>12月に<wbr>ニューヨークの<wbr>アポロシアターへ<wbr>行ける。<wbr>8位までが<wbr>敗者復活に<wbr>残り、<wbr>次の<wbr>コマが<wbr>あった。</p>
+<p class="n">Auro-ra は、<wbr>10位だった。</p>
+<p class="n">結果は<wbr>会場で<wbr>発表される。<wbr>選手席に<wbr>座ったまま、<wbr>聞いている。<wbr>最初に<wbr>思ったのは、<wbr>やりきった、<wbr>だった。<wbr>会場を<wbr>出るまで、<wbr>泣いていた。</p>
+<p class="n">次に<wbr>縄を<wbr>触ったのは、<wbr>10日後。<wbr>やめる<wbr>つもりは<wbr>ない。<wbr>3年生で、<wbr>4年生まで<wbr>続ける<wbr>つもりだった。</p>
+<p class="n">11月27日に<wbr>あの<wbr>グループが<wbr>作られたのは、<wbr>その<wbr>あとだ。</p>
+<p class="n">そんな<wbr>最中の、<wbr>ある<wbr>練習の<wbr>帰り道だった。<wbr>突然、<wbr>潤弥から<wbr>電話が<wbr>かかってくる。</p>
+<p class="n">では、<wbr>なぜ<wbr>この<wbr>5人だったのか。</p>
+<p class="n">番組から<wbr>声が<wbr>かかったのは、<wbr>坂田潤弥ひとりだった。<wbr>Instagramに<wbr>上げた<wbr>動画が<wbr>拡散し、<wbr>それを<wbr>見た<wbr>BGTが<wbr>オファーを<wbr>出した。<wbr>だから<wbr>潤弥には、<wbr>どの<wbr>チームで<wbr>出るかを<wbr>選ぶ<wbr>余地が<wbr>あった。</p>
+<p class="n">当時の<wbr>HARIBOWは、<wbr>大学の<wbr>ダブルダッチサークルで<wbr>同じ代が<wbr>揃った、<wbr>それだけの<wbr>チームだった。<wbr>会社に<wbr>する<wbr>気も、<wbr>長く<wbr>続ける<wbr>気も<wbr>ない。<wbr>一回イベントに<wbr>出るだけの<wbr>つもりで<wbr>集まっていた。</p>
+<div class="ask"><span class="lbl">引いたカード</span><div class="q">入口が<wbr>バラバラの<wbr>5人が、<wbr>なんで<wbr>同じチームに<wbr>なったんだっけ？</div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>なんで<wbr>潤弥が<wbr>HARIBOWで<wbr>出るんだ、<wbr>ってなったんだっけ。<wbr>最初に<wbr>オファー来た<wbr>時に<wbr>さ、<wbr>チーム<wbr>選べるじゃん。<wbr>なんで<wbr>ロアーじゃないの、って。</p></div></div>
+<div class="ann"><b>注</b>ロアー＝HARIBOWとは<wbr>別の<wbr>チーム。<wbr>潤弥は<wbr>こちらにも<wbr>所属していて、<wbr>2021年に<wbr>アポロシアターで<wbr>3位に<wbr>入っている。<wbr>番組から<wbr>声が<wbr>かかったのは<wbr>潤弥ひとりだったので、<wbr>どちらの<wbr>チームで<wbr>出るかを<wbr>選べた。<wbr>ロアーは<wbr>2026年の<wbr>単独公演で、<wbr>完全新作と<wbr>して<wbr>復活する。</div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>（番組側と）<wbr>ミーティングが<wbr>あって。<wbr>HARIBOWの<wbr>コンテストの<wbr>映像と、<wbr>もう<wbr>ひとつの<wbr>映像。<wbr>この<wbr>2つが<wbr>いい、って<wbr>言われて。<wbr>で、<wbr>ストリート感が<wbr>ほしい、<wbr>みたいな。</p></div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>自分<wbr>自身も、<wbr>ダブルダッチの<wbr>魅力を<wbr>一番シンプルな形で<wbr>見せたいと<wbr>思っていた。<wbr>テーマも<wbr>技も<wbr>衣装も、<wbr>シンプルイズベストな<wbr>感じで。</p></div></div>
+<figure class="fig"><img loading="lazy" src="assets/bgt/concept.jpg" alt="潤弥が書いた当時のコンセプト"><figcaption>2023年11月23日、<wbr>午前2時5分。<wbr>誘う<wbr>前に、<wbr>潤弥は<wbr>これを<wbr>書いている。<wbr>この<wbr>時点では、<wbr>番組名を<wbr>「ゴッドタレント」だと<wbr>思っている。</figcaption></figure>
+<p class="n">誘われた<wbr>側には<wbr>どう<wbr>見えていたのか。<wbr>その場で<wbr>LINEが<wbr>遡られた。</p>
+<div class="ask"><span class="lbl">引いたカード</span><div class="q">BGTに<wbr>誘われた<wbr>とき、<wbr>断る<wbr>選択肢<wbr>あった？</div></div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>11月27日。<wbr>（潤弥たちに）<wbr>いきなりグループ作られて、<wbr>今ミーティング入って<wbr>ほしい、って。<wbr>要件なしで<wbr>ミーティングに<wbr>招集されて。</p></div></div>
+<p class="n">11月27日。<wbr>要件を<wbr>告げられないまま<wbr>作られた<wbr>グループに<wbr>入れられ、<wbr>そのまま<wbr>通話が<wbr>はじまる。<wbr>話は<wbr>終わらない。<wbr>駅の<wbr>ホームに<wbr>立ったまま、<wbr>電車を<wbr>1本、<wbr>また<wbr>1本と<wbr>見送っている。</p>
+<p class="n">アポロが<wbr>消えてから、<wbr>いくらも<wbr>経っていない。</p>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>ワクワクして、<wbr>ミーティングにのめり込みすぎて。<wbr>駅の<wbr>ホームで<wbr>ミーティングしてたのに<wbr>終電逃して、<wbr>PayPayで<wbr>お金送って<wbr>もらう、と<wbr>いう。</p></div></div>
+<p class="n">気づいた<wbr>ときには、<wbr>終電が<wbr>出ていた。<wbr>帰る<wbr>金が<wbr>なくて、<wbr>送って<wbr>もらっている。</p>
+<p class="n">この<wbr>通話で<wbr>潤弥が<wbr>伝えたのは、<wbr>ゴットタレントに<wbr>出演できるかもしれない、と<wbr>いう<wbr>ことだけだった。</p>
+<p class="n">グループに<wbr>追加されたのは<wbr>11時59分。<wbr>真秀が<wbr>返事を<wbr>したのは、<wbr>12時26分だった。</p>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>色々<wbr>考慮しようと<wbr>思ったんですが、<wbr>迷う<wbr>余地なさすぎました。<wbr>お願いします。</p></div></div>
 <p class="n">27分だった。</p>
-<p class="n">次に呼び出されたのは、大晦日だった。</p>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>大晦日に3人で電話して。大事な話あるんですよね、穴開けちゃうんですけど、みたいなのを、（誘う側の）2人が言った。</p></div></div>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>5月の何日も開けといてほしいです、って言われたけど。俺も就職してんだよ、いきなりやろ、渋いなと思ったけど……釣られた。</p></div></div>
-<p class="n"><span class="nb">BGT</span>の予選は2月で、そのときは5人とも大学生だった。開けてくれと頼まれた5月は、準決勝と決勝の月にあたる。そして5月には、<span class="nb">潤弥</span>と<span class="nb">竜介</span>が働きはじめている。入ったばかりの勤め先を、何日も空ける話だった。</p>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>電話終わったら、行くわ、って言った気がする。</p></div></div>
-<p class="n">断る余地は、一応つくられてはいた。</p>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>（<span class="nb">潤弥</span>たちに）最初に聞かれて、断らなすぎて、絶対行きます、みたいに言ったときに、言い直されて。考える時間を設けられた記憶がある。もう一回自分（の気持ち）を聞いて、断ってもいい、って。</p></div></div>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>俺は結構明確に、出なくてもいいかな、みたいな気持ちがあって。（<span class="nb">潤弥</span>たちの）挑戦と、何十万も背負う責任も含めて。……でも、それでも行くわ、って。この勢いが大事だなと思って。</p></div></div>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>電話中に、なんか行きたくなった。</p></div></div>
-<p class="n">就職が決まっていた。何十万も自分で出す。予選で落ちるかもしれない。それでも全員が行った。</p>
-<p class="n">そして、その予選がどういうものかを、彼らは分かっていなかった。誘った<span class="nb">潤弥</span>自身が、間違えて伝えていた。</p>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>最初は体育館でオーディションをすると思っていて、それをみんなに伝えていた。そこで勝ち上がったらテレビに出演できると思っていたので、いけると思った。</p></div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>体育館の前で、（番組の）スタッフの前で披露すると思っていた。</p></div></div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>体育館で予選をやると思ってたので、いけると思ってた。</p></div></div>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>ある程度は通用すると思っていた。でも、本当に<span class="nb">ゴールデンブザー</span>が取れるとは思ってなかった。</p></div></div>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p><span class="nb">ゴールデンブザー</span>を取れるとは思っていなかったけど、何かしらの形で爪痕を残したり、かますことはできると思っていました。海外の人にはどうしたらウケるかを考えて、デモも作りました。通用するかどうかを強く考えていたというより、自分たちを見せに行く、という感覚の方が強かったです。</p></div></div>
-<p class="n"><span class="nb">潤弥</span>にとっては、そのオーディションに出ること自体が到達点だった。テレビに出るのはその先の話で、まだ手が届く場所にはないと思っていた。</p>
-<p class="n">行くと決めてから出発するまでに、これは何も分かっていないな、と思ったことはあったか。3人に聞いた。</p>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>なかった。</p></div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>なかった。</p></div></div>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>会場、移動手段、練習場所。</p></div></div>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p>ほとんど何も分かっていなかったです。誘ってくれた<span class="nb">潤弥</span>さんたちが基本的には理解していると思っていたんですけど、実際は誰も分かっていないことがたくさんありました。</p></div></div>
-<p class="n">誘われた側は、誘った側が分かっていると思っていた。誘った側も、分かっていなかった。</p>
-<p class="n"><span class="nb">真秀</span>が加わった直後、<span class="nb">潤弥</span>がグループに書いたのは、これだった。</p>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>パスポートだけみんなで確認し合おう！</p></div></div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>パスポート自分も切れてたので、取らないとでした。</p></div></div>
-<p class="n">番組から届いたメールにも、答えられていない。ディレクターは「チームの中に英語が堪能な人はいるか、通話中に通訳してくれる友人がいるか、それとも通訳が必要か」と聞いていた。</p>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>急ぎで英語喋れる人誘おう。</p></div></div>
-<p class="n">会場も、移動手段も、練習場所も、パスポートも、英語も。何ひとつ揃わないまま、5人は<span class="nb">ロンドン</span>へ発っている。</p>
-<p class="n">そして舞台に出て、<span class="nb">潤弥</span>はようやく気づいた。体育館ではなかった。</p>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>そこが会場で、サイモンがいて、本番なのかよ、と思った。</p></div></div>
-<div class="ann"><b>注</b>サイモン・コーウェル。<span class="nb">BGT</span>の審査員で、番組の顔にあたる人物。</div>
-<p class="n">客席が「<span class="nb">ゴールデンブザー</span>を押してくれ」と声を揃えはじめるのは、その数分後になる。</p>
-<figure class="fig"><img loading="lazy" src="assets/bgt/line.jpg" alt="真秀がグループに追加された日のLINE"><figcaption>11時59分に追加され、12時26分には「お願いします」と返している。<span class="nb">潤弥</span>の次の一言は「パスポートだけみんなで確認し合おう」。</figcaption></figure>
-<h2 class="ch" id="ch2">第三章　五人で、五万三千円</h2>
-<p class="n">渡航費は、学生の実費だった。誰かが出してくれるわけではない。だから、金を作るところから始まっている。</p>
-<p class="n">箱を作ったのは<span class="nb">周平</span>だった。前の晩、ダンボールを切って組み立てている。</p>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>クラファンとか募金もしてたけど。前日にダンボールでせっせと作ってた。</p></div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>目立つし、広告塔みたいなもんじゃん。客寄せパンダみたいな奴らが募金やってる、みたいな。</p></div></div>
-<p class="n">実際に入れてくれた人がいる。その金で<span class="nb">ロンドン</span>へ行った。</p>
-<p class="n">置いたのは、ある<span class="nb">ダブルダッチ</span>イベントの会場。ホワイエの、物販の横だった。</p>
-<figure class="fig"><img loading="lazy" src="assets/bgt/bokin.jpg" alt="手作りの募金箱"><figcaption>「<span class="nb">BGT</span>に行かせてください！」。ダンボールに、切り抜いた5人の写真と、ユニオンジャックと、ナルトのシールが貼ってある。</figcaption></figure>
-<p class="n">世界のテレビに出るための資金を、手作りのダンボール箱で集めようとしていた。</p>
-<p class="n">渡航費のうち、飛行機代だけで16万かかっている。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>ちょっとお金なくなっちゃったんで今度でいいですか、って。飛行機16万ぐらい。めっちゃ覚えてる。</p></div></div>
-<p class="n">それでも足りない。足りないぶんは、借りることになる。</p>
-<p class="n">そうして<span class="nb">ロンドン</span>に着いた。</p>
-<p class="n">着いてから、箱に入れてくれた人へ礼を撮っている。</p>
-<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/thanks_poster.jpg" src="assets/bgt/thanks.mp4" aria-label="募金のお礼"></video><figcaption><span class="nb">マンチェスター</span>空港。手作りのダンボール箱に入った金で、5人はここまで来ている。</figcaption></figure>
-<div class="ask"><span class="lbl">引いたカード</span><div class="q"><span class="nb">ロンドン</span>にいた間、飯どうしてた？ ホテルどうだった？</div></div>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>マジ覚えてない。とりあえず金ないから、ホテル抑えよう、って。</p></div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p><span class="nb">周平</span>とまほろが抑えてくれたんじゃない。</p></div></div>
-<p class="n">宿の値段は、その場で調べ直された。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p><span class="nb">ロンドン</span>の宿、さっき調べたら3泊4日で、5人で5万3,000円だった。</p></div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>割にはいい宿だったな。俺だけずっとソファーで寝てた。めっちゃ覚えてる。</p></div></div>
-<p class="n">3泊4日、5人で5万3,000円。ベッドは足りていない。</p>
-<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/hotel_poster.jpg" src="assets/bgt/hotel.mp4" aria-label="ロンドンの宿"></video><figcaption>3泊4日、5人で5万3,000円。ベッドは足りていない。</figcaption></figure>
-<p class="n">その宿代も、現地で作っている。<span class="nb">ピカデリーサーカス</span>の路上で、縄を回した。</p>
-<div class="ask"><span class="lbl">引いたカード</span><div class="q"><span class="nb">ロンドン</span>の<span class="nb">ピカデリーサーカス</span>で路上やったやつ、あれ何？</div></div>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>結構、最初は抵抗あった。バスキングという行為に。怒られないかな、とか。</p></div></div>
-<div class="ann"><b>注</b>バスキング＝路上で演奏やパフォーマンスをして、通りがかりの人から投げ銭をもらうこと。<span class="nb">ロンドン</span>では古くからある文化で、場所によっては公式のライセンス制になっている。</div>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>外国で（路上を）やってみたいな、と思ったことがなかったから。</p></div></div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>カズさんに相談したらスピーカーあげるって。無料でもらいました。ありがとうございます。</p></div></div>
-<p class="n">路上は、稼ぐ場所であると同時に、危ない場所でもあった。</p>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>（酔った人が）縄を踏んでて。めっちゃ近くまで来て、このぐらいで。</p></div></div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>何してくるかわからない。殺されててもおかしくないくらい。</p></div></div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>誰かが明確な行動を起こすと、逆に冷静になる。</p></div></div>
-<p class="n">それでも、路上で得たものがあった。</p>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>出た時に、心の底から喜ばれて。ほらちゃんと評価されてるじゃん、って。めっちゃ喜ばれて嬉しかった。</p></div></div>
-<p class="n">当時の映像は、いまも残っている。</p>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p>（当時の自分たちは）めちゃくちゃ楽しんでる。まだウキウキしてて、写真と動画が多いわ。今はないけど。</p></div></div>
-<p class="n">練習する場所は、最後まで見つからなかった。</p>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>練習場所の体育館が見つからなくて、高熱の中、無限に歩いた。</p></div></div>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p>海外で練習場所を確保するのがすごく難しくて。路上で知り合った人に「ここの体育館使えるよ」と連れて行ってもらったのに、結局使えなかったりすることも結構ありました。</p></div></div>
-<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/mahoro_poster.jpg" src="assets/bgt/mahoro.mp4" aria-label="高熱を出していた真秀"></video><figcaption><span class="nb">イギリス</span>滞在中、<span class="nb">真秀</span>は熱を出している。この状態で、練習場所を探して歩いていた。</figcaption></figure>
-<p class="n">そして、いま振り返るとこうなる。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>生活するためのバスキング。カズさんとかまほろには本当に感謝してるけど、今考えるとあれ、バスキングじゃなくて、ただ練習してるだけなんだけど。</p></div></div>
-<div class="pull">あれ、バスキングじゃなくて、ただ練習してるだけなんだけど。</div>
-<p class="n">生活費を稼ぐためにやっていたことが、結果として、いちばん長く跳んだ時間になっていた。</p>
-<p class="n">公園で始めた駒が、<span class="nb">ロンドン</span>の路上まで来ていた。</p>
-<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/picca_poster.jpg" src="assets/bgt/picca.mp4" aria-label="ピカデリーサーカスの路上"></video><figcaption>夜の<span class="nb">ピカデリーサーカス</span>。人だかりの中で縄を回している。生活費を稼ぐ場所であり、練習場所でもあった。</figcaption></figure>
-<h2 class="ch" id="ch3">第四章　さけるチーズ</h2>
-<p class="n">金の話は、笑い話では終わらなかった。</p>
-<div class="ask"><span class="lbl">引いたカード</span><div class="q"><span class="nb">BGT</span>の渡航費30〜40万、学生で実費だったよね。あれ、どうやって作った？</div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>30万あれば足りたんだけど。俺その時もう250万、280万ぐらい借りてる状態で、かつカードも切ってて。誰にも借りれなかった。お金ベースで考えたら、さすがにおかしくね、って思った記憶ある。</p></div></div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>（親から）30万借りた状態で15万だけ返してたから、返してないのに貸すとかありえない、って。めっちゃ怒られて。12月中に全部返したら貸してあげる、って言われた。</p></div></div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>それが12月の頭ぐらい。誘われた直後だから。一旦、バイトで15万返した。</p></div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>（渡航費を）クレジットカード、15分割ぐらい。</p></div></div>
-<p class="n">その金は、寝る時間を削って作っている。日中は<span class="nb">ゴットタレント</span>と他のイベントの練習。その合間に卒業論文を書く。夜は夜勤のバイトに入り、そのまま眠らずに朝練習へ向かう。</p>
-<p class="n">借金があり、返済の途中で、次の借入を断られている。その状態で、勝てるか分からない大会に、自費で行くと決めている。</p>
-<p class="n">次のカードは、痛みを聞くものだった。名指しされたのは、本人ではない。</p>
-<div class="ask"><span class="lbl">引いたカード</span><div class="q"><span class="nb">BGT</span>の期間中、この中でいちばんキツそうだったの、誰？</div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>一番きつそうだったのは……<span class="nb">海野</span>かな。アキレス腱が切れて、<span class="nb">海野</span>は出られないと思った。</p></div></div>
-<p class="n">渡英の前、<span class="nb">海野</span>は病院にいた。診察室で、両足とも切れそうだと言われている。そのあとレントゲンを見た。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>（医者に）2個とも両方切れそうでしょ、って言われて。レントゲン撮ったら、さけるチーズみたいになってた。</p></div></div>
-<div class="pull">レントゲン撮ったら、さけるチーズみたいになってた。</div>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>なんか（<span class="nb">海野</span>）足、引きずってたよね。</p></div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>引きずってた。俺、限界だったわ。</p></div></div>
-<p class="n">そして、その名前を挙げた<span class="nb">坂田潤弥</span>自身も、このとき足の手術を終えたばかりだった。松葉杖が取れたのは、渡英の直前。リハビリの期間中に、無理やり出ている。</p>
-<p class="n">両足で跳べない状態で、片足だけで振りを合わせていた。</p>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>直前まで、片足で（振り付けを）調整して。</p></div></div>
-<p class="n">5人のうち2人が、壊れた足のまま<span class="nb">ロンドン</span>へ渡っている。そして、いちばんキツかったのは誰かと聞かれたとき、どちらも自分の名前を挙げなかった。</p>
-<p class="n">負荷のかかり方は、均等ではなかった。役割で分かれている。</p>
-<p class="n">難しいロープを回すのは、年下のほうだ。そして、いちばんリスクの高いスピードを跳ぶのも年下が担う。1秒に8回まわる縄の中に、足を入れ続ける役目になる。</p>
-<p class="n"><span class="nb">海野</span>と<span class="nb">潤弥</span>は、自分のパートが終わったら、縄の外ではしゃぐ役割になる。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>（俺らが）一番年下に負荷をかけて、年下がやってた。</p></div></div>
-<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/junya_poster.jpg" src="assets/bgt/junya.mp4" aria-label="片足で振り付けを合わせる潤弥"></video><figcaption>ギプスのまま、片足で動いている。手術のあと、渡英までのあいだ。</figcaption></figure>
+<p class="n">次に<wbr>呼び出されたのは、<wbr>大晦日だった。</p>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>大晦日に<wbr>3人で<wbr>電話して。<wbr>大事な<wbr>話あるんですよね、<wbr>穴開けちゃうんですけど、<wbr>みたいなのを、<wbr>（誘う側の）<wbr>2人が<wbr>言った。</p></div></div>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>5月の<wbr>何日も<wbr>開けと<wbr>いて<wbr>ほしいです、って<wbr>言われたけど。<wbr>俺も<wbr>就職してんだよ、<wbr>いきなりやろ、<wbr>渋いなと<wbr>思ったけど……<wbr>釣られた。</p></div></div>
+<p class="n">BGTの<wbr>予選は<wbr>2月で、<wbr>その<wbr>ときは<wbr>5人とも<wbr>大学生だった。<wbr>開けてくれと<wbr>頼まれた<wbr>5月は、<wbr>準決勝と<wbr>決勝の<wbr>月に<wbr>あたる。<wbr>そして<wbr>5月には、<wbr>潤弥と<wbr>竜介が<wbr>働きはじめている。<wbr>入ったばかりの<wbr>勤め先を、<wbr>何日も<wbr>空ける<wbr>話だった。</p>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>電話終わったら、<wbr>行くわ、って<wbr>言った<wbr>気が<wbr>する。</p></div></div>
+<p class="n">断る<wbr>余地は、<wbr>一応つくられてはいた。</p>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>（潤弥たちに）<wbr>最初に<wbr>聞かれて、<wbr>断らなすぎて、<wbr>絶対<wbr>行きます、<wbr>みたいに<wbr>言った<wbr>ときに、<wbr>言い直されて。<wbr>考える<wbr>時間を<wbr>設けられた<wbr>記憶が<wbr>ある。<wbr>もう<wbr>一回<wbr>自分<wbr>（の<wbr>気持ち）を<wbr>聞いて、<wbr>断っても<wbr>いい、って。</p></div></div>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>俺は<wbr>結構<wbr>明確に、<wbr>出なくても<wbr>いいかな、<wbr>みたいな<wbr>気持ちが<wbr>あって。<wbr>（潤弥たちの）<wbr>挑戦と、<wbr>何十万も<wbr>背負う<wbr>責任も<wbr>含めて。<wbr>……<wbr>でも、<wbr>それでも<wbr>行くわ、って。<wbr>この<wbr>勢いが<wbr>大事だなと<wbr>思って。</p></div></div>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>電話中に、<wbr>なんか<wbr>行きたくなった。</p></div></div>
+<p class="n">就職が<wbr>決まっていた。<wbr>何十万も<wbr>自分で<wbr>出す。<wbr>予選で<wbr>落ちるかもしれない。<wbr>それでも<wbr>全員が<wbr>行った。</p>
+<p class="n">そして、<wbr>その<wbr>予選が<wbr>どういう<wbr>ものかを、<wbr>彼らは<wbr>分かっていなかった。<wbr>誘った<wbr>潤弥自身が、<wbr>間違えて<wbr>伝えていた。</p>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>最初は<wbr>体育館で<wbr>オーディションを<wbr>すると<wbr>思っていて、<wbr>それを<wbr>みんなに<wbr>伝えていた。<wbr>そこで<wbr>勝ち<wbr>上がったら<wbr>テレビに<wbr>出演できると<wbr>思っていたので、<wbr>いけると<wbr>思った。</p></div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>体育館の<wbr>前で、<wbr>（番組の）<wbr>スタッフの<wbr>前で<wbr>披露すると<wbr>思っていた。</p></div></div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>体育館で<wbr>予選を<wbr>やると<wbr>思ってたので、<wbr>いけると<wbr>思ってた。</p></div></div>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>ある<wbr>程度は<wbr>通用すると<wbr>思っていた。<wbr>でも、<wbr>本当に<wbr>ゴールデンブザーが<wbr>取れるとは<wbr>思ってなかった。</p></div></div>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>ゴールデンブザーを<wbr>取れるとは<wbr>思っていなかったけど、<wbr>何かしらの<wbr>形で<wbr>爪痕を<wbr>残したり、かます<wbr>ことは<wbr>できると<wbr>思っていました。<wbr>海外の<wbr>人には<wbr>どうしたら<wbr>ウケるかを<wbr>考えて、<wbr>デモも<wbr>作りました。<wbr>通用するか<wbr>どうかを<wbr>強く<wbr>考えていたと<wbr>いうより、<wbr>自分たちを<wbr>見せに<wbr>行く、と<wbr>いう<wbr>感覚の<wbr>方が<wbr>強かったです。</p></div></div>
+<p class="n">潤弥に<wbr>とっては、<wbr>その<wbr>オーディションに<wbr>出る<wbr>こと自体が<wbr>到達点だった。<wbr>テレビに<wbr>出るのは<wbr>その先の<wbr>話で、<wbr>まだ<wbr>手が<wbr>届く<wbr>場所には<wbr>ないと<wbr>思っていた。</p>
+<p class="n">行くと<wbr>決めてから<wbr>出発する<wbr>までに、<wbr>これは<wbr>何も<wbr>分かっていないな、と<wbr>思った<wbr>ことは<wbr>あったか。<wbr>3人に<wbr>聞いた。</p>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>なかった。</p></div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>なかった。</p></div></div>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>会場、<wbr>移動手段、<wbr>練習場所。</p></div></div>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>ほとんど<wbr>何も<wbr>分かっていなかったです。<wbr>誘ってくれた<wbr>潤弥さんたちが<wbr>基本的には<wbr>理解していると<wbr>思っていたんですけど、<wbr>実際は<wbr>誰も<wbr>分かっていない<wbr>ことがたくさん<wbr>ありました。</p></div></div>
+<p class="n">誘われた<wbr>側は、<wbr>誘った<wbr>側が<wbr>分かっていると<wbr>思っていた。<wbr>誘った<wbr>側も、<wbr>分かっていなかった。</p>
+<p class="n">真秀が<wbr>加わった<wbr>直後、<wbr>潤弥が<wbr>グループに<wbr>書いたのは、<wbr>これだった。</p>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>パスポートだけ<wbr>みんなで<wbr>確認し合おう！</p></div></div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>パスポート自分も<wbr>切れてたので、<wbr>取らないとでした。</p></div></div>
+<p class="n">番組から<wbr>届いた<wbr>メールにも、<wbr>答えられていない。<wbr>ディレクターは<wbr>「チームの<wbr>中に<wbr>英語が<wbr>堪能な<wbr>人は<wbr>いるか、<wbr>通話中に<wbr>通訳してくれる<wbr>友人が<wbr>いるか、<wbr>それとも<wbr>通訳が<wbr>必要か」と<wbr>聞いていた。</p>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>急ぎで<wbr>英語喋れる<wbr>人誘おう。</p></div></div>
+<p class="n">会場も、<wbr>移動手段も、<wbr>練習場所も、<wbr>パスポートも、<wbr>英語も。<wbr>何ひとつ<wbr>揃わないまま、<wbr>5人は<wbr>ロンドンへ<wbr>発っている。</p>
+<p class="n">そして<wbr>舞台に<wbr>出て、<wbr>潤弥は<wbr>ようやく<wbr>気づいた。<wbr>体育館ではなかった。</p>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>そこが<wbr>会場で、<wbr>サイモンが<wbr>いて、<wbr>本番なのかよ、と<wbr>思った。</p></div></div>
+<div class="ann"><b>注</b>サイモン・<wbr>コーウェル。<wbr>BGTの<wbr>審査員で、<wbr>番組の<wbr>顔に<wbr>あたる<wbr>人物。</div>
+<p class="n">客席が<wbr>「ゴールデンブザーを<wbr>押してくれ」と<wbr>声を<wbr>揃えはじめるのは、<wbr>その<wbr>数分後に<wbr>なる。</p>
+<figure class="fig"><img loading="lazy" src="assets/bgt/line.jpg" alt="真秀がグループに追加された日のLINE"><figcaption>11時59分に<wbr>追加され、<wbr>12時26分には<wbr>「お願いします」と<wbr>返している。<wbr>潤弥の<wbr>次の<wbr>一言は<wbr>「パスポートだけ<wbr>みんなで<wbr>確認し合おう」。</figcaption></figure>
+<h2 class="ch" id="ch2">第三章　五人で、<wbr>五万三千円</h2>
+<p class="n">渡航費は、<wbr>学生の<wbr>実費だった。<wbr>誰かが<wbr>出してくれるわけではない。<wbr>だから、<wbr>金を<wbr>作る<wbr>ところから<wbr>始まっている。</p>
+<p class="n">箱を<wbr>作ったのは<wbr>周平だった。<wbr>前の<wbr>晩、<wbr>ダンボールを<wbr>切って<wbr>組み立てている。</p>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>クラファンとか<wbr>募金もしてたけど。<wbr>前日に<wbr>ダンボールで<wbr>せっせと<wbr>作ってた。</p></div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>目立つし、<wbr>広告塔みたいな<wbr>もんじゃん。<wbr>客寄せパンダみたいな<wbr>奴らが<wbr>募金やってる、<wbr>みたいな。</p></div></div>
+<p class="n">実際に<wbr>入れてくれた<wbr>人が<wbr>いる。<wbr>その<wbr>金で<wbr>ロンドンへ<wbr>行った。</p>
+<p class="n">置いたのは、<wbr>ある<wbr>ダブルダッチイベントの<wbr>会場。<wbr>ホワイエの、<wbr>物販の<wbr>横だった。</p>
+<figure class="fig"><img loading="lazy" src="assets/bgt/bokin.jpg" alt="手作りの募金箱"><figcaption>「BGTに<wbr>行かせてください！」。<wbr>ダンボールに、<wbr>切り<wbr>抜いた<wbr>5人の<wbr>写真と、<wbr>ユニオンジャックと、<wbr>ナルトの<wbr>シールが<wbr>貼ってある。</figcaption></figure>
+<p class="n">世界の<wbr>テレビに<wbr>出る<wbr>ための<wbr>資金を、<wbr>手作りの<wbr>ダンボール箱で<wbr>集めようと<wbr>していた。</p>
+<p class="n">渡航費の<wbr>うち、<wbr>飛行機代だけで<wbr>16万かかっている。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>ちょっとお金なくなっちゃったんで<wbr>今度で<wbr>いいですか、って。<wbr>飛行機16万ぐらい。<wbr>めっちゃ<wbr>覚えてる。</p></div></div>
+<p class="n">それでも<wbr>足りない。<wbr>足りない<wbr>ぶんは、<wbr>借りることになる。</p>
+<p class="n">そうして<wbr>ロンドンに<wbr>着いた。</p>
+<p class="n">着いてから、<wbr>箱に<wbr>入れてくれた<wbr>人へ礼を<wbr>撮っている。</p>
+<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/thanks_poster.jpg" src="assets/bgt/thanks.mp4" aria-label="募金のお礼"></video><figcaption>マンチェスター空港。<wbr>手作りの<wbr>ダンボール箱に<wbr>入った<wbr>金で、<wbr>5人は<wbr>ここまで<wbr>来ている。</figcaption></figure>
+<div class="ask"><span class="lbl">引いたカード</span><div class="q">ロンドンに<wbr>いた間、<wbr>飯どうしてた？<wbr> ホテルどうだった？</div></div>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>マジ覚えてない。<wbr>とりあえず金ないから、<wbr>ホテル抑えよう、って。</p></div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>周平と<wbr>まほろが<wbr>抑えてくれたんじゃない。</p></div></div>
+<p class="n">宿の<wbr>値段は、<wbr>その場で<wbr>調べ直された。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>ロンドンの<wbr>宿、<wbr>さっき<wbr>調べたら<wbr>3泊4日で、<wbr>5人で<wbr>5万3,000円だった。</p></div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>割には<wbr>いい宿だったな。<wbr>俺だけずっと<wbr>ソファーで<wbr>寝てた。<wbr>めっちゃ<wbr>覚えてる。</p></div></div>
+<p class="n">3泊4日、<wbr>5人で<wbr>5万3,000円。<wbr>ベッドは<wbr>足りていない。</p>
+<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/hotel_poster.jpg" src="assets/bgt/hotel.mp4" aria-label="ロンドンの宿"></video><figcaption>3泊4日、<wbr>5人で<wbr>5万3,000円。<wbr>ベッドは<wbr>足りていない。</figcaption></figure>
+<p class="n">その<wbr>宿代も、<wbr>現地で<wbr>作っている。<wbr>ピカデリーサーカスの<wbr>路上で、<wbr>縄を<wbr>回した。</p>
+<div class="ask"><span class="lbl">引いたカード</span><div class="q">ロンドンの<wbr>ピカデリーサーカスで<wbr>路上やった<wbr>やつ、<wbr>あれ何？</div></div>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>結構、<wbr>最初は<wbr>抵抗あった。<wbr>バスキングと<wbr>いう<wbr>行為に。<wbr>怒られないかな、とか。</p></div></div>
+<div class="ann"><b>注</b>バスキング＝路上で<wbr>演奏や<wbr>パフォーマンスを<wbr>して、<wbr>通りが<wbr>かりの<wbr>人から<wbr>投げ銭を<wbr>もらう<wbr>こと。<wbr>ロンドンでは<wbr>古くから<wbr>ある<wbr>文化で、<wbr>場所に<wbr>よっては<wbr>公式の<wbr>ライセンス制に<wbr>なっている。</div>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>外国で<wbr>（路上を<wbr>）やってみたいな、と<wbr>思った<wbr>ことがなかったから。</p></div></div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>カズさんに<wbr>相談したら<wbr>スピーカーあ<wbr>げるって。<wbr>無料で<wbr>もらいました。<wbr>ありがとう<wbr>ございます。</p></div></div>
+<p class="n">路上は、<wbr>稼ぐ<wbr>場所であると<wbr>同時に、<wbr>危ない<wbr>場所でも<wbr>あった。</p>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>（酔った<wbr>人が）縄を<wbr>踏んでて。<wbr>めっちゃ<wbr>近くまで<wbr>来て、<wbr>この<wbr>ぐらいで。</p></div></div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>何してくるかわからない。<wbr>殺されてても<wbr>おかしくない<wbr>くらい。</p></div></div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>誰かが<wbr>明確な<wbr>行動を<wbr>起こすと、<wbr>逆に<wbr>冷静に<wbr>なる。</p></div></div>
+<p class="n">それでも、<wbr>路上で<wbr>得た<wbr>ものが<wbr>あった。</p>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>出た<wbr>時に、<wbr>心の<wbr>底から<wbr>喜ばれて。<wbr>ほらちゃんと<wbr>評価されてるじゃん、って。<wbr>めっちゃ喜ばれて<wbr>嬉しかった。</p></div></div>
+<p class="n">当時の<wbr>映像は、<wbr>いまも残っている。</p>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>（当時の<wbr>自分たちは）めちゃくちゃ<wbr>楽しんでる。<wbr>まだ<wbr>ウキウキしてて、<wbr>写真と<wbr>動画が<wbr>多いわ。<wbr>今は<wbr>ないけど。</p></div></div>
+<p class="n">練習する<wbr>場所は、<wbr>最後まで<wbr>見つから<wbr>なかった。</p>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>練習場所の<wbr>体育館が<wbr>見つから<wbr>なくて、<wbr>高熱の<wbr>中、<wbr>無限に<wbr>歩いた。</p></div></div>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>海外で<wbr>練習場所を<wbr>確保するのが<wbr>すごく<wbr>難しくて。<wbr>路上で<wbr>知り合った<wbr>人に<wbr>「ここの<wbr>体育館<wbr>使えるよ」と<wbr>連れて<wbr>行って<wbr>もらったのに、<wbr>結局<wbr>使えなかったりする<wbr>ことも<wbr>結構<wbr>ありました。</p></div></div>
+<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/mahoro_poster.jpg" src="assets/bgt/mahoro.mp4" aria-label="高熱を出していた真秀"></video><figcaption>イギリス滞在中、<wbr>真<wbr>秀は<wbr>熱を<wbr>出している。<wbr>この<wbr>状態で、<wbr>練習場所を<wbr>探して<wbr>歩いていた。</figcaption></figure>
+<p class="n">そして、<wbr>いま振り返ると<wbr>こうなる。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>生活する<wbr>ための<wbr>バスキング。<wbr>カズさんとか<wbr>まほろには<wbr>本当に<wbr>感謝してるけど、<wbr>今考えると<wbr>あれ、<wbr>バスキングじゃなくて、<wbr>ただ<wbr>練習してるだけなんだけど。</p></div></div>
+<div class="pull">あれ、<wbr>バスキングじゃなくて、<wbr>ただ<wbr>練習してるだけなんだけど。</div>
+<p class="n">生活費を<wbr>稼ぐ<wbr>ために<wbr>やっていた<wbr>ことが、<wbr>結果と<wbr>して、<wbr>いちばん長く<wbr>跳んだ<wbr>時間に<wbr>なっていた。</p>
+<p class="n">公園で<wbr>始めた<wbr>駒が、<wbr>ロンドンの<wbr>路上まで<wbr>来ていた。</p>
+<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/picca_poster.jpg" src="assets/bgt/picca.mp4" aria-label="ピカデリーサーカスの路上"></video><figcaption>夜の<wbr>ピカデリーサーカス。<wbr>人だかりの<wbr>中で<wbr>縄を<wbr>回している。<wbr>生活費を<wbr>稼ぐ<wbr>場所であり、<wbr>練習場所でも<wbr>あった。</figcaption></figure>
+<h2 class="ch" id="ch3">第四章　さける<wbr>チーズ</h2>
+<p class="n">金の<wbr>話は、<wbr>笑い<wbr>話では<wbr>終わらなかった。</p>
+<div class="ask"><span class="lbl">引いたカード</span><div class="q">BGTの<wbr>渡航費30〜40万、<wbr>学生で<wbr>実費だったよね。<wbr>あれ、<wbr>どうやって<wbr>作った？</div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>30万あれば<wbr>足りたんだけど。<wbr>俺その<wbr>時もう<wbr>250万、<wbr>280万ぐらい<wbr>借りてる<wbr>状態で、<wbr>かつ<wbr>カードも<wbr>切ってて。<wbr>誰にも<wbr>借りれなかった。<wbr>お金ベースで<wbr>考えたら、<wbr>さすがに<wbr>おかしくね、って<wbr>思った<wbr>記憶ある。</p></div></div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>（親から）<wbr>30万借りた<wbr>状態で<wbr>15万だけ返してたから、<wbr>返してないのに<wbr>貸すとか<wbr>ありえない、って。<wbr>めっちゃ<wbr>怒られて。<wbr>12月中に<wbr>全部<wbr>返したら<wbr>貸してあげる、って<wbr>言われた。</p></div></div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>それが<wbr>12月の<wbr>頭ぐらい。<wbr>誘われた<wbr>直後だから。<wbr>一旦、<wbr>バイトで<wbr>15万返した。</p></div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>（渡航費を<wbr>）クレジットカード、<wbr>15分割ぐらい。</p></div></div>
+<p class="n">その金は、<wbr>寝る<wbr>時間を<wbr>削って<wbr>作っている。<wbr>日中は<wbr>ゴットタレントと<wbr>他の<wbr>イベントの<wbr>練習。<wbr>その合間に<wbr>卒業論文を<wbr>書く。<wbr>夜は<wbr>夜勤の<wbr>バイトに<wbr>入り、<wbr>そのまま<wbr>眠らずに<wbr>朝練習へ<wbr>向かう。</p>
+<p class="n">借金が<wbr>あり、<wbr>返済の<wbr>途中で、<wbr>次の<wbr>借入を<wbr>断られている。<wbr>その<wbr>状態で、<wbr>勝てるか<wbr>分からない<wbr>大会に、<wbr>自費で<wbr>行くと<wbr>決めている。</p>
+<p class="n">次の<wbr>カードは、<wbr>痛みを<wbr>聞く<wbr>ものだった。<wbr>名指しされたのは、<wbr>本人ではない。</p>
+<div class="ask"><span class="lbl">引いたカード</span><div class="q">BGTの<wbr>期間中、<wbr>この<wbr>中で<wbr>いちばんキツそうだったの、<wbr>誰？</div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>一<wbr>番きつそうだったのは<wbr>……<wbr>海野かな。<wbr>アキレス腱が<wbr>切れて、<wbr>海野は<wbr>出られないと<wbr>思った。</p></div></div>
+<p class="n">渡英の<wbr>前、<wbr>海野は<wbr>病院に<wbr>いた。<wbr>診察室で、<wbr>両足とも<wbr>切れそうだと<wbr>言われている。<wbr>その<wbr>あと<wbr>レントゲンを<wbr>見た。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>（医者に）<wbr>2個とも<wbr>両方<wbr>切れそうでしょ、って<wbr>言われて。<wbr>レントゲン撮ったら、<wbr>さける<wbr>チーズみたいに<wbr>なってた。</p></div></div>
+<div class="pull">レントゲン撮ったら、<wbr>さける<wbr>チーズみたいに<wbr>なってた。</div>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>なんか<wbr>（海野）<wbr>足、<wbr>引きずってたよね。</p></div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>引きずってた。<wbr>俺、<wbr>限界だったわ。</p></div></div>
+<p class="n">そして、<wbr>その<wbr>名前を<wbr>挙げた<wbr>坂田潤弥自身も、<wbr>この<wbr>とき足の<wbr>手術を<wbr>終えたばかりだった。<wbr>松葉杖が<wbr>取れたのは、<wbr>渡英の<wbr>直前。<wbr>リハビリの<wbr>期間中に、<wbr>無理やり出ている。</p>
+<p class="n">両足で<wbr>跳べない<wbr>状態で、<wbr>片足だけで<wbr>振りを<wbr>合わせていた。</p>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>直前まで、<wbr>片足で<wbr>（振り付けを<wbr>）調整して。</p></div></div>
+<p class="n">5人の<wbr>うち2人が、<wbr>壊れた<wbr>足の<wbr>まま<wbr>ロンドンへ<wbr>渡っている。<wbr>そして、<wbr>いちばんキツかったのは<wbr>誰かと<wbr>聞かれた<wbr>とき、<wbr>どちらも<wbr>自分の<wbr>名前を<wbr>挙げなかった。</p>
+<p class="n">負荷の<wbr>かかり方は、<wbr>均等ではなかった。<wbr>役割で<wbr>分かれている。</p>
+<p class="n">難しい<wbr>ロープを<wbr>回すのは、<wbr>年下の<wbr>ほうだ。<wbr>そして、<wbr>いちばんリスクの<wbr>高い<wbr>スピードを<wbr>跳ぶの<wbr>も<wbr>年下が<wbr>担う。<wbr>1秒に<wbr>8回まわる<wbr>縄の<wbr>中に、<wbr>足を<wbr>入れ続ける<wbr>役目に<wbr>なる。</p>
+<p class="n">海野と<wbr>潤弥は、<wbr>自分の<wbr>パートが<wbr>終わったら、<wbr>縄の<wbr>外では<wbr>しゃぐ<wbr>役割に<wbr>なる。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>（俺らが）<wbr>一番<wbr>年下に<wbr>負荷を<wbr>かけて、<wbr>年下が<wbr>やってた。</p></div></div>
+<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/junya_poster.jpg" src="assets/bgt/junya.mp4" aria-label="片足で振り付けを合わせる潤弥"></video><figcaption>ギプスのまま、<wbr>片足で<wbr>動いている。<wbr>手術の<wbr>あと、<wbr>渡英までの<wbr>あいだ。</figcaption></figure>
 <h2 class="ch" id="ch4">第五章　揃わなかった</h2>
-<p class="n">そのあと、カードは痛みではなく、違いを聞くものに変わった。</p>
-<div class="ask"><span class="lbl">引いたカード</span><div class="q">いまここにいる5人の中で、自分と一番価値観が違うのは誰？ どこが？</div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>根本的に考え方違うよね。全員違う。</p></div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>話し合いは常にできてるから、根本の価値観は一緒だなと思ってる。感情論で話し合うことはないし。だから、それに対して建設的な話ができる。</p></div></div>
-<p class="n">では、何が違うのか。出てきた答えは、意外だった。</p>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p><span class="nb">ダブルダッチ</span>においては同じ。それ以外は……人に興味があるかないか。</p></div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>知らない人に話しかけて、その人の人生を聞きたい。普通に一般的な人もいれば、結構やばい人もいるじゃん。その人にも人生あるって考えたら、どんな感じで生きてるんだろうって。</p></div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>パフォーマンスを作る時に、そのものに興味があるじゃん。その音がいいとか、この動きがいいとか。特定の誰かが喜ぶ、まではあんまり考えない。</p></div></div>
-<p class="n">人に興味があるか、ないか。同じ舞台を作っている5人が、そこで割れている。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>今は結構マシになったけど、中学生の時とかは、トイレで隣の人だったら絶対話しかけるし、エレベーターが同じだったらずっと話しかけてた。</p></div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>一緒にいる人に、ちょっと恥ずかしい、って言われて（話しかけるのを）やめた。</p></div></div>
-<p class="n">違いは、最初からうまく扱えていたわけではない。</p>
-<p class="n">予定が合わず、集合は23時になった。練習施設を借りる金はない。そのまま公園で、朝6時まで縄を回している。</p>
-<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/park_poster.jpg" src="assets/bgt/park.mp4" aria-label="決勝前、朝4時の練習"></video><figcaption>2024年5月4日、午前4時すぎ。準決勝と決勝の月。空が明るくなりはじめている。</figcaption></figure>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>最初、5人で<span class="nb">BGT</span>に向けて練習したじゃん。あの時は話し合いが多かったし、対立も結構あった。決勝ぐらいからかな。</p></div></div>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>（価値観が）統一されたっていうよりかは、役割ができてから。それを<span class="nb">HARIBOW</span>の軸に、みんなが肉付けていく。そういうショーの作り方になったからね。</p></div></div>
-<div class="ann"><b>注</b><span class="nb">HARIBOW</span>の何が評価されているのかが見えて、それが軸になった。全員の考えを一つに揃えるのではなく、揃わないまま、その軸に各自が足していくやり方。</div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>（5人とも）同じことやってワクワクして楽しい、と思ってるから。</p></div></div>
-<p class="n">価値観は揃わなかった。揃わないまま、役割で組み立てる方法を見つけた。それが、いまのショーの作り方になっている。</p>
-<p class="n">その決勝と同じ5月に、<span class="nb">海野</span>と<span class="nb">真秀</span>が会社を立ち上げている。株式会社<span class="nb">HARIBOW</span>。</p>
-<p class="n">秋になって、<span class="nb">潤弥</span>と<span class="nb">竜介</span>は勤め先を辞め、その会社に移った。就職した年のうちに、辞めている。</p>
-<p class="n"><span class="nb">潤弥</span>が辞めると決めたのは、上司との会話の途中だった。</p>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>両立は無理でしょ、<span class="nb">ダブルダッチ</span>かうちか、どっちか辞めてほしい、と言われて。即答で、会社を辞めると言ってしまった。</p></div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>次の日に<span class="nb">HARIBOW</span>の案件が一つなくなった話を聞いて、とんでもない冷や汗をかいた記憶がある。</p></div></div>
-<h2 class="ch" id="ch5">第六章　満席でも、赤字</h2>
-<p class="n">ここで、9月29日のカードが引かれた。</p>
-<div class="ask"><span class="lbl">引いたカード</span><div class="q">9/29の単独公演、儲からないのになんでやるの？</div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>9月29日の単独公演、これ発表していいんですか。満席でもギリギリ赤字、っていう。</p></div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>今すぐプロジェクターとか全部やめれば、結構儲かります。</p></div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>一夜にして結構な額が儲かると思うんですけど。やんないじゃないですか。</p></div></div>
-<p class="n">この日まで、実際の数字を見ていなかった者もいる。<span class="nb">竜介</span>が知ったのは8月の終わり。仕事中だった。収録の、数日前になる。</p>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>最近ちゃんと知った。実態を。本当に赤字なんだな、っていう。</p></div></div>
-<p class="n">チケットが1枚売れるたびに、赤字は減る。ただし、全部売り切っても足りない。それが「満席でもギリギリ赤字」の意味だ。</p>
-<p class="n">会場を借りる金も、機材の金も、チケット代でまかなえる。まかなえないのは、作った人間の給料だ。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>トントンだね、っていうのは、ただの収支だけを見てて、人件費が0になってる。払ってる給料を考えると、圧倒的に数百万単位のマイナスだった。</p></div></div>
-<p class="n">収支表の上では、この公演はトントンに見える。そう見えるのは、5人と後輩たちがこの数か月に使った時間が、そこに1円も計上されていないからだ。それを入れると、数百万円のマイナスになる。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>（すごいのは）それが赤字なことじゃなくて、そこに<span class="nb">潤弥</span>と<span class="nb">周平</span>の時間を割けるようになったこと。</p></div></div>
-<p class="n">学生のころ、練習に給料は出なかった。バイトで渡航費を作り、親に借り、カードを分割にして海外へ行った。いまは違う。作っている時間そのものに、給料が出ている。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>大学生が勝手にやって金を落とすとかじゃないから。固定給で、そこに時間としてお金が払われてる。お金にならないことをやること。それがすごいよね。優勝賞金とかがある大会の作品ではないので。</p></div></div>
-<div class="pull">お金にならないことをやること。それがすごいよね。</div>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p>儲からなくていいから、いい単独公演を作っていいよ、って言われたら、誰でも作りたいじゃん。正直。</p></div></div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>儲からないことができるようになった、っていうのもある。会社として、それでもできる。</p></div></div>
-<p class="n">賞金の出ない公演に、給料を払って人を張りつけておける。学生のときには、どうやってもできなかったことだ。この赤字は、そこまで来たことの証明書のようなものになっている。</p>
-<p class="n">ここで一度、部屋が静かになった。</p>
-<p class="n">では、何のために赤字を出すのか。一言で聞いた。</p>
-<div class="ask"><span class="lbl">引いたカード</span><div class="q">原動力って、一言で言うと何だろう。</div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>（<span class="nb">HARIBOW</span>を）かっこいい、と思ってもらいたい。っていうのが一番大きい。</p></div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>（俺らを）見てくれてる大学生とか、小中高生が、目指してくれる。憧れになるっていう。</p></div></div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>これ（＝この公演）を真似して他のイベントがかっこよくなったら、むしろ熱い。</p></div></div>
-<p class="n">パリコレクションに出てくる服は、そのまま店に並ぶわけではない。売るための場ではなく、次の方向を示すための場だからだ。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>パリコレみたいな。ファッションの、あれみたいな存在がいいなと思っています。</p></div></div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>なぜやるか。夢、っていうことやな。一言で言うと。</p></div></div>
-<figure class="fig"><img loading="lazy" src="assets/bgt/flyer.jpg" alt="公演のチラシ"><figcaption>「公園から世界、その先へ。」</figcaption></figure>
-<p class="n">話は外向きから内向きに移った。</p>
-<p class="n">海外へ行くことが特別だったころは、それだけで人が集まった。いまは、行けて当たり前になっている。当たり前になったものは、人を引き止めない。</p>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>でも、海外でパフォーマンスするのが若干当たり前になってきてさ。みんな、なんかワクワクが減ってきてるじゃないですか。</p></div></div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>結構、仕事マインドよりの人も増えてきてる気がする。</p></div></div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p><span class="nb">HARIBOW</span>として入れることの良さというか、価値を伝える。1個の手段にはなるのかな、っていうのは結構思う。それがなくなったら、みんな入りたくなくなっちゃうから。</p></div></div>
-<div class="ann"><b>注</b>「入れる」＝<span class="nb">HARIBOW</span>のメンバーになれること。いま在籍している多くは、この5人より下の代にあたる。</div>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>結局、そのワクワクは定期的にアップデートしていかないといけないですよね。</p></div></div>
-<p class="n">そして、その赤字を誰が背負っているのか、という話になった。</p>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>最初のメンバーが何十万払って、みたいな。今はお金をもらっていくものみたいになってきた。</p></div></div>
-<p class="n">最初のメンバーは、何十万も自分で払って海外へ行った。いまは会社が出す。同じ場所へ行くのでも、意味が変わっている。</p>
-<p class="n">そして、赤字を出すのは会社だ。会社の金は、この5人も後輩たちも含めて、全員が日々の仕事で稼いでいる。つまりこの公演の赤字は、自分たちが働いた金で埋まる。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>赤字を支えてるのは下の子たちだから。割に合わない、と考える人が下にいてもおかしくはないな、とは思い始めてはいる。</p></div></div>
-<p class="n">念のために書いておくと、これは特定の誰かの話ではない。5人が、いまの構造をどう見ているかという話だ。</p>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>外側ばっかりに意識がいってそうじゃん。そうじゃなくて、思ったより自分たちは内側も重視してるよ、っていうのはある。俺らがワクワクしたい。<span class="nb">HARIBOW</span>がワクワクしたい。</p></div></div>
-<div class="ann"><b>注</b>「外側」＝観客や業界。「内側」＝メンバー自身。発信のためだけにやっているのではない、という意味。</div>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>ワクワクしなきゃな。外の人へ向けても、内側に矢印を向けても。両面で。</p></div></div>
-<p class="n">最後に、この公演が何のためのものなのかが語られた。</p>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>俺は個人的に、2年ぐらいショーを作ることによって枯渇して。それでも続いてるんですけど。</p></div></div>
-<div class="ann"><b>注</b>この2年、作品を作り続けてきた結果、アイデアが尽きかけている、という意味。</div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p><span class="nb">HARIBOW</span>っていうところが、素晴らしいショーだったり、勝負する団体を超えて。究極レベルのパフォーマンスを発信していく団体になってほしいと思っていて。世界でも通用する。っていうのを目指す。</p></div></div>
-<p class="n">大会には出場枠があり、審査があり、賞金がある。誰かが用意した場に、呼ばれて出ていく。単独公演にはそれがない。日程も、会場も、演目も、客席も、自分たちで決めて、自分たちで埋める。</p>
-<p class="n">逃げ場がないぶん、作るものは上がる。だから負荷として置いている。</p>
+<p class="n">その<wbr>あと、<wbr>カードは<wbr>痛みではなく、<wbr>違いを<wbr>聞く<wbr>ものに<wbr>変わった。</p>
+<div class="ask"><span class="lbl">引いたカード</span><div class="q">いまここに<wbr>いる<wbr>5人の<wbr>中で、<wbr>自分と<wbr>一番<wbr>価値観が<wbr>違うのは<wbr>誰？<wbr> どこが？</div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>根本的に<wbr>考え方<wbr>違うよね。<wbr>全員違う。</p></div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>話し合いは<wbr>常に<wbr>できてるから、<wbr>根本の<wbr>価値観は<wbr>一緒だなと<wbr>思ってる。<wbr>感情論で<wbr>話し合う<wbr>ことは<wbr>ないし。<wbr>だから、<wbr>それに<wbr>対して<wbr>建設的な<wbr>話が<wbr>できる。</p></div></div>
+<p class="n">では、<wbr>何が<wbr>違うのか。<wbr>出てきた<wbr>答えは、<wbr>意外だった。</p>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>ダブルダッチに<wbr>おいては<wbr>同じ。<wbr>それ以外は<wbr>……<wbr>人に<wbr>興味が<wbr>あるかないか。</p></div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>知らない<wbr>人に<wbr>話しかけて、<wbr>その<wbr>人の<wbr>人生を<wbr>聞きたい。<wbr>普通に<wbr>一般的な<wbr>人も<wbr>いれば、<wbr>結構やばい<wbr>人も<wbr>いるじゃん。<wbr>その<wbr>人にも<wbr>人生あるって<wbr>考えたら、<wbr>どんな<wbr>感じで<wbr>生きてるんだろうって。</p></div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>パフォーマンスを<wbr>作る<wbr>時に、<wbr>その<wbr>ものに<wbr>興味が<wbr>あるじゃん。<wbr>その<wbr>音が<wbr>いいとか、<wbr>この<wbr>動きが<wbr>いいとか。<wbr>特定の<wbr>誰かが<wbr>喜ぶ、<wbr>までは<wbr>あんまり<wbr>考えない。</p></div></div>
+<p class="n">人に<wbr>興味が<wbr>あるか、<wbr>ないか。<wbr>同じ<wbr>舞台を<wbr>作っている<wbr>5人が、<wbr>そこで<wbr>割れている。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>今は<wbr>結構<wbr>マシに<wbr>なったけど、<wbr>中学生の<wbr>時とかは、<wbr>トイレで<wbr>隣の<wbr>人だったら<wbr>絶対話しかけるし、<wbr>エレベーターが<wbr>同じだったら<wbr>ずっと<wbr>話しかけてた。</p></div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>一緒に<wbr>いる<wbr>人に、<wbr>ちょっと<wbr>恥ずかしい、って<wbr>言われて<wbr>（話しかけるのを<wbr>）やめた。</p></div></div>
+<p class="n">違いは、<wbr>最初から<wbr>うまく<wbr>扱えていたわけではない。</p>
+<p class="n">予定が<wbr>合わず、<wbr>集合は<wbr>23時に<wbr>なった。<wbr>練習施設を<wbr>借りる<wbr>金は<wbr>ない。<wbr>そのまま<wbr>公園で、<wbr>朝6時まで<wbr>縄を<wbr>回している。</p>
+<figure class="fig"><video controls playsinline preload="none" poster="assets/bgt/park_poster.jpg" src="assets/bgt/park.mp4" aria-label="決勝前、朝4時の練習"></video><figcaption>2024年5月4日、<wbr>午前4時すぎ。<wbr>準決勝と<wbr>決勝の<wbr>月。<wbr>空が<wbr>明るくなりはじめている。</figcaption></figure>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>最初、<wbr>5人で<wbr>BGTに<wbr>向けて<wbr>練習したじゃん。<wbr>あの<wbr>時は<wbr>話し合いが<wbr>多かったし、<wbr>対立も<wbr>結構<wbr>あった。<wbr>決勝ぐらいからかな。</p></div></div>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>（価値観が）<wbr>統一されたっていうよりかは、<wbr>役割が<wbr>できてから。<wbr>それを<wbr>HARIBOWの<wbr>軸に、<wbr>みんなが<wbr>肉付けていく。<wbr>そういう<wbr>ショーの<wbr>作り方に<wbr>なったからね。</p></div></div>
+<div class="ann"><b>注</b>HARIBOWの<wbr>何が<wbr>評価されているのかが<wbr>見えて、<wbr>それが<wbr>軸に<wbr>なった。<wbr>全員の<wbr>考えを<wbr>一つに<wbr>揃えるのではなく、<wbr>揃わないまま、<wbr>その<wbr>軸に<wbr>各自が<wbr>足していく<wbr>やり方。</div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>（5人とも）<wbr>同じ<wbr>こと<wbr>やって<wbr>ワクワクして<wbr>楽しい、と<wbr>思ってるから。</p></div></div>
+<p class="n">価値観は<wbr>揃わなかった。<wbr>揃わないまま、<wbr>役割で<wbr>組み立てる<wbr>方法を<wbr>見つけた。<wbr>それが、<wbr>いまの<wbr>ショーの<wbr>作り方に<wbr>なっている。</p>
+<p class="n">その<wbr>決勝と<wbr>同じ<wbr>5月に、<wbr>海野と<wbr>真秀が<wbr>会社を<wbr>立ち上げている。<wbr>株式会社HARIBOW。</p>
+<p class="n">秋に<wbr>なって、<wbr>潤弥と<wbr>竜介は<wbr>勤め先を<wbr>辞め、<wbr>その<wbr>会社に<wbr>移った。<wbr>就職した年の<wbr>うちに、<wbr>辞めている。</p>
+<p class="n">潤弥が<wbr>辞めると<wbr>決めたのは、<wbr>上司との<wbr>会話の<wbr>途中だった。</p>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>両立は<wbr>無理でしょ、<wbr>ダブルダッチかうちか、<wbr>どっちか<wbr>辞めて<wbr>ほしい、と<wbr>言われて。<wbr>即答で、<wbr>会社を<wbr>辞めると<wbr>言ってしまった。</p></div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>次の<wbr>日に<wbr>HARIBOWの<wbr>案件が<wbr>一つなくなった<wbr>話を<wbr>聞いて、とんでも<wbr>ない<wbr>冷や汗を<wbr>かいた<wbr>記憶が<wbr>ある。</p></div></div>
+<h2 class="ch" id="ch5">第六章　満席でも、<wbr>赤字</h2>
+<p class="n">ここで、<wbr>9月29日の<wbr>カードが<wbr>引かれた。</p>
+<div class="ask"><span class="lbl">引いたカード</span><div class="q">9/29の<wbr>単独公演、<wbr>儲からないのに<wbr>なんで<wbr>やるの？</div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>9月29日の<wbr>単独公演、<wbr>これ発表していいんですか。<wbr>満席でも<wbr>ギリギリ赤字、っていう。</p></div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>今すぐ<wbr>プロジェクターとか<wbr>全部<wbr>やめれば、<wbr>結構<wbr>儲かります。</p></div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>一夜に<wbr>して<wbr>結構な<wbr>額が<wbr>儲かると<wbr>思うんですけど。<wbr>やんないじゃないですか。</p></div></div>
+<p class="n">この<wbr>日まで、<wbr>実際の<wbr>数字を<wbr>見ていなかった<wbr>者も<wbr>いる。<wbr>竜介が<wbr>知ったのは<wbr>8月の<wbr>終わり。<wbr>仕事中だった。<wbr>収録の、<wbr>数日前に<wbr>なる。</p>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>最近ちゃんと<wbr>知った。<wbr>実態を。<wbr>本当に<wbr>赤字なんだな、っていう。</p></div></div>
+<p class="n">チケットが<wbr>1枚売れる<wbr>たびに、<wbr>赤字は<wbr>減る。<wbr>ただし、<wbr>全部<wbr>売り<wbr>切っても<wbr>足りない。<wbr>それが<wbr>「満席でも<wbr>ギリギリ赤字」の<wbr>意味だ。</p>
+<p class="n">会場を<wbr>借りる<wbr>金も、<wbr>機材の<wbr>金も、<wbr>チケット代で<wbr>まかなえる。<wbr>まかなえないのは、<wbr>作った<wbr>人間の<wbr>給料だ。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>トントンだね、っていうのは、<wbr>ただの<wbr>収支だけを<wbr>見てて、<wbr>人件費が<wbr>0に<wbr>なってる。<wbr>払ってる<wbr>給料を<wbr>考えると、<wbr>圧倒的に<wbr>数百万単位の<wbr>マイナスだった。</p></div></div>
+<p class="n">収支表の<wbr>上では、<wbr>この<wbr>公演は<wbr>トントンに<wbr>見える。<wbr>そう<wbr>見えるのは、<wbr>5人と<wbr>後輩たちが<wbr>この<wbr>数か月に<wbr>使った<wbr>時間が、<wbr>そこに<wbr>1円も<wbr>計上されていないからだ。<wbr>それを<wbr>入れると、<wbr>数百万円の<wbr>マイナスに<wbr>なる。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>（すごいのは）<wbr>それが<wbr>赤字な<wbr>ことじゃなくて、<wbr>そこに<wbr>潤弥と<wbr>周平の<wbr>時間を<wbr>割けるようになった<wbr>こと。</p></div></div>
+<p class="n">学生の<wbr>ころ、<wbr>練習に<wbr>給料は<wbr>出なかった。<wbr>バイトで<wbr>渡航費を<wbr>作り、<wbr>親に<wbr>借り、<wbr>カードを<wbr>分割に<wbr>して<wbr>海外へ<wbr>行った。<wbr>いまは<wbr>違う。<wbr>作っている<wbr>時間<wbr>その<wbr>ものに、<wbr>給料が<wbr>出ている。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>大学生が<wbr>勝手に<wbr>やって金を<wbr>落とすとかじゃないから。<wbr>固定給で、<wbr>そこに<wbr>時間と<wbr>してお金が<wbr>払われてる。<wbr>お金に<wbr>ならない<wbr>ことを<wbr>やる<wbr>こと。<wbr>それが<wbr>すごいよね。<wbr>優勝賞金とかが<wbr>ある<wbr>大会の<wbr>作品ではないので。</p></div></div>
+<div class="pull">お金に<wbr>ならない<wbr>ことを<wbr>やる<wbr>こと。<wbr>それが<wbr>すごいよね。</div>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>儲からなくていいから、<wbr>いい単独公演を<wbr>作って<wbr>いいよ、って<wbr>言われたら、<wbr>誰でも<wbr>作りたいじゃん。<wbr>正直。</p></div></div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>儲からない<wbr>ことができるようになった、っていうのも<wbr>ある。<wbr>会社と<wbr>して、<wbr>それでも<wbr>できる。</p></div></div>
+<p class="n">賞金の<wbr>出ない<wbr>公演に、<wbr>給料を<wbr>払って<wbr>人を<wbr>張りつけて<wbr>おける。<wbr>学生の<wbr>ときには、<wbr>どうやっても<wbr>できなかった<wbr>ことだ。<wbr>この<wbr>赤字は、<wbr>そこまで<wbr>来た<wbr>ことの<wbr>証明書のような<wbr>ものになっている。</p>
+<p class="n">ここで<wbr>一度、<wbr>部屋が<wbr>静かに<wbr>なった。</p>
+<p class="n">では、<wbr>何の<wbr>ために<wbr>赤字を<wbr>出すのか。<wbr>一言で<wbr>聞いた。</p>
+<div class="ask"><span class="lbl">引いたカード</span><div class="q">原動力って、<wbr>一言で<wbr>言うと<wbr>何だろう。</div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>（HARIBOWを<wbr>）かっこいい、と<wbr>思って<wbr>もらいたい。<wbr>っていうのが<wbr>一番<wbr>大きい。</p></div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>（俺らを<wbr>）<wbr>見てくれてる<wbr>大学生とか、<wbr>小中<wbr>高生が、<wbr>目指してくれる。<wbr>憧れに<wbr>なるっていう。</p></div></div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>これ<wbr>（＝この<wbr>公演）を<wbr>真似して<wbr>他の<wbr>イベントが<wbr>かっこよくなったら、<wbr>むしろ熱い。</p></div></div>
+<p class="n">パリコレクションに<wbr>出てくる<wbr>服は、<wbr>そのまま<wbr>店に<wbr>並ぶわけではない。<wbr>売る<wbr>ための<wbr>場ではなく、<wbr>次の<wbr>方向を<wbr>示すための<wbr>場だからだ。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>パリ<wbr>コレみたいな。<wbr>ファッションの、<wbr>あれみたいな<wbr>存在が<wbr>いいなと<wbr>思っています。</p></div></div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>な<wbr>ぜやるか。<wbr>夢、っていう<wbr>ことやな。<wbr>一言で<wbr>言うと。</p></div></div>
+<figure class="fig"><img loading="lazy" src="assets/bgt/flyer.jpg" alt="公演のチラシ"><figcaption>「公園から<wbr>世界、<wbr>その<wbr>先へ。」</figcaption></figure>
+<p class="n">話は<wbr>外向きから<wbr>内向きに<wbr>移った。</p>
+<p class="n">海外へ<wbr>行く<wbr>ことが<wbr>特別だった<wbr>ころは、<wbr>それだけで<wbr>人が<wbr>集まった。<wbr>いまは、<wbr>行けて<wbr>当たり前に<wbr>なっている。<wbr>当たり前に<wbr>なった<wbr>ものは、<wbr>人を<wbr>引き止めない。</p>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>でも、<wbr>海外で<wbr>パフォーマンスするのが<wbr>若干当たり前に<wbr>なってきてさ。<wbr>みんな、<wbr>なんか<wbr>ワクワクが<wbr>減ってきてるじゃないですか。</p></div></div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>結構、<wbr>仕事マインドよりの<wbr>人も<wbr>増えてきてる<wbr>気が<wbr>する。</p></div></div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>HARIBOWと<wbr>して<wbr>入れる<wbr>ことの<wbr>良さと<wbr>いうか、<wbr>価値を<wbr>伝える。<wbr>1個の<wbr>手段には<wbr>なるのかな、っていうのは<wbr>結構<wbr>思う。<wbr>それが<wbr>なくなったら、<wbr>みんな<wbr>入りたくなくなっちゃうから。</p></div></div>
+<div class="ann"><b>注</b>「入れる」＝HARIBOWの<wbr>メンバーに<wbr>なれる<wbr>こと。<wbr>いま在籍している<wbr>多くは、<wbr>この<wbr>5人より<wbr>下の<wbr>代に<wbr>あたる。</div>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>結局、<wbr>その<wbr>ワクワクは<wbr>定期的に<wbr>アップデートしていかないと<wbr>いけないですよね。</p></div></div>
+<p class="n">そして、<wbr>その<wbr>赤字を<wbr>誰が<wbr>背負っているのか、と<wbr>いう<wbr>話に<wbr>なった。</p>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>最初の<wbr>メンバーが<wbr>何十万払って、<wbr>みたいな。<wbr>今は<wbr>お金を<wbr>もらっていく<wbr>ものみ<wbr>たいに<wbr>なってきた。</p></div></div>
+<p class="n">最初の<wbr>メンバーは、<wbr>何十万も<wbr>自分で<wbr>払って<wbr>海外へ<wbr>行った。<wbr>いまは<wbr>会社が<wbr>出す。<wbr>同じ<wbr>場所へ<wbr>行くのでも、<wbr>意味が<wbr>変わっている。</p>
+<p class="n">そして、<wbr>赤字を<wbr>出すのは<wbr>会社だ。<wbr>会社の<wbr>金は、<wbr>この<wbr>5人も<wbr>後輩たちも<wbr>含めて、<wbr>全員が<wbr>日々の<wbr>仕事で<wbr>稼いでいる。<wbr>つまり<wbr>この<wbr>公演の<wbr>赤字は、<wbr>自分たちが<wbr>働いた金で<wbr>埋まる。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>赤字を<wbr>支えてるのは<wbr>下の<wbr>子たちだから。<wbr>割に<wbr>合わない、と<wbr>考える<wbr>人が<wbr>下に<wbr>いても<wbr>おかしくは<wbr>ないな、とは<wbr>思い始めては<wbr>いる。</p></div></div>
+<p class="n">念の<wbr>ために<wbr>書いて<wbr>おくと、<wbr>これは<wbr>特定の<wbr>誰かの<wbr>話ではない。<wbr>5人が、<wbr>いまの<wbr>構造を<wbr>どう<wbr>見ているかと<wbr>いう<wbr>話だ。</p>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>外側ばっかりに<wbr>意識が<wbr>いって<wbr>そうじゃん。<wbr>そうじゃなくて、<wbr>思ったより<wbr>自分たちは<wbr>内側も<wbr>重視してるよ、っていうのは<wbr>ある。<wbr>俺らが<wbr>ワクワクしたい。<wbr>HARIBOWが<wbr>ワクワクしたい。</p></div></div>
+<div class="ann"><b>注</b>「外側」<wbr>＝観客や<wbr>業界。<wbr>「内側」＝メンバー自身。<wbr>発信の<wbr>ためだけに<wbr>やっているのではない、と<wbr>いう<wbr>意味。</div>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>ワクワクしなきゃな。<wbr>外の<wbr>人へ<wbr>向けても、<wbr>内側に<wbr>矢印を<wbr>向けても。<wbr>両面で。</p></div></div>
+<p class="n">最後に、<wbr>この<wbr>公演が<wbr>何の<wbr>ための<wbr>ものなのかが<wbr>語られた。</p>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>俺は<wbr>個人的に、<wbr>2年ぐらいショーを<wbr>作ることに<wbr>よって<wbr>枯渇して。<wbr>それでも<wbr>続いてるんですけど。</p></div></div>
+<div class="ann"><b>注</b>この<wbr>2年、<wbr>作品を<wbr>作り続けてきた<wbr>結果、<wbr>アイデアが<wbr>尽きかけている、と<wbr>いう<wbr>意味。</div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>HARIBO<wbr>Wっていう<wbr>ところが、<wbr>素晴らしい<wbr>ショーだったり、<wbr>勝負する<wbr>団体を<wbr>超えて。<wbr>究極レベルの<wbr>パフォーマンスを<wbr>発信していく<wbr>団体に<wbr>なって<wbr>ほしいと<wbr>思っていて。<wbr>世界でも<wbr>通用する。<wbr>っていうのを<wbr>目指す。</p></div></div>
+<p class="n">大会には<wbr>出場枠が<wbr>あり、<wbr>審査が<wbr>あり、<wbr>賞金が<wbr>ある。<wbr>誰かが<wbr>用意した<wbr>場に、<wbr>呼ばれて<wbr>出ていく。<wbr>単独公演には<wbr>それが<wbr>ない。<wbr>日程も、<wbr>会場も、<wbr>演目も、<wbr>客席も、<wbr>自分たちで<wbr>決めて、<wbr>自分たちで<wbr>埋める。</p>
+<p class="n">逃げ場が<wbr>ない<wbr>ぶん、<wbr>作る<wbr>ものは<wbr>上がる。<wbr>だから<wbr>負荷と<wbr>して<wbr>置いている。</p>
 <div class="bal"><div class="av av-all" aria-hidden="true">全員</div><div class="bub"><div class="nm">複数・全員</div><p>アップデートしましょう。</p></div></div>
-<h2 class="ch" id="ch6">どこを見てほしいか</h2>
-<p class="n">メンバーに、同じことを聞いた。9月29日、自分のどこを見てほしいか。客席のどこに座ると、それがよく見えるか。</p>
-<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">井端真秀</span></div><p>お客さんに目線を合わせる。前の方に座っていると、目を合わせられます。僕は目が悪いので。</p></div></div>
-<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">松澤竜介</span></div><p>ステップをどれだけ守らないでできるか。近くの席だと、よく見えると思います。</p></div></div>
-<div class="ann"><b>注</b>ステップ＝縄の中で足を運ぶ基本の型。それをどこまで崩せるか、という話。</div>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p>基本的にはパフォーマンスを見てほしいです。特に、全員が横一列になるところは、自分も前に向かってアピールできる時間があります。下手側のステージに近い席だと、自分のことは結構見やすいと思います。</p></div></div>
-<div class="ann"><b>注</b>下手（しもて）＝客席から見て左側。</div>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>皆さんのおかげで、いまの<span class="nb">HARIBOW</span>がある。その恩返しがしたい。</p></div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>自分というよりは、公演全体を見てほしい。それが僕たちの今なんだと思ってほしい。いいことも悪いことも含めて。</p></div></div>
-<p class="n">3人が、前の方の席、と答えた。<span class="nb">海野</span>と<span class="nb">潤弥</span>は、席を指定しなかった。</p>
-<p class="n">もうひとつ、チームとしての答えがある。</p>
-<p class="n"><span class="nb">HARIBOW</span>が見てほしいのは、これまでの全部が通過点だった、ということだ。子供の頃から、同じ仲間と、同じ遊びのまま。違いは才能ではなく、途切れさせなかったこと。</p>
-<p class="n">好きなことをやっていたら、思ったより遠くまで連れて行かれた。そういうことが起きる、という話でもある。</p>
-<p class="n">——あなたが手放した「何か」と「誰か」を、思い出しに来てほしい。</p>
-<h2 class="ch" id="ch7">エピローグ　まだ、埋まっていない</h2>
-<p class="n">誘う話には、つづきがある。断られてもいる。</p>
-<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">海野鷹幸</span></div><p>行けたら行くわ、で絶対来ない親友だから。すごく疑ってて、本当に来ない。</p></div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>（当日は）呼ぶだけ呼んで、喋れない。</p></div></div>
-<p class="n">番組史上初のブザーを受けた5人が、目黒の客席を埋めるために、友達にひとりずつ連絡を入れている。</p>
-<p class="n">2024年の<span class="nb">BGT</span>で、彼らは何が起きているのか分からないまま、番組史上初の観客<span class="nb">ゴールデンブザー</span>を受けた。価値はあとから知った。翌2025年、チーム<span class="nb">HARIBOW</span>は<span class="nb">IJRU</span>世界選手権——ジャンプロープの世界一を決める大会——で優勝している。こちらは、狙って獲りにいったものだ。</p>
-<p class="n">今度は、全部分かっている。満席でも赤字になることも、当日の客席が埋まるか分からないことも、誰が何を背負うかも。そのうえで、やると決めている。</p>
-<p class="n"><span class="nb">BGT</span>のときと、9月29日。どっちが無謀か。<span class="nb">真秀</span>と<span class="nb">竜介</span>と<span class="nb">周平</span>は<span class="nb">BGT</span>と答えた。<span class="nb">潤弥</span>の答えは、同じくらい、だった。</p>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p><span class="nb">BGT</span>の方が明らかに無謀だったと思います。スケジュールがかなりタイトだったのもありますし、そもそも<span class="nb">ゴールデンブザー</span>をもう一度取るということ自体が無謀でした。</p></div></div>
-<p class="n">いまの5人で、あの時と同じことをやれると思うか。4人とも、やれる、と答えている。</p>
-<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">加藤周平</span></div><p>あの時も無謀だったけど、今もよく分からないスケジュールの中で動いていることが多いので、この5人なら同じようなことはできると思います。</p></div></div>
-<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm"><span class="nb">坂田潤弥</span></div><p>いつか、<span class="nb">BGT</span>の話みたいなノリで宇宙に行く話がきた時に、まほろを全く同じシチュエーションで唐突に誘おうと思っている。</p></div></div>
-<p class="n">盤の端まで行った駒が、次に何に成るのか。それはまだ決まっていない。</p>
-<p class="n">2026年9月29日（火）、<span class="nb">めぐろパーシモンホール</span> 大ホール。開場18:00、開演19:30。<span class="nb">HARIBOW</span>初の単独公演「Go BEYOND」。出演31名、演目は9つ。この記事に出てきた5人も、これまでを共に歩んできた仲間たちも、全員そこに立つ。</p>
-<p class="n">チケットは go-beyond.haribow.com から。一般S席 前売 4,500円、一般A席 前売 3,500円、大学生 前売 2,500円。</p>
-<p class="n">客席は、まだ埋まっていない。</p>
+<h2 class="ch" id="ch6">どこを<wbr>見てほしいか</h2>
+<p class="n">メンバーに、<wbr>同じ<wbr>ことを<wbr>聞いた。<wbr>9月29日、<wbr>自分の<wbr>どこを<wbr>見てほしいか。<wbr>客席の<wbr>どこに<wbr>座ると、<wbr>それが<wbr>よく<wbr>見えるか。</p>
+<div class="bal"><div class="av p-mahoro" aria-hidden="true"></div><div class="bub"><div class="nm">井端真秀</div><p>お客さんに<wbr>目線を<wbr>合わせる。<wbr>前の<wbr>方に<wbr>座っていると、<wbr>目を<wbr>合わせられます。<wbr>僕は<wbr>目が<wbr>悪いので。</p></div></div>
+<div class="bal"><div class="av p-ryusuke" aria-hidden="true"></div><div class="bub"><div class="nm">松澤竜介</div><p>ステップを<wbr>どれだけ守らないでできるか。<wbr>近くの<wbr>席だと、<wbr>よく<wbr>見えると<wbr>思います。</p></div></div>
+<div class="ann"><b>注</b>ステップ＝縄の<wbr>中で<wbr>足を<wbr>運ぶ基本の型。<wbr>それを<wbr>どこまで<wbr>崩せるか、と<wbr>いう話。</div>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>基本的には<wbr>パフォーマンスを<wbr>見てほしいです。<wbr>特に、<wbr>全員が<wbr>横一列に<wbr>なる<wbr>ところは、<wbr>自分も<wbr>前に<wbr>向かって<wbr>アピールできる<wbr>時間が<wbr>あります。<wbr>下手側の<wbr>ステージに<wbr>近い席だと、<wbr>自分の<wbr>ことは<wbr>結構<wbr>見やすいと<wbr>思います。</p></div></div>
+<div class="ann"><b>注</b>下手<wbr>（しもて）<wbr>＝客席から<wbr>見て<wbr>左側。</div>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>皆さんの<wbr>おかげで、<wbr>いまの<wbr>HARIBOWが<wbr>ある。<wbr>その<wbr>恩返しが<wbr>したい。</p></div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>自分と<wbr>いう<wbr>よりは、<wbr>公演全体を<wbr>見てほしい。<wbr>それが<wbr>僕たちの<wbr>今なんだと<wbr>思って<wbr>ほしい。<wbr>いいことも<wbr>悪いことも<wbr>含めて。</p></div></div>
+<p class="n">3人が、<wbr>前の<wbr>方の<wbr>席、と<wbr>答えた。<wbr>海野と<wbr>潤弥は、<wbr>席を<wbr>指定しなかった。</p>
+<p class="n">もう<wbr>ひとつ、<wbr>チームと<wbr>しての<wbr>答えが<wbr>ある。</p>
+<p class="n">HARIBOWが<wbr>見てほしいのは、<wbr>これまでの<wbr>全部が<wbr>通過点だった、と<wbr>いう<wbr>ことだ。<wbr>子供の<wbr>頃から、<wbr>同じ<wbr>仲間と、<wbr>同じ<wbr>遊びの<wbr>まま。<wbr>違いは<wbr>才能ではなく、<wbr>途切れさせなかった<wbr>こと。</p>
+<p class="n">好きな<wbr>ことを<wbr>やっていたら、<wbr>思ったより<wbr>遠くまで<wbr>連れて行かれた。<wbr>そういう<wbr>ことが<wbr>起きる、と<wbr>いう<wbr>話でも<wbr>ある。</p>
+<p class="n">——あなたが<wbr>手放した<wbr>「何か」と<wbr>「誰か」を、<wbr>思い出しに<wbr>来て<wbr>ほしい。</p>
+<h2 class="ch" id="ch7">エピローグ　まだ、<wbr>埋まっていない</h2>
+<p class="n">誘う<wbr>話には、<wbr>つづきが<wbr>ある。<wbr>断られてもいる。</p>
+<div class="bal"><div class="av p-unno" aria-hidden="true"></div><div class="bub"><div class="nm">海野鷹幸</div><p>行けたら<wbr>行くわ、<wbr>で<wbr>絶対来ない<wbr>親友だから。<wbr>すごく<wbr>疑ってて、<wbr>本当に<wbr>来ない。</p></div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>（<wbr>当日は）<wbr>呼ぶだけ<wbr>呼んで、<wbr>喋れない。</p></div></div>
+<p class="n">番組史上初の<wbr>ブザーを<wbr>受けた<wbr>5人が、<wbr>目黒の<wbr>客席を<wbr>埋める<wbr>ために、<wbr>友達に<wbr>ひとりずつ連絡を<wbr>入れている。</p>
+<p class="n">2024年の<wbr>BGTで、<wbr>彼らは<wbr>何が<wbr>起きているのか<wbr>分からないまま、<wbr>番組史上初の<wbr>観客ゴールデンブザーを<wbr>受けた。<wbr>価値は<wbr>あとから<wbr>知った。<wbr>翌2025年、<wbr>チームHARIBOWは<wbr>IJRU世界選手権<wbr>——ジャンプロープの<wbr>世界一を<wbr>決める<wbr>大会——で<wbr>優勝している。<wbr>こちらは、<wbr>狙って<wbr>獲りに<wbr>いった<wbr>ものだ。</p>
+<p class="n">今度は、<wbr>全部<wbr>分かっている。<wbr>満席でも<wbr>赤字に<wbr>なることも、<wbr>当日の<wbr>客席が<wbr>埋まるか<wbr>分からない<wbr>ことも、<wbr>誰が<wbr>何を<wbr>背負うかも。<wbr>そのうえで、<wbr>やると<wbr>決めている。</p>
+<p class="n">BGTの<wbr>ときと、<wbr>9月29日。<wbr>どっちが<wbr>無謀か。<wbr>真秀と<wbr>竜介と<wbr>周平は<wbr>BGTと<wbr>答えた。<wbr>潤弥の<wbr>答えは、<wbr>同じくらい、<wbr>だった。</p>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>BGTの<wbr>方が<wbr>明らかに<wbr>無謀だったと<wbr>思います。<wbr>スケジュールが<wbr>かなり<wbr>タイトだったのもありますし、<wbr>そも<wbr>そも<wbr>ゴールデンブザーを<wbr>もう<wbr>一度<wbr>取ると<wbr>いう<wbr>こと自体が<wbr>無謀でした。</p></div></div>
+<p class="n">いまの<wbr>5人で、<wbr>あの<wbr>時と<wbr>同じ<wbr>ことを<wbr>やれると<wbr>思うか。<wbr>4人とも、<wbr>やれる、と<wbr>答えている。</p>
+<div class="bal"><div class="av p-shuhei" aria-hidden="true"></div><div class="bub"><div class="nm">加藤周平</div><p>あの<wbr>時も<wbr>無謀だったけど、<wbr>今も<wbr>よく<wbr>分からない<wbr>スケジュールの<wbr>中で<wbr>動いている<wbr>ことが<wbr>多いので、<wbr>この<wbr>5人なら<wbr>同じような<wbr>ことは<wbr>できると<wbr>思います。</p></div></div>
+<div class="bal"><div class="av p-junya" aria-hidden="true"></div><div class="bub"><div class="nm">坂田潤弥</div><p>いつか、<wbr>BGTの<wbr>話みたいな<wbr>ノリで<wbr>宇宙に<wbr>行く<wbr>話が<wbr>きた<wbr>時に、<wbr>まほろを<wbr>全く<wbr>同じ<wbr>シチュエーションで<wbr>唐突に<wbr>誘おうと<wbr>思っている。</p></div></div>
+<p class="n">盤の<wbr>端まで<wbr>行った<wbr>駒が、<wbr>次に<wbr>何に<wbr>成るのか。<wbr>それは<wbr>まだ<wbr>決まっていない。</p>
+<p class="n">2026年9月29日<wbr>（火）、<wbr>めぐろパーシモンホール 大ホール。<wbr>開場18:00、<wbr>開演19:30。<wbr>HARIBOW初の<wbr>単独公演<wbr>「Go BEYOND」。<wbr>出演31名、<wbr>演目は<wbr>9つ。<wbr>この<wbr>記事に<wbr>出てきた<wbr>5人も、<wbr>これまでを<wbr>共に<wbr>歩ん<wbr>できた<wbr>仲間たちも、<wbr>全員<wbr>そこに<wbr>立つ。</p>
+<p class="n">チケットは<wbr> go-beyond.haribow.com から。<wbr>一般S席 前売 4,500円、<wbr>一般A席 前売 3,500円、<wbr>大学生 前売 2,500円。</p>
+<p class="n">客席は、<wbr>まだ<wbr>埋まっていない。</p>
 
 <section class="endcta">
   <p class="ec-lead">この記事に出てくる5人は、2026年9月29日、めぐろパーシモンホールの大ホールに立ちます。</p>
