@@ -18,6 +18,13 @@
   /* ▼ チケット購入URL（将来 ticket.haribow.com にする時もここだけ） */
   var PURCHASE_URL = "https://ticket.haribow.com/seats.html";
 
+  /* ▼ グッズ（事前受注）
+     受注ページは ticket.haribow.com 側にある。このサイトは入口だけを持ち、
+     商品・価格・締切は GAS の商品マスタ（?page=goods_catalog）から毎回受ける。
+     ★ここに金額や締切を書き写さないこと。goods.html と食い違う。 */
+  var GOODS_API = "https://script.google.com/macros/s/AKfycbyPtSUbVfZX9keG6E9jP9EfVSjy9DoA6onp_FgXPM3tbjLz2gm5UNcxaeqSyzIIbPFW/exec";
+  var GOODS_URL = "https://ticket.haribow.com/goods.html";
+
   /* ▼ ラインナップ（演目）。順番＝表示順。img:null で写真なし。bg:背景位置クラス(任意) */
   var LINEUP = [
     { tags: [{ t: "世界王者", c: "gold" }], title: "YOUNG BLOOD", img: "assets/lineup/young-blood.jpg",
@@ -118,6 +125,56 @@
     return "<tr>" + name + price + "</tr>";
   }
 
+  function yen(n) { return "\u00a5" + Number(n).toLocaleString("ja-JP"); }
+
+  function goodsRow(it) {
+    var name = '<td class="name">' + it.name + (it.hasSize ? '<span class="sub">サイズあり</span>' : "") + "</td>";
+    /* 当日価格 0 ＝ 当日は売らない商品（事前販売限定セット）。0円と出さない。 */
+    var day = it.dayPrice ? yen(it.dayPrice) : '<span class="only">事前のみ</span>';
+    return "<tr>" + name + '<td class="p">' + yen(it.price) + '</td><td class="p">' + day + "</td></tr>";
+  }
+
+  /* GAS は時々 404（Googleのエラーページ）を返すことがある。2026-09-22 に実際に踏んだ。
+     1回きりの取得だとその時だけグッズが消えるので、短い間隔で1度だけ引き直す。 */
+  function renderGoods(retry) {
+    var sec = q("#goods");
+    if (!sec || !window.fetch) return;
+    fetch(GOODS_API + "?page=goods_catalog")
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || !d.ok || !d.items) { if (!retry) setTimeout(function () { renderGoods(true); }, 1500); return; }
+        var items = d.items.filter(function (it) { return it.onSale !== false; });
+        if (!items.length) return;
+
+        q("#goodsBody").innerHTML = items.map(goodsRow).join("");
+
+        var notes = [];
+        if (d.open && d.orderEnd) notes.push("事前受注のお申し込みは <b>" + d.orderEnd + "</b> まで。");
+        if (!d.open) notes.push("<b>事前受注の受付は終了しました。</b>" + (d.closedReason ? d.closedReason : "当日、会場の物販ブースでお求めいただけます。"));
+        if (d.pickup) {
+          notes.push("事前受注分のお受け取りは公演当日、<b>" + d.pickup.place + "</b>（" + d.pickup.time + "）です。" +
+            (d.pickup.unclaimed ? "当日お受け取りになれなかった場合は、" + d.pickup.unclaimed + "します。" : ""));
+        }
+        if (d.sizes && d.sizes.length) notes.push("サイズは " + d.sizes.join(" ／ ") + " からお選びいただけます。");
+        q("#goodsNote").innerHTML = "※ " + notes.join(" ");
+
+        /* 受付が閉じている間は事前受注の入口を出さない（押しても買えない） */
+        var buy = q("#goodsBuy");
+        if (d.open) { buy.querySelector("a").setAttribute("href", GOODS_URL); }
+        else { buy.setAttribute("hidden", ""); }
+
+        sec.removeAttribute("hidden");
+        /* スクロールリビールは読み込み時に監視を張る。後から表示した分は、
+           交差判定を待たずに出しておく（画面外なら次のスクロールで自然に見える）。 */
+        var rev = sec.querySelectorAll(".reveal");
+        for (var i = 0; i < rev.length; i++) rev[i].classList.add("in");
+      })
+      .catch(function () {
+        /* 取れなければ出さない。古い価格を出すより無い方がいい */
+        if (!retry) setTimeout(function () { renderGoods(true); }, 1500);
+      });
+  }
+
   window.HARIBOW = {
     purchaseURL: PURCHASE_URL,
     show: SHOW,
@@ -157,6 +214,8 @@
       // 購入リンク
       var a = document.querySelectorAll("[data-buy]");
       for (var i = 0; i < a.length; i++) a[i].setAttribute("href", PURCHASE_URL);
+      // グッズ（カタログが取れた時だけセクションを出す）
+      renderGoods();
     }
   };
 })();

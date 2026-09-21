@@ -237,6 +237,9 @@ section{padding:96px 0}
 
 /* tickets */
 .tk{background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.gd{background:var(--bg)}
+[hidden]{display:none!important}
+.ttable td.p .only{font-family:"Zen Kaku Gothic New",sans-serif;font-size:13px;font-weight:500;color:var(--faint);letter-spacing:.04em}
 .ttable{width:100%;border-collapse:collapse;font-size:15px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .ttable th,.ttable td{padding:15px 16px;text-align:left;border-bottom:1px solid var(--line)}
 .ttable thead th{background:rgba(255,255,255,.03);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
@@ -299,6 +302,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
   <div class="nav-links">
     <a href="#lineup">ラインナップ</a>
     <a href="#tickets">チケット</a>
+    <a href="#goods">グッズ</a>
     <a href="#access">アクセス</a>
     <a href="#guide">来場ガイド</a>
   </div>
@@ -417,6 +421,24 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
          ★削除の順序：先に ticket.haribow.com 側で ?tab=stream の着地に中止の案内を出し、
            それが反映されたことを確認してから、この入口を消した。逆順にすると、
            別ドメインで反映がずれる間、説明の無いまま座席表に落ちる人が出る。 -->
+  </div>
+</section>
+
+<!-- グッズ（事前受注）
+     ★このセクションは価格も締切も持っていない。ticket.haribow.com/goods.html と同じ
+       ?page=goods_catalog から受けて描いている。商品マスタを直せばここも変わる。
+       金額・締切・受け取り場所をこのファイルに書き写さないこと（二重管理になる）。
+     ★カタログが取れなかった時は、このセクションごと出さない（hidden のまま）。
+       古い価格を出すくらいなら、何も出さない方がいい。 -->
+<section class="tk gd" id="goods" hidden>
+  <div class="wrap">
+    <div class="sec-head"><div class="ey">Goods</div><h2 class="disp">グッズ</h2></div>
+    <table class="ttable">
+      <thead><tr><th>商品</th><th>事前受注</th><th>当日（会場）</th></tr></thead>
+      <tbody id="goodsBody"></tbody>
+    </table>
+    <p class="note" id="goodsNote"></p>
+    <div class="buy" id="goodsBuy"><a class="btn btn-p" href="https://ticket.haribow.com/goods.html">グッズを事前受注する</a></div>
   </div>
 </section>
 
