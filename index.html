@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="ended">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -282,6 +282,11 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
   .nav .brand{font-size:15px}
   .ttable th,.ttable td{padding:12px 12px;font-size:14px}
 }
+/* 2026-11-06 終演後モード：html.ended で購入・グッズ・カウントダウン・来場案内を隠す。戻すときは html の class を外す */
+html.ended [data-buy],html.ended #tickets,html.ended #goods,html.ended #countdown,html.ended #access,html.ended #guide,
+html.ended .nav-links a[href="#tickets"],html.ended .nav-links a[href="#goods"],html.ended .nav-links a[href="#access"],html.ended .nav-links a[href="#guide"]{display:none!important}
+.ended-note{display:none}
+html.ended .ended-note{display:block;margin:18px 0 0;font-size:15px;line-height:1.9;letter-spacing:.04em}
 </style>
 </head>
 <body>
@@ -315,6 +320,7 @@ footer .cr{color:var(--faint);font-size:12px;margin-top:26px;letter-spacing:.08e
   <div class="ov">
     <p class="theme">公園から世界、その先へ。</p>
     <div class="meta-line" id="heroMeta"></div>
+    <p class="ended-note">公演は終了しました。ご来場いただいた皆さま、ありがとうございました。</p>
     <div class="btns">
       <a class="btn btn-p" data-buy href="https://ticket.haribow.com/seats.html">チケットを購入する</a>
       <a class="fs" href="https://kv.haribow.com/" target="_blank" rel="noopener">フルスクリーンで見る →</a>
